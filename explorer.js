@@ -116,23 +116,34 @@ const cacheHierarchy = async (directory, currentHierarchy) => {
 
     //FindOut Which kind of Hierarchy is this also fill it in
     let hasOrderedChilds = false;
+    setOrderedOrnot = false;
     for (const dirent of Dirents) {
       let cached;
       if (/[0-9]+/.test(dirent.name)) {
-        hasOrderedChilds = true;
-        cached = parseDirent(directory, dirent, currentHierarchy, true);
-      } else {
-        if (hasOrderedChilds) {
+        if (!hasOrderedChilds && setOrderedOrnot) {
           console.log(
             "Error: Each folder can only contain eather ordered childeren or switchable ones."
           );
           return;
         }
+        hasOrderedChilds = true;
+        setOrderedOrnot = true;
+        cached = parseDirent(directory, dirent, currentHierarchy, true);
+      } else {
+        if (hasOrderedChilds && setOrderedOrnot) {
+          console.log(
+            "Error: Each folder can only contain eather ordered childeren or switchable ones."
+          );
+          return;
+        }
+        hasOrderedChilds = false;
+        setOrderedOrnot = true;
         cached = parseDirent(directory, dirent, currentHierarchy, false);
       }
+
       if (cached) {
-        console.log(cached);
-        await cacheHierarchy(directory + dirent.name + "/", cached);}
+        await cacheHierarchy(directory + dirent.name + "/", cached);
+      }
     }
     ////////////////////////////////////////////////////////
     // if (dirent.isDirectory()) folders.push(dirent.name);
