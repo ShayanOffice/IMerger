@@ -10,7 +10,7 @@
           "metaName": "Aqua",
           "extension": "png",
           "direntName": "Aqua.png",
-          "address": "./Traits/01-Background/Aqua.png/",
+          "address": "./Traits/01-Background/Aqua.png",
           "blendingMode": "normal"
         },
         {
@@ -18,7 +18,7 @@
           "metaName": "Forest",
           "extension": "png",
           "direntName": "Forest.png",
-          "address": "./Traits/01-Background/Forest.png/",
+          "address": "./Traits/01-Background/Forest.png",
           "blendingMode": "normal"
         },
         {
@@ -26,7 +26,7 @@
           "metaName": "Galaxy",
           "extension": "png",
           "direntName": "Galaxy.png",
-          "address": "./Traits/01-Background/Galaxy.png/",
+          "address": "./Traits/01-Background/Galaxy.png",
           "blendingMode": "normal"
         },
         {
@@ -34,7 +34,7 @@
           "metaName": "Lava",
           "extension": "png",
           "direntName": "Lava.png",
-          "address": "./Traits/01-Background/Lava.png/",
+          "address": "./Traits/01-Background/Lava.png",
           "blendingMode": "normal"
         },
         {
@@ -42,7 +42,7 @@
           "metaName": "Mountain",
           "extension": "png",
           "direntName": "Mountain.png",
-          "address": "./Traits/01-Background/Mountain.png/",
+          "address": "./Traits/01-Background/Mountain.png",
           "blendingMode": "normal"
         },
         {
@@ -50,7 +50,7 @@
           "metaName": "Psycho",
           "extension": "png",
           "direntName": "Psycho.png",
-          "address": "./Traits/01-Background/Psycho.png/",
+          "address": "./Traits/01-Background/Psycho.png",
           "blendingMode": "normal"
         },
         {
@@ -58,7 +58,7 @@
           "metaName": "Snow",
           "extension": "png",
           "direntName": "Snow.png",
-          "address": "./Traits/01-Background/Snow.png/",
+          "address": "./Traits/01-Background/Snow.png",
           "blendingMode": "normal"
         }
       ],
@@ -75,7 +75,7 @@
           "metaName": "Alien",
           "extension": "png",
           "direntName": "Alien.png",
-          "address": "./Traits/02-Body/Alien.png/",
+          "address": "./Traits/02-Body/Alien.png",
           "blendingMode": "normal"
         },
         {
@@ -83,7 +83,7 @@
           "metaName": "Gold",
           "extension": "png",
           "direntName": "Gold.png",
-          "address": "./Traits/02-Body/Gold.png/",
+          "address": "./Traits/02-Body/Gold.png",
           "blendingMode": "normal"
         },
         {
@@ -91,7 +91,7 @@
           "metaName": "Normal",
           "extension": "png",
           "direntName": "Normal.png",
-          "address": "./Traits/02-Body/Normal.png/",
+          "address": "./Traits/02-Body/Normal.png",
           "blendingMode": "normal"
         },
         {
@@ -99,7 +99,7 @@
           "metaName": "Zombie",
           "extension": "png",
           "direntName": "Zombie.png",
-          "address": "./Traits/02-Body/Zombie.png/",
+          "address": "./Traits/02-Body/Zombie.png",
           "blendingMode": "normal"
         }
       ],
@@ -120,7 +120,7 @@
               "metaName": "Angry",
               "extension": "png",
               "direntName": "Angry.png",
-              "address": "./Traits/03-Top/01-Eyes/Angry.png/",
+              "address": "./Traits/03-Top/01-Eyes/Angry.png",
               "blendingMode": "normal"
             },
             {
@@ -128,7 +128,7 @@
               "metaName": "Chill",
               "extension": "png",
               "direntName": "Chill.png",
-              "address": "./Traits/03-Top/01-Eyes/Chill.png/",
+              "address": "./Traits/03-Top/01-Eyes/Chill.png",
               "blendingMode": "normal"
             },
             {
@@ -136,7 +136,7 @@
               "metaName": "Focus",
               "extension": "png",
               "direntName": "Focus.png",
-              "address": "./Traits/03-Top/01-Eyes/Focus.png/",
+              "address": "./Traits/03-Top/01-Eyes/Focus.png",
               "blendingMode": "normal"
             },
             {
@@ -144,7 +144,7 @@
               "metaName": "Shame",
               "extension": "png",
               "direntName": "Shame.png",
-              "address": "./Traits/03-Top/01-Eyes/Shame.png/",
+              "address": "./Traits/03-Top/01-Eyes/Shame.png",
               "blendingMode": "normal"
             },
             {
@@ -152,7 +152,7 @@
               "metaName": "Surprise",
               "extension": "png",
               "direntName": "Surprise.png",
-              "address": "./Traits/03-Top/01-Eyes/Surprise.png/",
+              "address": "./Traits/03-Top/01-Eyes/Surprise.png",
               "blendingMode": "normal"
             }
           ],
@@ -169,7 +169,7 @@
               "metaName": "Alien",
               "extension": "png",
               "direntName": "Alien.png",
-              "address": "./Traits/03-Top/02-Head/Alien.png/",
+              "address": "./Traits/03-Top/02-Head/Alien.png",
               "blendingMode": "normal"
             },
             {
@@ -177,7 +177,7 @@
               "metaName": "Gold",
               "extension": "png",
               "direntName": "Gold.png",
-              "address": "./Traits/03-Top/02-Head/Gold.png/",
+              "address": "./Traits/03-Top/02-Head/Gold.png",
               "blendingMode": "normal"
             },
             {
@@ -185,7 +185,7 @@
               "metaName": "Normal",
               "extension": "png",
               "direntName": "Normal.png",
-              "address": "./Traits/03-Top/02-Head/Normal.png/",
+              "address": "./Traits/03-Top/02-Head/Normal.png",
               "blendingMode": "normal"
             },
             {
@@ -193,7 +193,7 @@
               "metaName": "Zombie",
               "extension": "png",
               "direntName": "Zombie.png",
-              "address": "./Traits/03-Top/02-Head/Zombie.png/",
+              "address": "./Traits/03-Top/02-Head/Zombie.png",
               "blendingMode": "normal"
             }
           ],
@@ -210,7 +210,7 @@
               "metaName": "Backwards Camo",
               "extension": "png",
               "direntName": "Backwards Camo.png",
-              "address": "./Traits/03-Top/03-Headwear/Backwards Camo.png/",
+              "address": "./Traits/03-Top/03-Headwear/Backwards Camo.png",
               "blendingMode": "normal"
             },
             {
@@ -218,7 +218,7 @@
               "metaName": "Blue Bandana",
               "extension": "png",
               "direntName": "Blue Bandana.png",
-              "address": "./Traits/03-Top/03-Headwear/Blue Bandana.png/",
+              "address": "./Traits/03-Top/03-Headwear/Blue Bandana.png",
               "blendingMode": "normal"
             },
             {
@@ -226,7 +226,7 @@
               "metaName": "Bowler",
               "extension": "png",
               "direntName": "Bowler.png",
-              "address": "./Traits/03-Top/03-Headwear/Bowler.png/",
+              "address": "./Traits/03-Top/03-Headwear/Bowler.png",
               "blendingMode": "normal"
             },
             {
@@ -234,7 +234,7 @@
               "metaName": "Cowboy",
               "extension": "png",
               "direntName": "Cowboy.png",
-              "address": "./Traits/03-Top/03-Headwear/Cowboy.png/",
+              "address": "./Traits/03-Top/03-Headwear/Cowboy.png",
               "blendingMode": "normal"
             },
             {
@@ -242,7 +242,7 @@
               "metaName": "Empty",
               "extension": "png",
               "direntName": "Empty.png",
-              "address": "./Traits/03-Top/03-Headwear/Empty.png/",
+              "address": "./Traits/03-Top/03-Headwear/Empty.png",
               "blendingMode": "normal"
             },
             {
@@ -250,7 +250,7 @@
               "metaName": "Leaves",
               "extension": "png",
               "direntName": "Leaves.png",
-              "address": "./Traits/03-Top/03-Headwear/Leaves.png/",
+              "address": "./Traits/03-Top/03-Headwear/Leaves.png",
               "blendingMode": "normal"
             },
             {
@@ -258,7 +258,7 @@
               "metaName": "Pink Punk",
               "extension": "png",
               "direntName": "Pink Punk.png",
-              "address": "./Traits/03-Top/03-Headwear/Pink Punk.png/",
+              "address": "./Traits/03-Top/03-Headwear/Pink Punk.png",
               "blendingMode": "normal"
             },
             {
@@ -266,7 +266,7 @@
               "metaName": "Purple Hat",
               "extension": "png",
               "direntName": "Purple Hat.png",
-              "address": "./Traits/03-Top/03-Headwear/Purple Hat.png/",
+              "address": "./Traits/03-Top/03-Headwear/Purple Hat.png",
               "blendingMode": "normal"
             },
             {
@@ -274,7 +274,7 @@
               "metaName": "Purple Punk",
               "extension": "png",
               "direntName": "Purple Punk.png",
-              "address": "./Traits/03-Top/03-Headwear/Purple Punk.png/",
+              "address": "./Traits/03-Top/03-Headwear/Purple Punk.png",
               "blendingMode": "normal"
             },
             {
@@ -282,7 +282,7 @@
               "metaName": "Rasta",
               "extension": "png",
               "direntName": "Rasta.png",
-              "address": "./Traits/03-Top/03-Headwear/Rasta.png/",
+              "address": "./Traits/03-Top/03-Headwear/Rasta.png",
               "blendingMode": "normal"
             },
             {
@@ -290,7 +290,7 @@
               "metaName": "Red Bandana",
               "extension": "png",
               "direntName": "Red Bandana.png",
-              "address": "./Traits/03-Top/03-Headwear/Red Bandana.png/",
+              "address": "./Traits/03-Top/03-Headwear/Red Bandana.png",
               "blendingMode": "normal"
             },
             {
@@ -298,7 +298,7 @@
               "metaName": "Sailor",
               "extension": "png",
               "direntName": "Sailor.png",
-              "address": "./Traits/03-Top/03-Headwear/Sailor.png/",
+              "address": "./Traits/03-Top/03-Headwear/Sailor.png",
               "blendingMode": "normal"
             },
             {
@@ -306,7 +306,7 @@
               "metaName": "Wizard",
               "extension": "png",
               "direntName": "Wizard.png",
-              "address": "./Traits/03-Top/03-Headwear/Wizard.png/",
+              "address": "./Traits/03-Top/03-Headwear/Wizard.png",
               "blendingMode": "normal"
             }
           ],
@@ -323,7 +323,7 @@
               "metaName": "Full Beard",
               "extension": "png",
               "direntName": "Full Beard.png",
-              "address": "./Traits/03-Top/04-Mouth/Full Beard.png/",
+              "address": "./Traits/03-Top/04-Mouth/Full Beard.png",
               "blendingMode": "normal"
             },
             {
@@ -331,7 +331,7 @@
               "metaName": "Happy",
               "extension": "png",
               "direntName": "Happy.png",
-              "address": "./Traits/03-Top/04-Mouth/Happy.png/",
+              "address": "./Traits/03-Top/04-Mouth/Happy.png",
               "blendingMode": "normal"
             },
             {
@@ -339,7 +339,7 @@
               "metaName": "Lips",
               "extension": "png",
               "direntName": "Lips.png",
-              "address": "./Traits/03-Top/04-Mouth/Lips.png/",
+              "address": "./Traits/03-Top/04-Mouth/Lips.png",
               "blendingMode": "normal"
             },
             {
@@ -347,7 +347,7 @@
               "metaName": "Lock Beard",
               "extension": "png",
               "direntName": "Lock Beard.png",
-              "address": "./Traits/03-Top/04-Mouth/Lock Beard.png/",
+              "address": "./Traits/03-Top/04-Mouth/Lock Beard.png",
               "blendingMode": "normal"
             },
             {
@@ -355,7 +355,7 @@
               "metaName": "Moustache",
               "extension": "png",
               "direntName": "Moustache.png",
-              "address": "./Traits/03-Top/04-Mouth/Moustache.png/",
+              "address": "./Traits/03-Top/04-Mouth/Moustache.png",
               "blendingMode": "normal"
             },
             {
@@ -363,7 +363,7 @@
               "metaName": "Serious",
               "extension": "png",
               "direntName": "Serious.png",
-              "address": "./Traits/03-Top/04-Mouth/Serious.png/",
+              "address": "./Traits/03-Top/04-Mouth/Serious.png",
               "blendingMode": "normal"
             },
             {
@@ -371,7 +371,7 @@
               "metaName": "Surprise",
               "extension": "png",
               "direntName": "Surprise.png",
-              "address": "./Traits/03-Top/04-Mouth/Surprise.png/",
+              "address": "./Traits/03-Top/04-Mouth/Surprise.png",
               "blendingMode": "normal"
             },
             {
@@ -379,7 +379,7 @@
               "metaName": "Twisted",
               "extension": "png",
               "direntName": "Twisted.png",
-              "address": "./Traits/03-Top/04-Mouth/Twisted.png/",
+              "address": "./Traits/03-Top/04-Mouth/Twisted.png",
               "blendingMode": "normal"
             }
           ],
@@ -396,7 +396,7 @@
               "metaName": "Common",
               "extension": "png",
               "direntName": "Common.png",
-              "address": "./Traits/03-Top/05-Nose/Common.png/",
+              "address": "./Traits/03-Top/05-Nose/Common.png",
               "blendingMode": "normal"
             }
           ],
@@ -418,7 +418,7 @@
           "metaName": "Blue Jacket",
           "extension": "png",
           "direntName": "Blue Jacket.png",
-          "address": "./Traits/04-Outfit/Blue Jacket.png/",
+          "address": "./Traits/04-Outfit/Blue Jacket.png",
           "blendingMode": "normal"
         },
         {
@@ -426,7 +426,7 @@
           "metaName": "Gap",
           "extension": "png",
           "direntName": "Gap.png",
-          "address": "./Traits/04-Outfit/Gap.png/",
+          "address": "./Traits/04-Outfit/Gap.png",
           "blendingMode": "normal"
         },
         {
@@ -434,7 +434,7 @@
           "metaName": "Hoodie",
           "extension": "png",
           "direntName": "Hoodie.png",
-          "address": "./Traits/04-Outfit/Hoodie.png/",
+          "address": "./Traits/04-Outfit/Hoodie.png",
           "blendingMode": "normal"
         },
         {
@@ -442,7 +442,7 @@
           "metaName": "Lumberjack",
           "extension": "png",
           "direntName": "Lumberjack.png",
-          "address": "./Traits/04-Outfit/Lumberjack.png/",
+          "address": "./Traits/04-Outfit/Lumberjack.png",
           "blendingMode": "normal"
         },
         {
@@ -450,7 +450,7 @@
           "metaName": "Pink Hoodie",
           "extension": "png",
           "direntName": "Pink Hoodie.png",
-          "address": "./Traits/04-Outfit/Pink Hoodie.png/",
+          "address": "./Traits/04-Outfit/Pink Hoodie.png",
           "blendingMode": "normal"
         },
         {
@@ -458,7 +458,7 @@
           "metaName": "Red Jacket",
           "extension": "png",
           "direntName": "Red Jacket.png",
-          "address": "./Traits/04-Outfit/Red Jacket.png/",
+          "address": "./Traits/04-Outfit/Red Jacket.png",
           "blendingMode": "normal"
         },
         {
@@ -466,7 +466,7 @@
           "metaName": "Shirt with holes",
           "extension": "png",
           "direntName": "Shirt with holes.png",
-          "address": "./Traits/04-Outfit/Shirt with holes.png/",
+          "address": "./Traits/04-Outfit/Shirt with holes.png",
           "blendingMode": "normal"
         },
         {
@@ -474,7 +474,7 @@
           "metaName": "Tanktop",
           "extension": "png",
           "direntName": "Tanktop.png",
-          "address": "./Traits/04-Outfit/Tanktop.png/",
+          "address": "./Traits/04-Outfit/Tanktop.png",
           "blendingMode": "normal"
         }
       ],
@@ -491,7 +491,7 @@
           "metaName": "Aviator",
           "extension": "png",
           "direntName": "Aviator.png",
-          "address": "./Traits/05-Sunglasses/Aviator.png/",
+          "address": "./Traits/05-Sunglasses/Aviator.png",
           "blendingMode": "normal"
         },
         {
@@ -499,7 +499,7 @@
           "metaName": "Cateyes",
           "extension": "png",
           "direntName": "Cateyes.png",
-          "address": "./Traits/05-Sunglasses/Cateyes.png/",
+          "address": "./Traits/05-Sunglasses/Cateyes.png",
           "blendingMode": "normal"
         },
         {
@@ -507,7 +507,7 @@
           "metaName": "Empty",
           "extension": "png",
           "direntName": "Empty.png",
-          "address": "./Traits/05-Sunglasses/Empty.png/",
+          "address": "./Traits/05-Sunglasses/Empty.png",
           "blendingMode": "normal"
         },
         {
@@ -515,7 +515,7 @@
           "metaName": "Pirate Patch",
           "extension": "png",
           "direntName": "Pirate Patch.png",
-          "address": "./Traits/05-Sunglasses/Pirate Patch.png/",
+          "address": "./Traits/05-Sunglasses/Pirate Patch.png",
           "blendingMode": "normal"
         },
         {
@@ -523,7 +523,7 @@
           "metaName": "Thug Sunglasses",
           "extension": "png",
           "direntName": "Thug Sunglasses.png",
-          "address": "./Traits/05-Sunglasses/Thug Sunglasses.png/",
+          "address": "./Traits/05-Sunglasses/Thug Sunglasses.png",
           "blendingMode": "normal"
         }
       ],

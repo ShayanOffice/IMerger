@@ -4,9 +4,13 @@ Compositor:
 
 0) chooser could also read from available hierarchy.
 1) Make the chooser.js choose randomly.
+    calculate all possibilities and if target count is higher stop when reached tha roof.
 2) Then make an array and run the compositor.js from chooser.js on it.
 3) make the rarity functionality.
     .parse rarity amount inside each hierarchy.
     .make chooser follow rarity rules.
 4) polish it.
 5) make the desired metadata.
+
+
+

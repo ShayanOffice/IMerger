@@ -62,7 +62,7 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
     const blendingMode = /._.+\./.test(dirent.name)
       ? dirent.name.replace(/(.+)(_.+)(\..+)/, `$2`)
       : 'normal';
-    const address = directory + dirent.name + '/';
+    const address = directory + dirent.name;
     const newImageData = createBlendingImage(
       currentHierarchy,
       metaName,
