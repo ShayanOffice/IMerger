@@ -3,537 +3,537 @@
   "switchableChildren": [],
   "orderedChildren": [
     {
-      "parent": "",
+      "parent": "./Traits/",
       "switchableChildren": [
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Aqua",
           "extension": "png",
           "direntName": "Aqua.png",
-          "address": "./Traits/01-Background/Aqua.png",
+          "address": "./Traits/01-Background/Aqua.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Forest",
           "extension": "png",
           "direntName": "Forest.png",
-          "address": "./Traits/01-Background/Forest.png",
+          "address": "./Traits/01-Background/Forest.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Galaxy",
           "extension": "png",
           "direntName": "Galaxy.png",
-          "address": "./Traits/01-Background/Galaxy.png",
+          "address": "./Traits/01-Background/Galaxy.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Lava",
           "extension": "png",
           "direntName": "Lava.png",
-          "address": "./Traits/01-Background/Lava.png",
+          "address": "./Traits/01-Background/Lava.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Mountain",
           "extension": "png",
           "direntName": "Mountain.png",
-          "address": "./Traits/01-Background/Mountain.png",
+          "address": "./Traits/01-Background/Mountain.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Psycho",
           "extension": "png",
           "direntName": "Psycho.png",
-          "address": "./Traits/01-Background/Psycho.png",
+          "address": "./Traits/01-Background/Psycho.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/01-Background",
+          "parent": "./Traits/01-Background/",
           "metaName": "Snow",
           "extension": "png",
           "direntName": "Snow.png",
-          "address": "./Traits/01-Background/Snow.png",
+          "address": "./Traits/01-Background/Snow.png/",
           "blendingMode": "normal"
         }
       ],
       "orderedChildren": [],
       "metaName": "Background",
       "direntName": "01-Background",
-      "address": "./Traits/01-Background"
+      "address": "./Traits/01-Background/"
     },
     {
-      "parent": "",
+      "parent": "./Traits/",
       "switchableChildren": [
         {
-          "parent": "./Traits/02-Body",
+          "parent": "./Traits/02-Body/",
           "metaName": "Alien",
           "extension": "png",
           "direntName": "Alien.png",
-          "address": "./Traits/02-Body/Alien.png",
+          "address": "./Traits/02-Body/Alien.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/02-Body",
+          "parent": "./Traits/02-Body/",
           "metaName": "Gold",
           "extension": "png",
           "direntName": "Gold.png",
-          "address": "./Traits/02-Body/Gold.png",
+          "address": "./Traits/02-Body/Gold.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/02-Body",
+          "parent": "./Traits/02-Body/",
           "metaName": "Normal",
           "extension": "png",
           "direntName": "Normal.png",
-          "address": "./Traits/02-Body/Normal.png",
+          "address": "./Traits/02-Body/Normal.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/02-Body",
+          "parent": "./Traits/02-Body/",
           "metaName": "Zombie",
           "extension": "png",
           "direntName": "Zombie.png",
-          "address": "./Traits/02-Body/Zombie.png",
+          "address": "./Traits/02-Body/Zombie.png/",
           "blendingMode": "normal"
         }
       ],
       "orderedChildren": [],
       "metaName": "Body",
       "direntName": "02-Body",
-      "address": "./Traits/02-Body"
+      "address": "./Traits/02-Body/"
     },
     {
-      "parent": "",
+      "parent": "./Traits/",
       "switchableChildren": [],
       "orderedChildren": [
         {
-          "parent": "./Traits/03-Top",
+          "parent": "./Traits/03-Top/",
           "switchableChildren": [
             {
-              "parent": "./Traits/03-Top/01-Eyes",
+              "parent": "./Traits/03-Top/01-Eyes/",
               "metaName": "Angry",
               "extension": "png",
               "direntName": "Angry.png",
-              "address": "./Traits/03-Top/01-Eyes/Angry.png",
+              "address": "./Traits/03-Top/01-Eyes/Angry.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/01-Eyes",
+              "parent": "./Traits/03-Top/01-Eyes/",
               "metaName": "Chill",
               "extension": "png",
               "direntName": "Chill.png",
-              "address": "./Traits/03-Top/01-Eyes/Chill.png",
+              "address": "./Traits/03-Top/01-Eyes/Chill.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/01-Eyes",
+              "parent": "./Traits/03-Top/01-Eyes/",
               "metaName": "Focus",
               "extension": "png",
               "direntName": "Focus.png",
-              "address": "./Traits/03-Top/01-Eyes/Focus.png",
+              "address": "./Traits/03-Top/01-Eyes/Focus.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/01-Eyes",
+              "parent": "./Traits/03-Top/01-Eyes/",
               "metaName": "Shame",
               "extension": "png",
               "direntName": "Shame.png",
-              "address": "./Traits/03-Top/01-Eyes/Shame.png",
+              "address": "./Traits/03-Top/01-Eyes/Shame.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/01-Eyes",
+              "parent": "./Traits/03-Top/01-Eyes/",
               "metaName": "Surprise",
               "extension": "png",
               "direntName": "Surprise.png",
-              "address": "./Traits/03-Top/01-Eyes/Surprise.png",
+              "address": "./Traits/03-Top/01-Eyes/Surprise.png/",
               "blendingMode": "normal"
             }
           ],
           "orderedChildren": [],
           "metaName": "Eyes",
           "direntName": "01-Eyes",
-          "address": "./Traits/03-Top/01-Eyes"
+          "address": "./Traits/03-Top/01-Eyes/"
         },
         {
-          "parent": "./Traits/03-Top",
+          "parent": "./Traits/03-Top/",
           "switchableChildren": [
             {
-              "parent": "./Traits/03-Top/02-Head",
+              "parent": "./Traits/03-Top/02-Head/",
               "metaName": "Alien",
               "extension": "png",
               "direntName": "Alien.png",
-              "address": "./Traits/03-Top/02-Head/Alien.png",
+              "address": "./Traits/03-Top/02-Head/Alien.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/02-Head",
+              "parent": "./Traits/03-Top/02-Head/",
               "metaName": "Gold",
               "extension": "png",
               "direntName": "Gold.png",
-              "address": "./Traits/03-Top/02-Head/Gold.png",
+              "address": "./Traits/03-Top/02-Head/Gold.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/02-Head",
+              "parent": "./Traits/03-Top/02-Head/",
               "metaName": "Normal",
               "extension": "png",
               "direntName": "Normal.png",
-              "address": "./Traits/03-Top/02-Head/Normal.png",
+              "address": "./Traits/03-Top/02-Head/Normal.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/02-Head",
+              "parent": "./Traits/03-Top/02-Head/",
               "metaName": "Zombie",
               "extension": "png",
               "direntName": "Zombie.png",
-              "address": "./Traits/03-Top/02-Head/Zombie.png",
+              "address": "./Traits/03-Top/02-Head/Zombie.png/",
               "blendingMode": "normal"
             }
           ],
           "orderedChildren": [],
           "metaName": "Head",
           "direntName": "02-Head",
-          "address": "./Traits/03-Top/02-Head"
+          "address": "./Traits/03-Top/02-Head/"
         },
         {
-          "parent": "./Traits/03-Top",
+          "parent": "./Traits/03-Top/",
           "switchableChildren": [
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Backwards Camo",
               "extension": "png",
               "direntName": "Backwards Camo.png",
-              "address": "./Traits/03-Top/03-Headwear/Backwards Camo.png",
+              "address": "./Traits/03-Top/03-Headwear/Backwards Camo.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Blue Bandana",
               "extension": "png",
               "direntName": "Blue Bandana.png",
-              "address": "./Traits/03-Top/03-Headwear/Blue Bandana.png",
+              "address": "./Traits/03-Top/03-Headwear/Blue Bandana.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Bowler",
               "extension": "png",
               "direntName": "Bowler.png",
-              "address": "./Traits/03-Top/03-Headwear/Bowler.png",
+              "address": "./Traits/03-Top/03-Headwear/Bowler.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Cowboy",
               "extension": "png",
               "direntName": "Cowboy.png",
-              "address": "./Traits/03-Top/03-Headwear/Cowboy.png",
+              "address": "./Traits/03-Top/03-Headwear/Cowboy.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Empty",
               "extension": "png",
               "direntName": "Empty.png",
-              "address": "./Traits/03-Top/03-Headwear/Empty.png",
+              "address": "./Traits/03-Top/03-Headwear/Empty.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Leaves",
               "extension": "png",
               "direntName": "Leaves.png",
-              "address": "./Traits/03-Top/03-Headwear/Leaves.png",
+              "address": "./Traits/03-Top/03-Headwear/Leaves.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Pink Punk",
               "extension": "png",
               "direntName": "Pink Punk.png",
-              "address": "./Traits/03-Top/03-Headwear/Pink Punk.png",
+              "address": "./Traits/03-Top/03-Headwear/Pink Punk.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Purple Hat",
               "extension": "png",
               "direntName": "Purple Hat.png",
-              "address": "./Traits/03-Top/03-Headwear/Purple Hat.png",
+              "address": "./Traits/03-Top/03-Headwear/Purple Hat.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Purple Punk",
               "extension": "png",
               "direntName": "Purple Punk.png",
-              "address": "./Traits/03-Top/03-Headwear/Purple Punk.png",
+              "address": "./Traits/03-Top/03-Headwear/Purple Punk.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Rasta",
               "extension": "png",
               "direntName": "Rasta.png",
-              "address": "./Traits/03-Top/03-Headwear/Rasta.png",
+              "address": "./Traits/03-Top/03-Headwear/Rasta.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Red Bandana",
               "extension": "png",
               "direntName": "Red Bandana.png",
-              "address": "./Traits/03-Top/03-Headwear/Red Bandana.png",
+              "address": "./Traits/03-Top/03-Headwear/Red Bandana.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Sailor",
               "extension": "png",
               "direntName": "Sailor.png",
-              "address": "./Traits/03-Top/03-Headwear/Sailor.png",
+              "address": "./Traits/03-Top/03-Headwear/Sailor.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/03-Headwear",
+              "parent": "./Traits/03-Top/03-Headwear/",
               "metaName": "Wizard",
               "extension": "png",
               "direntName": "Wizard.png",
-              "address": "./Traits/03-Top/03-Headwear/Wizard.png",
+              "address": "./Traits/03-Top/03-Headwear/Wizard.png/",
               "blendingMode": "normal"
             }
           ],
           "orderedChildren": [],
           "metaName": "Headwear",
           "direntName": "03-Headwear",
-          "address": "./Traits/03-Top/03-Headwear"
+          "address": "./Traits/03-Top/03-Headwear/"
         },
         {
-          "parent": "./Traits/03-Top",
+          "parent": "./Traits/03-Top/",
           "switchableChildren": [
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Full Beard",
               "extension": "png",
               "direntName": "Full Beard.png",
-              "address": "./Traits/03-Top/04-Mouth/Full Beard.png",
+              "address": "./Traits/03-Top/04-Mouth/Full Beard.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Happy",
               "extension": "png",
               "direntName": "Happy.png",
-              "address": "./Traits/03-Top/04-Mouth/Happy.png",
+              "address": "./Traits/03-Top/04-Mouth/Happy.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Lips",
               "extension": "png",
               "direntName": "Lips.png",
-              "address": "./Traits/03-Top/04-Mouth/Lips.png",
+              "address": "./Traits/03-Top/04-Mouth/Lips.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Lock Beard",
               "extension": "png",
               "direntName": "Lock Beard.png",
-              "address": "./Traits/03-Top/04-Mouth/Lock Beard.png",
+              "address": "./Traits/03-Top/04-Mouth/Lock Beard.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Moustache",
               "extension": "png",
               "direntName": "Moustache.png",
-              "address": "./Traits/03-Top/04-Mouth/Moustache.png",
+              "address": "./Traits/03-Top/04-Mouth/Moustache.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Serious",
               "extension": "png",
               "direntName": "Serious.png",
-              "address": "./Traits/03-Top/04-Mouth/Serious.png",
+              "address": "./Traits/03-Top/04-Mouth/Serious.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Surprise",
               "extension": "png",
               "direntName": "Surprise.png",
-              "address": "./Traits/03-Top/04-Mouth/Surprise.png",
+              "address": "./Traits/03-Top/04-Mouth/Surprise.png/",
               "blendingMode": "normal"
             },
             {
-              "parent": "./Traits/03-Top/04-Mouth",
+              "parent": "./Traits/03-Top/04-Mouth/",
               "metaName": "Twisted",
               "extension": "png",
               "direntName": "Twisted.png",
-              "address": "./Traits/03-Top/04-Mouth/Twisted.png",
+              "address": "./Traits/03-Top/04-Mouth/Twisted.png/",
               "blendingMode": "normal"
             }
           ],
           "orderedChildren": [],
           "metaName": "Mouth",
           "direntName": "04-Mouth",
-          "address": "./Traits/03-Top/04-Mouth"
+          "address": "./Traits/03-Top/04-Mouth/"
         },
         {
-          "parent": "./Traits/03-Top",
+          "parent": "./Traits/03-Top/",
           "switchableChildren": [
             {
-              "parent": "./Traits/03-Top/05-Nose",
+              "parent": "./Traits/03-Top/05-Nose/",
               "metaName": "Common",
               "extension": "png",
               "direntName": "Common.png",
-              "address": "./Traits/03-Top/05-Nose/Common.png",
+              "address": "./Traits/03-Top/05-Nose/Common.png/",
               "blendingMode": "normal"
             }
           ],
           "orderedChildren": [],
           "metaName": "Nose",
           "direntName": "05-Nose",
-          "address": "./Traits/03-Top/05-Nose"
+          "address": "./Traits/03-Top/05-Nose/"
         }
       ],
       "metaName": "Top",
       "direntName": "03-Top",
-      "address": "./Traits/03-Top"
+      "address": "./Traits/03-Top/"
     },
     {
-      "parent": "",
+      "parent": "./Traits/",
       "switchableChildren": [
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Blue Jacket",
           "extension": "png",
           "direntName": "Blue Jacket.png",
-          "address": "./Traits/04-Outfit/Blue Jacket.png",
+          "address": "./Traits/04-Outfit/Blue Jacket.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Gap",
           "extension": "png",
           "direntName": "Gap.png",
-          "address": "./Traits/04-Outfit/Gap.png",
+          "address": "./Traits/04-Outfit/Gap.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Hoodie",
           "extension": "png",
           "direntName": "Hoodie.png",
-          "address": "./Traits/04-Outfit/Hoodie.png",
+          "address": "./Traits/04-Outfit/Hoodie.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Lumberjack",
           "extension": "png",
           "direntName": "Lumberjack.png",
-          "address": "./Traits/04-Outfit/Lumberjack.png",
+          "address": "./Traits/04-Outfit/Lumberjack.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Pink Hoodie",
           "extension": "png",
           "direntName": "Pink Hoodie.png",
-          "address": "./Traits/04-Outfit/Pink Hoodie.png",
+          "address": "./Traits/04-Outfit/Pink Hoodie.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Red Jacket",
           "extension": "png",
           "direntName": "Red Jacket.png",
-          "address": "./Traits/04-Outfit/Red Jacket.png",
+          "address": "./Traits/04-Outfit/Red Jacket.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Shirt with holes",
           "extension": "png",
           "direntName": "Shirt with holes.png",
-          "address": "./Traits/04-Outfit/Shirt with holes.png",
+          "address": "./Traits/04-Outfit/Shirt with holes.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/04-Outfit",
+          "parent": "./Traits/04-Outfit/",
           "metaName": "Tanktop",
           "extension": "png",
           "direntName": "Tanktop.png",
-          "address": "./Traits/04-Outfit/Tanktop.png",
+          "address": "./Traits/04-Outfit/Tanktop.png/",
           "blendingMode": "normal"
         }
       ],
       "orderedChildren": [],
       "metaName": "Outfit",
       "direntName": "04-Outfit",
-      "address": "./Traits/04-Outfit"
+      "address": "./Traits/04-Outfit/"
     },
     {
-      "parent": "",
+      "parent": "./Traits/",
       "switchableChildren": [
         {
-          "parent": "./Traits/05-Sunglasses",
+          "parent": "./Traits/05-Sunglasses/",
           "metaName": "Aviator",
           "extension": "png",
           "direntName": "Aviator.png",
-          "address": "./Traits/05-Sunglasses/Aviator.png",
+          "address": "./Traits/05-Sunglasses/Aviator.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/05-Sunglasses",
+          "parent": "./Traits/05-Sunglasses/",
           "metaName": "Cateyes",
           "extension": "png",
           "direntName": "Cateyes.png",
-          "address": "./Traits/05-Sunglasses/Cateyes.png",
+          "address": "./Traits/05-Sunglasses/Cateyes.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/05-Sunglasses",
+          "parent": "./Traits/05-Sunglasses/",
           "metaName": "Empty",
           "extension": "png",
           "direntName": "Empty.png",
-          "address": "./Traits/05-Sunglasses/Empty.png",
+          "address": "./Traits/05-Sunglasses/Empty.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/05-Sunglasses",
+          "parent": "./Traits/05-Sunglasses/",
           "metaName": "Pirate Patch",
           "extension": "png",
           "direntName": "Pirate Patch.png",
-          "address": "./Traits/05-Sunglasses/Pirate Patch.png",
+          "address": "./Traits/05-Sunglasses/Pirate Patch.png/",
           "blendingMode": "normal"
         },
         {
-          "parent": "./Traits/05-Sunglasses",
+          "parent": "./Traits/05-Sunglasses/",
           "metaName": "Thug Sunglasses",
           "extension": "png",
           "direntName": "Thug Sunglasses.png",
-          "address": "./Traits/05-Sunglasses/Thug Sunglasses.png",
+          "address": "./Traits/05-Sunglasses/Thug Sunglasses.png/",
           "blendingMode": "normal"
         }
       ],
       "orderedChildren": [],
       "metaName": "Sunglasses",
       "direntName": "05-Sunglasses",
-      "address": "./Traits/05-Sunglasses"
+      "address": "./Traits/05-Sunglasses/"
     }
   ],
   "metaName": "root",
   "direntName": "",
-  "address": ""
+  "address": "./Traits/"
 }

@@ -1,6 +1,5 @@
-import {promises as fs} from'fs';
-import { cacheDir, traitsDir } from './global.js';
-import {writeCachedHierarchy} from './fileHandler.js';
+import { traitsDir } from './global.js';
+import { writeHierarchyToFile, readDir } from './fileHandler.js';
 
 let iterationsCounter = 0;
 
@@ -11,7 +10,7 @@ const Hierarchy = {
   orderedChildren: [],
   metaName: 'root',
   direntName: '',
-  address: '',
+  address: traitsDir,
 };
 
 const createHierarchy = (
@@ -63,7 +62,7 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
     const blendingMode = /._.+\./.test(dirent.name)
       ? dirent.name.replace(/(.+)(_.+)(\..+)/, `$2`)
       : 'normal';
-    const address = directory + dirent.name;
+    const address = directory + dirent.name + '/';
     const newImageData = createBlendingImage(
       currentHierarchy,
       metaName,
@@ -76,7 +75,7 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
     else currentHierarchy.switchableChildren.push(newImageData);
     return null;
   } else {
-    const address = directory + dirent.name;
+    const address = directory + dirent.name + '/';
     const metaName = dirent.name.replace(/([0-9]+-)(.+)/, `$2`);
     const NewHierarchy = createHierarchy(
       currentHierarchy,
@@ -96,7 +95,7 @@ const cacheHierarchy = async (
   currentHierarchy = Hierarchy
 ) => {
   try {
-    const Dirents = await fs.readdir(directory, { withFileTypes: true });
+    const Dirents = await readDir(directory);
 
     //FindOut Which kind of Hierarchy is this also fill it in
     let hasOrderedChilds = false;
@@ -134,13 +133,11 @@ const cacheHierarchy = async (
   }
 };
 
-
 const cache = async () => {
   try {
     await cacheHierarchy();
-    await writeCachedHierarchy(Hierarchy, cacheDir);
-    // console.log(Hierarchy.orderedChildren[3]);
-
+    await writeHierarchyToFile(Hierarchy);
+    // console.log(theWritten.orderedChildren[3]);
   } catch (err) {
     console.log(err);
   }
