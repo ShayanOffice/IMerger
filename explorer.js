@@ -1,30 +1,26 @@
-const { rename } = require("fs");
-const { dirname } = require("path");
+import {promises as fs} from'fs';
+import { cacheDir, traitsDir } from './global.js';
+import {writeCachedHierarchy} from './fileHandler.js';
 
-const fs = require("fs").promises;
-
-let rootDir = "./Traits/";
-let allSubFolders = [];
-let allFiles = [];
 let iterationsCounter = 0;
 
 //Assuming we only have PNGs and Folders
 const Hierarchy = {
-  parent: null,
+  parent: './',
   switchableChildren: [],
   orderedChildren: [],
-  metaName: "root",
-  direntName: "",
-  address: "",
+  metaName: 'root',
+  direntName: '',
+  address: '',
 };
 
 const createHierarchy = (
-  parent = Hierarchy,
-  metaName = "",
-  direntName = "",
-  address = ""
+  parentH,
+  metaName = '',
+  direntName = '',
+  address = ''
 ) => ({
-  parent,
+  parent: parentH.address,
   switchableChildren: [],
   orderedChildren: [],
   metaName,
@@ -33,23 +29,23 @@ const createHierarchy = (
 });
 
 const BlendingImage = {
-  parent: null,
-  metaName: "",
-  extension: "",
-  direntName: "",
-  address: "",
-  blendingMode: "normal",
+  parent: './',
+  metaName: '',
+  extension: '',
+  direntName: '',
+  address: '',
+  blendingMode: 'normal',
 };
 
 const createBlendingImage = (
-  parent = Hierarchy,
-  metaName = "",
-  extension = "",
-  direntName = "",
-  address = "",
-  blendingMode = "normal"
+  parentH,
+  metaName = '',
+  extension = '',
+  direntName = '',
+  address = '',
+  blendingMode = 'normal'
 ) => ({
-  parent,
+  parent: parentH.address,
   metaName,
   extension,
   direntName,
@@ -66,8 +62,8 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
     const extension = fileName.replace(/(.+)\.(.+)/, `$2`);
     const blendingMode = /._.+\./.test(dirent.name)
       ? dirent.name.replace(/(.+)(_.+)(\..+)/, `$2`)
-      : "normal";
-    const address = directory + "/" + dirent.name;
+      : 'normal';
+    const address = directory + dirent.name;
     const newImageData = createBlendingImage(
       currentHierarchy,
       metaName,
@@ -88,13 +84,6 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
       dirent.name,
       address
     );
-    const testImage = createBlendingImage(
-      currentHierarchy,
-      metaName,
-      "wdw",
-      dirent.name,
-      address
-    );
     if (ordered) currentHierarchy.orderedChildren.push(NewHierarchy);
     else currentHierarchy.switchableChildren.push(NewHierarchy);
 
@@ -102,27 +91,22 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
   }
 };
 
-// if (/._/.test(dirent.name)) {
-//   const newName = dirent.name.replace(/(.*)\_/, ``)
-//   await fs.rename(directory + dirent.name, directory+ newName);
-
-// }
-
-const cacheHierarchy = async (directory, currentHierarchy) => {
-  let folders = [];
-  let files = [];
+const cacheHierarchy = async (
+  directory = traitsDir,
+  currentHierarchy = Hierarchy
+) => {
   try {
     const Dirents = await fs.readdir(directory, { withFileTypes: true });
 
     //FindOut Which kind of Hierarchy is this also fill it in
     let hasOrderedChilds = false;
-    setOrderedOrnot = false;
+    let setOrderedOrnot = false;
     for (const dirent of Dirents) {
       let cached;
       if (/[0-9]+/.test(dirent.name)) {
         if (!hasOrderedChilds && setOrderedOrnot) {
           console.log(
-            "Error: Each folder can only contain eather ordered childeren or switchable ones."
+            'Error: Each folder can only contain eather ordered childeren or switchable ones.'
           );
           return;
         }
@@ -132,7 +116,7 @@ const cacheHierarchy = async (directory, currentHierarchy) => {
       } else {
         if (hasOrderedChilds && setOrderedOrnot) {
           console.log(
-            "Error: Each folder can only contain eather ordered childeren or switchable ones."
+            'Error: Each folder can only contain eather ordered childeren or switchable ones.'
           );
           return;
         }
@@ -142,50 +126,24 @@ const cacheHierarchy = async (directory, currentHierarchy) => {
       }
 
       if (cached) {
-        await cacheHierarchy(directory + dirent.name + "/", cached);
+        await cacheHierarchy(directory + dirent.name + '/', cached);
       }
-    }
-    ////////////////////////////////////////////////////////
-    // if (dirent.isDirectory()) folders.push(dirent.name);
-    // else if (dirent.isFile()) files.push(dirent.name);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const Explore = async (directory) => {
-  let folders = [];
-  let files = [];
-  const currentHierarchy = {};
-  try {
-    const Dirents = await fs.readdir(directory, { withFileTypes: true });
-    for (const dirent of Dirents) {
-      if (dirent.isDirectory()) folders.push(dirent.name);
-      else if (dirent.isFile()) {
-        files.push(dirent.name);
-      }
-    }
-    allSubFolders = [...allSubFolders, ...folders];
-    allFiles = [...allFiles, ...files];
-
-    iterationsCounter++;
-    // if (folders.length != 0)
-    // console.log('subfolders inside "' + directory + '" are:\n' + folders);
-    // if (files.length != 0)
-    //   console.log('files inside "' + directory + '" are:\n' + files);
-    for (const subFolder of folders) {
-      await cacheHierarchy(directory + subFolder + "/");
     }
   } catch (err) {
     console.log(err);
   }
 };
 
-const Main = async () => {
+
+const cache = async () => {
   try {
-    await cacheHierarchy(rootDir, Hierarchy);
-    console.log(Hierarchy.orderedChildren[3]);
-  } catch (err) {}
+    await cacheHierarchy();
+    await writeCachedHierarchy(Hierarchy, cacheDir);
+    // console.log(Hierarchy.orderedChildren[3]);
+
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-Main();
+cache();

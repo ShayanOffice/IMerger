@@ -1,0 +1,31 @@
+1. Install Install VC++ Build Tools  2017 and while installing select V140 from the side menu
+
+2. Install Python 2.7, and add it to your PATH
+
+3. npm config set python python2.7 --global
+
+4. npm config set python C:\Python27\python.exe --global
+
+5. npm config set msvs_version 2015 --global
+
+6. set VCTargetsPath=C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140
+
+
+**Note:  If you still face error > most likely the problem is node-sass is not installed** 
+After this step you have to restart your machine
+
+7. Install the latest versions of Python
+
+8. As Admin:
+$ cd "C:\Program Files\nodejs\node_modules\npm"
+$ npm install node-gyp
+
+9. $ npm config set msvs_version 2015 --global
+
+Note: that I have VS 2017, but configuring it as ver 2017 won't work. Not sure why.
+
+    10. As Admin:
+$ npm install -g node-sass
+
+And finally, one last check:
+$ node-sass -v
