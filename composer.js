@@ -1,4 +1,4 @@
-const Jimp = require('jimp');
+import Jimp from 'jimp';
 const backgroundAddress = 'Traits/01-Background/Aqua.png';
 const overlayAddress = 'Traits/02-Body/Alien.png';
 const destination = 'built/';
@@ -27,9 +27,10 @@ const compositeImgArr = async (imagesArray) => {
   return await finalJimp.write(destination + 'builtImage.jpg');
 };
 
-const compositeProbs = async (probabilities) => {
+const compositeProbs = async (AllImagesTraits = []) => {
+for (const singleImgTraits of AllImagesTraits) {
   var loadedJimpsArray = [];
-  for (const Hierarchy of probabilities) {
+  for (const Hierarchy of singleImgTraits) {
     const jimpImg = await readJimpImg(Hierarchy.address);
     loadedJimpsArray.push(jimpImg);
   }
@@ -39,13 +40,15 @@ const compositeProbs = async (probabilities) => {
       .composite(jimpImg, 0, 0, { mode: Jimp.BLEND_SOURCE_OVER })
       .quality(100);
   }
-  return await finalJimp.write(destination + 'builtImage.jpg');
+  return await finalJimp.write(destination + 'builtImage_' + Date.now() +'.jpg');
+  // console.log(singleImgTraits);
+}
 };
 
 
 
-export const compose = async () => {
-  const img = await compositeProbs(imgArray);
+export const compose = async (AllImagesTraits) => {
+  const img = await compositeProbs(AllImagesTraits);
 };
 
-compose();
+// compose();

@@ -51,4 +51,4 @@ export const choose = async (Count) => {
   }
 };
 
-choose();
+// choose();

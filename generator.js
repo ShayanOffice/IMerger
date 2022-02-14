@@ -2,11 +2,12 @@
 //  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
 
 import { choose } from "./chooser.js";
-import { compose } from "./compositor.js";
+import { compose } from "./composer.js";
 
 
 const main = async ()=>{
 const probArr = await choose(5);
-const img = await compose(probArr[0]);
+// console.log(probArr);
+const img = await compose(probArr);
 }
 main();
