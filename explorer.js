@@ -1,4 +1,4 @@
-import { traitsDir } from './global.js';
+import { traitsDir } from './config.js';
 import { writeHierarchyToFile, readDir } from './fileHandler.js';
 
 let iterationsCounter = 0;
@@ -52,6 +52,7 @@ const createBlendingImage = (
   blendingMode,
 });
 
+
 const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
   if (dirent.isFile()) {
     const fileName = /._.+\./.test(dirent.name)
@@ -60,7 +61,7 @@ const parseDirent = (directory, dirent, currentHierarchy, ordered = true) => {
     const metaName = fileName.replace(/(.+)(\..+)/, `$1`);
     const extension = fileName.replace(/(.+)\.(.+)/, `$2`);
     const blendingMode = /._.+\./.test(dirent.name)
-      ? dirent.name.replace(/(.+)(_.+)(\..+)/, `$2`)
+      ? dirent.name.replace(/(.+_)(.+)(\..+)/, `$2`)
       : 'normal';
     const address = directory + dirent.name;
     const newImageData = createBlendingImage(

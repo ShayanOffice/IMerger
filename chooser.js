@@ -42,8 +42,6 @@ const makeProbabilities = async (rootHierarchy, Count) => {
 export const choose = async (Count) => {
   try {
     const Hierarchy = await readHierarchyFromFile();
-    // console.log(Hierarchy);
-    // console.log(AllFinalResults);
     await makeProbabilities(Hierarchy, Count);
     return allProbabilities;
   } catch (err) {

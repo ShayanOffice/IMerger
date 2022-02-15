@@ -3,11 +3,11 @@
 
 import { choose } from "./chooser.js";
 import { compose } from "./composer.js";
-
+import {size} from "./config.js";
 
 const main = async ()=>{
-const probArr = await choose(5);
-// console.log(probArr);
-const img = await compose(probArr);
+const probArr = await choose(20);
+console.log(probArr);
+const img = await compose(probArr,size);
 }
 main();

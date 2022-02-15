@@ -1,9 +1,5 @@
-import Jimp from 'jimp';
-const backgroundAddress = 'Traits/01-Background/Aqua.png';
-const overlayAddress = 'Traits/02-Body/Alien.png';
-const destination = 'built/';
-
-const imgArray = [backgroundAddress, overlayAddress];
+import Jimp from "jimp";
+const destination = "built/";
 
 const readJimpImg = (address) =>
   Jimp.read(address)
@@ -12,43 +8,72 @@ const readJimpImg = (address) =>
       console.error(err);
     });
 
-const compositeImgArr = async (imagesArray) => {
-  var loadedJimpsArray = [];
-  for (const imageAddr of imagesArray) {
-    const jimpImg = await readJimpImg(imageAddr);
-    loadedJimpsArray.push(jimpImg);
+const parseJimpBlendingMode = (Hierarchy) => {
+  var blendingModeName = Hierarchy.blendingMode.toLowerCase();
+  var JimpBlendingMode;
+  switch (blendingModeName) {
+    case "normal":
+      JimpBlendingMode = Jimp.BLEND_SOURCE_OVER;
+      break;
+    case "multiply":
+      JimpBlendingMode = Jimp.BLEND_MULTIPLY;
+      break;
+    case "add":
+      JimpBlendingMode = Jimp.BLEND_ADD;
+      break;
+    case "screen":
+      JimpBlendingMode = Jimp.BLEND_SCREEN;
+      break;
+    case "overlay":
+      JimpBlendingMode = Jimp.BLEND_OVERLAY;
+      break;
+    case "darken":
+      JimpBlendingMode = Jimp.BLEND_DARKEN;
+      break;
+    case "lighten":
+      JimpBlendingMode = Jimp.BLEND_LIGHTEN;
+      break;
+    case "hardlight":
+      JimpBlendingMode = Jimp.BLEND_HARDLIGHT;
+      break;
+    case "difference":
+      JimpBlendingMode = Jimp.BLEND_DIFFERENCE;
+      break;
+    case "exclusion":
+      JimpBlendingMode = Jimp.BLEND_EXCLUSION;
+      break;
+    default:
+      JimpBlendingMode = Jimp.BLEND_SOURCE_OVER;
+      break;
   }
-  var finalJimp = new Jimp(2048, 2048);
-  for (const jimpImg of loadedJimpsArray) {
-    finalJimp = await finalJimp
-      .composite(jimpImg, 0, 0, { mode: Jimp.BLEND_SOURCE_OVER })
-      .quality(100);
-  }
-  return await finalJimp.write(destination + 'builtImage.jpg');
+  return JimpBlendingMode;
 };
 
-const compositeProbs = async (AllImagesTraits = []) => {
-for (const singleImgTraits of AllImagesTraits) {
-  var loadedJimpsArray = [];
-  for (const Hierarchy of singleImgTraits) {
-    const jimpImg = await readJimpImg(Hierarchy.address);
-    loadedJimpsArray.push(jimpImg);
+const compositeProbs = async (AllImagesTraits = [], size) => {
+  for (const singleImgTraits of AllImagesTraits) {
+    var loadedJimpsArray = [];
+    var loadedJimpsBlendingMs = [];
+    for (const Hierarchy of singleImgTraits) {
+      const jimpImg = await readJimpImg(Hierarchy.address);
+      loadedJimpsArray.push(jimpImg);
+      loadedJimpsBlendingMs.push(parseJimpBlendingMode(Hierarchy));
+    }
+    var finalJimp = new Jimp(size, size);
+    for (let index = 0; index < loadedJimpsArray.length; index++) {
+      const jimpImg = loadedJimpsArray[index];
+      const blendingMode = loadedJimpsBlendingMs[index];
+      finalJimp = await finalJimp
+        .resize(size, size)
+        .composite(jimpImg, 0, 0, { mode: blendingMode })
+        .quality(100);
+    }
+    await finalJimp.write(destination + "builtImage_" + Date.now() + ".jpg");
+    // console.log(singleImgTraits);
   }
-  var finalJimp = new Jimp(2048, 2048);
-  for (const jimpImg of loadedJimpsArray) {
-    finalJimp = await finalJimp
-      .composite(jimpImg, 0, 0, { mode: Jimp.BLEND_SOURCE_OVER })
-      .quality(100);
-  }
-  return await finalJimp.write(destination + 'builtImage_' + Date.now() +'.jpg');
-  // console.log(singleImgTraits);
-}
 };
 
-
-
-export const compose = async (AllImagesTraits) => {
-  const img = await compositeProbs(AllImagesTraits);
+export const compose = async (AllImagesTraits, size) => {
+  const img = await compositeProbs(AllImagesTraits, size);
 };
 
 // compose();
