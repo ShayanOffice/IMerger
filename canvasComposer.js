@@ -1,4 +1,12 @@
+
+
+
 const destination = "built/";
+const baseImgAddress = "./Traits/02-Body/01-Back/General.png";
+const overlayImgAddress = "./Traits/02-Body/02-SkinPatterns/BrightReptile_Screen.png";
+
+
+
 
 // const readJimpImg = (address) =>
 //   Jimp.read(address)
@@ -81,5 +89,14 @@ const destination = "built/";
 // export const compose = async (AllImagesTraits, size) => {
 //   const img = await compositeProbs(AllImagesTraits, size);
 // };
+
+export const compose = async () => {
+  try {
+
+
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 compose();
