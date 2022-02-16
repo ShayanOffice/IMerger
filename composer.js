@@ -55,6 +55,13 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
     var loadedJimpsBlendingMs = [];
     for (const Hierarchy of singleImgTraits) {
       const jimpImg = await readJimpImg(Hierarchy.address);
+      if (Hierarchy.hueVariant.hue) {
+        var colorName = Hierarchy.hueVariant.colorName;
+        var hueAmount = parseInt(Hierarchy.hueVariant.hue);
+        console.log('coloring "' + Hierarchy.address + '" => ' + colorName);
+        await jimpImg.color([{ apply: "hue", params: [hueAmount] }]);
+        console.log("Done");
+      }
       loadedJimpsArray.push(jimpImg);
       loadedJimpsBlendingMs.push(parseJimpBlendingMode(Hierarchy));
     }
