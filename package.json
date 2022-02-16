@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/ShayanOffice/NFTGenerator#readme",
   "dependencies": {
+    "caman": "^4.1.2",
     "canvas": "^2.9.0",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "skia-canvas": "^0.9.29"
   },
   "type": "module"
 }
