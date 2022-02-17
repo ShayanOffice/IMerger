@@ -106,3 +106,4 @@ dist
 # Traits Directory
 Traits/
 cached_data/
+built/
