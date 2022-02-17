@@ -1,1 +1,1 @@
-# NFTGenerator
+# IMerger
