@@ -1,7 +1,3 @@
-Compositor:
-    Error Handling on composition
-    
-
 file handler should parse huevariants in each folder.
 unhue none.png.
 resize
@@ -13,7 +9,8 @@ bg element
 eyeglasses
 eyeVariants
 compression
-
+support all photoshop blending modes.
+add fx objects instead of just hue
 0) chooser could also read from available hierarchy.
 1) Make the chooser.js choose randomly.
     calculate all possibilities and if target count is higher stop when reached tha roof.
