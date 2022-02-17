@@ -67,7 +67,6 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
       let ctx = canvas.getContext("2d");
       ctx.drawImage(Img, 0, 0, size, size);
       var imageData = ctx.getImageData(0, 0, size, size);
-      // console.log(Hierarchy.hueVariant.colorName);
       if (Hierarchy.hueVariant.colorName) {
         var colorName = Hierarchy.hueVariant.colorName;
         var hueAmount = parseInt(Hierarchy.hueVariant.hue);

@@ -6,7 +6,7 @@ import { compose } from "./canvasComposer.js";
 import { size } from "./config.js";
 
 const main = async () => {
-  const probArr = await choose(10);
+  const probArr = await choose(60);
   const img = await compose(probArr, size);
 };
 main();

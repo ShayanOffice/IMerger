@@ -24,12 +24,12 @@ const selectTraits = async (
     )
       currentHueVariant = randomChoice(Hierarchy.hueVariants);
     else {
-      console.log(
-        "this is " +
-          Hierarchy.metaName +
-          " inheritting it's parent's color: " +
-          parentHueVariant.colorName
-      );
+      // console.log(
+      //   "this is " +
+      //     Hierarchy.metaName +
+      //     " inheritting it's parent's color: " +
+      //     parentHueVariant.colorName
+      // );
       if (Hierarchy.hueVariants === "unhued") isUnhued = true;
       currentHueVariant = parentHueVariant;
     }
