@@ -60,11 +60,11 @@ const makeProbabilities = async (rootHierarchy, Count) => {
   let currentProbability = [];
   let counter = 0;
   while (counter < Count) {
-    const defH = await HierarchyFromFile();
     currentProbability = [];
-    let emptyHue= {};
-    rootHierarchy = defH;
-    await selectTraits(rootHierarchy, currentProbability, emptyHue);
+    let emptyHue = {};
+    //make a copy so we don't touch the main object referenced.
+    const defH = await JSON.parse(JSON.stringify(rootHierarchy));
+    await selectTraits(defH, currentProbability, emptyHue);
     if (!allProbabilities.includes(currentProbability)) {
       allProbabilities.push(currentProbability);
       counter++;
