@@ -5,6 +5,8 @@ Compositor:
 file handler should parse huevariants in each folder.
 unhue none.png.
 resize
+move mole above
+compression
 0) chooser could also read from available hierarchy.
 1) Make the chooser.js choose randomly.
     calculate all possibilities and if target count is higher stop when reached tha roof.

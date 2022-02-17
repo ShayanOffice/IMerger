@@ -3,11 +3,11 @@
 
 import { choose } from "./chooser.js";
 import { compose } from "./canvasComposer.js";
-import {size} from "./config.js";
+import { size } from "./config.js";
 
-const main = async ()=>{
-const probArr = await choose(1);
-console.log(probArr);
-const img = await compose(probArr,size);
-}
+const main = async () => {
+  const probArr = await choose(1);
+  console.log(probArr[0][0].metaName + probArr[0][0].hueVariant.colorName);
+  const img = await compose(probArr, size);
+};
 main();

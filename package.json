@@ -19,6 +19,7 @@
   "dependencies": {
     "caman": "^4.1.2",
     "canvas": "^2.9.0",
+    "canvas-filters": "^1.0.1",
     "fs": "0.0.1-security",
     "skia-canvas": "^0.9.29"
   },
