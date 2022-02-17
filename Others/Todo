@@ -1,0 +1,27 @@
+file handler should parse huevariants in each folder.
+unhue none.png.
+resize
+move mole above
+lips colors
+darkerSkin
+darkBg
+bg elements
+eyeglasses
+eyeVariants
+compression
+Make room for future species
+
+support all photoshop blending modes.
+add fx objects instead of just hue
+0) chooser could also read from available hierarchy.
+1) Make the chooser.js choose randomly.
+    calculate all possibilities and if target count is higher stop when reached tha roof.
+
+2) Then make an array and run the compositor.js from chooser.js on it.
+    .log what it's doing.
+3) make the rarity functionality.
+    .parse rarity amount inside each hierarchy.
+    .make chooser follow rarity rules.
+    .Hue and Fx Capabilities
+4) polish it.
+5) make the desired metadata.

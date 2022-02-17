@@ -1,86 +1,158 @@
-import Jimp from "jimp";
-const destination = "built/";
+import Skia from "skia-canvas";
+import { promises as fs } from "fs";
+import {ImageFilters} from "./canvas-filters/imagefilters.js";
+// import { Canvas } from "skia-canvas/lib";
 
-const readJimpImg = (address) =>
-  Jimp.read(address)
-    .then((image) => image)
-    .catch((err) => {
-      console.error(err);
-    });
+const destination = "./built/";
+const baseImgAddress = "./Traits/02-Body/01-Back/General.png";
+const overlayImgAddress =
+  "./Traits/02-Body/02-SkinPatterns/BrightReptile_Screen.png";
 
-const parseJimpBlendingMode = (Hierarchy) => {
+const readImg = async (address) => {
+  try {
+    console.log('reading trait: "' + address + '"');
+    return await Skia.loadImage(address);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const parseCanvasBlendingMode = (Hierarchy) => {
   var blendingModeName = Hierarchy.blendingMode.toLowerCase();
-  var JimpBlendingMode;
+  var BlendingMode;
   switch (blendingModeName) {
     case "normal":
-      JimpBlendingMode = Jimp.BLEND_SOURCE_OVER;
+      BlendingMode = "source-over";
       break;
     case "multiply":
-      JimpBlendingMode = Jimp.BLEND_MULTIPLY;
-      break;
-    case "add":
-      JimpBlendingMode = Jimp.BLEND_ADD;
+      BlendingMode = "multiply";
       break;
     case "screen":
-      JimpBlendingMode = Jimp.BLEND_SCREEN;
+      BlendingMode = "screen";
       break;
     case "overlay":
-      JimpBlendingMode = Jimp.BLEND_OVERLAY;
+      BlendingMode = "overlay";
       break;
     case "darken":
-      JimpBlendingMode = Jimp.BLEND_DARKEN;
+      BlendingMode = "darken";
       break;
     case "lighten":
-      JimpBlendingMode = Jimp.BLEND_LIGHTEN;
+      BlendingMode = "lighten";
       break;
     case "hardlight":
-      JimpBlendingMode = Jimp.BLEND_HARDLIGHT;
+      BlendingMode = "hard-light";
       break;
     case "difference":
-      JimpBlendingMode = Jimp.BLEND_DIFFERENCE;
+      BlendingMode = "difference";
       break;
     case "exclusion":
-      JimpBlendingMode = Jimp.BLEND_EXCLUSION;
+      BlendingMode = "exclusion";
       break;
     default:
-      JimpBlendingMode = Jimp.BLEND_SOURCE_OVER;
+      BlendingMode = "source-over";
       break;
   }
-  return JimpBlendingMode;
+  return BlendingMode;
 };
 
 const compositeProbs = async (AllImagesTraits = [], size) => {
   for (const singleImgTraits of AllImagesTraits) {
-    var loadedJimpsArray = [];
-    var loadedJimpsBlendingMs = [];
-    for (const Hierarchy of singleImgTraits) {
-      const jimpImg = await readJimpImg(Hierarchy.address);
-      if (Hierarchy.hueVariant.hue) {
+    var loadedImgDataArray = [];
+    var loadedBlendingMs = [];
+    // console.log(singleImgTraits[0].metaName);
+    for (let index = 0; index < singleImgTraits.length; index++) {
+      const Hierarchy = singleImgTraits[index];
+      const Img = await readImg(Hierarchy.address);
+      let canvas = new Skia.Canvas(size, size);
+      let ctx = canvas.getContext("2d");
+      ctx.drawImage(Img, 0, 0, size, size);
+      var imageData = ctx.getImageData(0, 0, size, size);
+      if (Hierarchy.hueVariant.colorName) {
         var colorName = Hierarchy.hueVariant.colorName;
         var hueAmount = parseInt(Hierarchy.hueVariant.hue);
         console.log('coloring "' + Hierarchy.address + '" => ' + colorName);
-        await jimpImg.color([{ apply: "hue", params: [hueAmount] }]);
+
+        var imageData = await ImageFilters.HSLAdjustment(
+          imageData,
+          hueAmount,
+          0,
+          0
+        );
+        ctx.putImageData(imageData, 0, 0);
         console.log("Done");
       }
-      loadedJimpsArray.push(jimpImg);
-      loadedJimpsBlendingMs.push(parseJimpBlendingMode(Hierarchy));
+      loadedImgDataArray.push(canvas);
+      loadedBlendingMs.push(parseCanvasBlendingMode(Hierarchy));
     }
-    var finalJimp = new Jimp(size, size);
-    for (let index = 0; index < loadedJimpsArray.length; index++) {
-      const jimpImg = loadedJimpsArray[index];
-      const blendingMode = loadedJimpsBlendingMs[index];
-      finalJimp = await finalJimp
-        .resize(size, size)
-        .composite(jimpImg, 0, 0, { mode: blendingMode })
-        .quality(100);
+
+    let canvas = new Skia.Canvas(size, size);
+    let ctx = canvas.getContext("2d");
+
+    for (let index = 0; index < loadedImgDataArray.length; index++) {
+      const loadedCanv = loadedImgDataArray[index];
+      const blendingMode = loadedBlendingMs[index];
+
+      ctx.globalCompositeOperation = blendingMode;
+      ctx.drawCanvas(loadedCanv, 0, 0);
     }
-    await finalJimp.write(destination + "builtImage_" + Date.now() + ".jpg");
-    // console.log(singleImgTraits);
+    const buff = await canvas.toBuffer("image/png");
+    await fs.writeFile(destination + "builtImage_" + Date.now() + ".jpg", buff);
   }
 };
 
-export const compose = async (AllImagesTraits, size) => {
-  const img = await compositeProbs(AllImagesTraits, size);
+export const compose = async (AllImagesTraits = [], size) => {
+  try {
+    const img = await compositeProbs(AllImagesTraits, size);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-// compose();
+const makeOne = async () => {
+  try {
+    let canvas = new Skia.Canvas(4096, 4096);
+    let ctx = canvas.getContext("2d");
+    let base = await Skia.loadImage(baseImgAddress);
+    let over = await Skia.loadImage(overlayImgAddress);
+    // ctx.filter = `hue-rotate(2700rad)`;
+    ctx.drawImage(base, 0, 0, 4096, 4096);
+    var imageData = ctx.getImageData(0, 0, 4096, 4096);
+    var filtered = ImageFilters.HSLAdjustment(imageData, -180, 0, 0);
+    ctx.putImageData(filtered, 0, 0);
+    ctx.globalCompositeOperation = "screen";
+    ctx.drawImage(over, 0, 0, 4096, 4096);
+    const buff = await canvas.toBuffer("image/png");
+    await fs.writeFile("./test.png", buff);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// makeOne();
+
+//   "source-over",
+//   "source-in",
+//   "source-out",
+//   "source-atop",
+//   "destination-over",
+//   "destination-in",
+//   "destination-out",
+//   "destination-atop",
+//   "lighter",
+//   "copy",
+//   "xor",
+//   "multiply",
+//   "screen",
+//   "overlay",
+//   "darken",
+//   "lighten",
+//   "color-dodge",
+//   "color-burn",
+//   "hard-light",
+//   "soft-light",
+//   "difference",
+//   "exclusion",
+//   "hue",
+//   "saturation",
+//   "color",
+//   "luminosity"
