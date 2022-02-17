@@ -59,17 +59,19 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
   for (const singleImgTraits of AllImagesTraits) {
     var loadedImgDataArray = [];
     var loadedBlendingMs = [];
-
-    for (const Hierarchy of singleImgTraits) {
+    // console.log(singleImgTraits[0].metaName);
+    for (let index = 0; index < singleImgTraits.length; index++) {
+      const Hierarchy = singleImgTraits[index];
       const Img = await readImg(Hierarchy.address);
       let canvas = new Skia.Canvas(size, size);
       let ctx = canvas.getContext("2d");
       ctx.drawImage(Img, 0, 0, size, size);
       var imageData = ctx.getImageData(0, 0, size, size);
+      // console.log(Hierarchy.hueVariant.colorName);
       if (Hierarchy.hueVariant.colorName) {
-        console.log('coloring "' + Hierarchy.address + '" => ' + colorName);
         var colorName = Hierarchy.hueVariant.colorName;
         var hueAmount = parseInt(Hierarchy.hueVariant.hue);
+        console.log('coloring "' + Hierarchy.address + '" => ' + colorName);
 
         var imageData = await ImageFilters.HSLAdjustment(
           imageData,
@@ -84,7 +86,6 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
       loadedBlendingMs.push(parseCanvasBlendingMode(Hierarchy));
     }
 
-    
     let canvas = new Skia.Canvas(size, size);
     let ctx = canvas.getContext("2d");
 

@@ -14,7 +14,7 @@ const selectTraits = async (
   isUnhued = false
 ) => {
   let counter = 0;
-  var currnetHueVariant;
+  var currentHueVariant;
   if (!Hierarchy.extension) {
     //it's a folder entry
     /////////////////////HandleVariant//////////////////////
@@ -22,19 +22,25 @@ const selectTraits = async (
       Array.isArray(Hierarchy.hueVariants) &&
       Hierarchy.hueVariants.length > 0
     )
-      currnetHueVariant = randomChoice(Hierarchy.hueVariants);
+      currentHueVariant = randomChoice(Hierarchy.hueVariants);
     else {
+      console.log(
+        "this is " +
+          Hierarchy.metaName +
+          " inheritting it's parent's color: " +
+          parentHueVariant.colorName
+      );
       if (Hierarchy.hueVariants === "unhued") isUnhued = true;
-      currnetHueVariant = parentHueVariant;
+      currentHueVariant = parentHueVariant;
     }
     /////////////////////HandleVariant//////////////////////
 
     if (Hierarchy.orderedChildren.length > 0) {
       for (const hir of Hierarchy.orderedChildren)
-        await selectTraits(hir, CurrentIterTraits, currnetHueVariant, isUnhued);
+        await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
     } else if (Hierarchy.switchableChildren.length > 0) {
       const hir = randomChoice(Hierarchy.switchableChildren);
-      await selectTraits(hir, CurrentIterTraits, currnetHueVariant, isUnhued);
+      await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
     } else {
       console.error("Given Hierarchy is Empty");
       return;
@@ -43,11 +49,10 @@ const selectTraits = async (
     //it's a file entry
     /////////////////////HandleVariant//////////////////////
     if (!isUnhued) {
-      if (parentHueVariant)
-        Hierarchy.hueVariant = parentHueVariant;
+      if (parentHueVariant.hue) Hierarchy.hueVariant = parentHueVariant;
     }
     /////////////////////HandleVariant//////////////////////
-    CurrentIterTraits.push(Hierarchy);
+    await CurrentIterTraits.push(Hierarchy);
   }
 };
 
@@ -55,8 +60,10 @@ const makeProbabilities = async (rootHierarchy, Count) => {
   let currentProbability = [];
   let counter = 0;
   while (counter < Count) {
+    const defH = await HierarchyFromFile();
     currentProbability = [];
-    let emptyHue;
+    let emptyHue= {};
+    rootHierarchy = defH;
     await selectTraits(rootHierarchy, currentProbability, emptyHue);
     if (!allProbabilities.includes(currentProbability)) {
       allProbabilities.push(currentProbability);
