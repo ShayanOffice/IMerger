@@ -2,11 +2,7 @@ import Skia from "skia-canvas";
 import { promises as fs } from "fs";
 import {ImageFilters} from "./canvas-filters/imagefilters.js";
 // import { Canvas } from "skia-canvas/lib";
-
-const destination = "./built/";
-const baseImgAddress = "./Traits/02-Body/01-Back/General.png";
-const overlayImgAddress =
-  "./Traits/02-Body/02-SkinPatterns/BrightReptile_Screen.png";
+const imgDestination = "./built/img";
 
 const readImg = async (address) => {
   try {
@@ -96,7 +92,7 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
     const buff = await canvas.toBuffer("image/png");
-    await fs.writeFile(destination + "builtImage_" + Date.now() + ".jpg", buff);
+    await fs.writeFile(imgDestination + "builtImage_" + Date.now() + ".jpg", buff);
   }
 };
 
