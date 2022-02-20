@@ -1,16 +1,21 @@
-import { traitsDir } from "./config.js";
-import { HierarchyFromFile } from "./fileHandler.js";
+import { traitsDir } from './config.js';
+import { HierarchyFromFile } from './fileHandler.js';
 let allProbabilities = [];
-
+const randomChoice = (arr) => {
+  const randInd = Math.floor(Math.random() * arr.length);
+  return arr[randInd];
+};
 
 const selectTraits = async (
   Hierarchy,
   CurrentIterTraits,
   parentHueVariant,
-  isUnhued = false
+  isUnhued = false,
+  ignoreMeta = false
 ) => {
   let counter = 0;
   var currentHueVariant;
+  if (ignoreMeta) Hierarchy.ignoreMeta = true;
   if (!Hierarchy.extension) {
     //it's a folder entry
     /////////////////////HandleVariant//////////////////////
@@ -20,25 +25,31 @@ const selectTraits = async (
     )
       currentHueVariant = randomChoice(Hierarchy.hueVariants);
     else {
-      // console.log(
-      //   "this is " +
-      //     Hierarchy.metaName +
-      //     " inheritting it's parent's color: " +
-      //     parentHueVariant.colorName
-      // );
-      if (Hierarchy.hueVariants === "unhued") isUnhued = true;
+      if (Hierarchy.hueVariants === 'unhued') isUnhued = true;
       currentHueVariant = parentHueVariant;
     }
     /////////////////////HandleVariant//////////////////////
 
     if (Hierarchy.orderedChildren.length > 0) {
       for (const hir of Hierarchy.orderedChildren)
-        await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
+        await selectTraits(
+          hir,
+          CurrentIterTraits,
+          currentHueVariant,
+          isUnhued,
+          Hierarchy.ignoreMeta
+        );
     } else if (Hierarchy.switchableChildren.length > 0) {
       const hir = randomChoice(Hierarchy.switchableChildren);
-      await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
+      await selectTraits(
+        hir,
+        CurrentIterTraits,
+        currentHueVariant,
+        isUnhued,
+        Hierarchy.ignoreMeta
+      );
     } else {
-      console.error("Given Hierarchy is Empty");
+      console.error('Given Hierarchy is Empty');
       return;
     }
   } else {

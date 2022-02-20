@@ -1,30 +1,29 @@
-import { traitsDir } from "./config.js";
+import { traitsDir } from './config.js';
 import {
   HierarchyToFile,
   readDir,
   HueVariantsFromFolder,
-} from "./fileHandler.js";
-import { parseFileName, parseFolderName } from "./nameParser.js";
-
+} from './fileHandler.js';
+import { parseFileName, parseFolderName } from './nameParser.js';
 
 const Hierarchy = {
-  parent: "./",
-  metaName: "root",
+  parent: './',
+  metaName: 'root',
   rarity: 100,
   switchableChildren: [],
   orderedChildren: [],
   hueVariants: [],
-  direntName: "",
+  direntName: '',
   address: traitsDir,
 };
 
 const createHierarchy = (
   parentH,
-  metaName = "",
+  metaName = '',
   rarity = 100,
   hueVariants = [],
-  direntName = "",
-  address = ""
+  direntName = '',
+  address = ''
 ) => ({
   parent: parentH.address,
   metaName,
@@ -37,25 +36,25 @@ const createHierarchy = (
 });
 
 const BlendingImage = {
-  parent: "./",
-  metaName: "",
+  parent: './',
+  metaName: '',
   rarity: 100,
   hueVariant: {},
-  extension: "",
-  direntName: "",
-  address: "",
-  blendingMode: "normal",
+  extension: '',
+  direntName: '',
+  address: '',
+  blendingMode: 'normal',
 };
 
 const createBlendingImage = (
   parentH,
-  metaName = "",
+  metaName = '',
   rarity = 100,
   hueVariant = {},
-  extension = "",
-  direntName = "",
-  address = "",
-  blendingMode = "normal"
+  extension = '',
+  direntName = '',
+  address = '',
+  blendingMode = 'normal'
 ) => ({
   parent: parentH.address,
   metaName,
@@ -90,7 +89,7 @@ const parseAndAddDirent = (
     else currentHierarchy.switchableChildren.push(newImageData);
     return null;
   } else {
-    const address = directory + dirent.name + "/";
+    const address = directory + dirent.name + '/';
     const parsedNameObj = parseFolderName(dirent.name);
     const NewHierarchy = createHierarchy(
       currentHierarchy,
@@ -117,30 +116,32 @@ const cacheHierarchy = async (
     let hasOrderedChilds = false;
     let setOrderedOrnot = false;
     for (const dirent of Dirents) {
-      let cached;
-      if (/[0-9]+-/.test(dirent.name)) {
-        if (!hasOrderedChilds && setOrderedOrnot) {
-          console.log(
-            "Error: Each folder can only contain eather ordered childeren or switchable ones."
-          );
-          return;
-        }
-        hasOrderedChilds = true;
-        setOrderedOrnot = true;
-        cached = parseAndAddDirent(directory, dirent, currentHierarchy, true);
+      if (dirent.name === 'hue.json') {
+        //Exluded from children
+        //add it to current Hierarchy.
+        const fileDir = directory + dirent.name;
+        // console.log(fileDir);
+        currentHierarchy.hueVariants = await HueVariantsFromFolder(fileDir);
+      } else if (dirent.name === 'unhued') {
+        currentHierarchy.hueVariants = 'unhued';
+      } else if (dirent.name === 'ignoremeta') {
+        currentHierarchy.ignoreMeta = true;
       } else {
-        if (dirent.name === "hue.json") {
-          //Exluded from children
-          //add it to current Hierarchy.
-          const fileDir = directory + dirent.name;
-          // console.log(fileDir);
-          currentHierarchy.hueVariants = await HueVariantsFromFolder(fileDir);
-        } else if (dirent.name === "unhued") {
-          currentHierarchy.hueVariants = "unhued";
+        let cached;
+        if (/[0-9]+-/.test(dirent.name)) {
+          if (!hasOrderedChilds && setOrderedOrnot) {
+            console.log(
+              'Error: Each folder can only contain eather ordered childeren or switchable ones.'
+            );
+            return;
+          }
+          hasOrderedChilds = true;
+          setOrderedOrnot = true;
+          cached = parseAndAddDirent(directory, dirent, currentHierarchy, true);
         } else {
           if (hasOrderedChilds && setOrderedOrnot) {
             console.log(
-              "Error: Each folder can only contain eather ordered childeren or switchable ones."
+              'Error: Each folder can only contain eather ordered childeren or switchable ones.'
             );
             return;
           }
@@ -153,10 +154,10 @@ const cacheHierarchy = async (
             false
           );
         }
-      }
 
-      if (cached) {
-        await cacheHierarchy(directory + dirent.name + "/", cached);
+        if (cached) {
+          await cacheHierarchy(directory + dirent.name + '/', cached);
+        }
       }
     }
   } catch (err) {
