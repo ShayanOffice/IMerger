@@ -1,9 +1,41 @@
 import Skia from "skia-canvas";
 import { promises as fs } from "fs";
-import {ImageFilters} from "./canvas-filters/imagefilters.js";
+import sha1 from "sha1";
+import { ImageFilters } from "./canvas-filters/imagefilters.js";
+import { MetaDescription, MetaName, MetaLinkBase } from "./config.js";
 // import { Canvas } from "skia-canvas/lib";
 
-const imgDestination = "./built/img";
+const imgDestination = "./built/Images/";
+const metaDestination = "./built/MetaDatas/";
+
+const metaTemplate = {
+  name: "Your Collection #1",
+  description: "Friendly OpenSea Creature that enjoys long swims in the ocean.",
+  image: "ipfs://NewUriToReplace/1.png",
+  dna: "e84638f79025d035e7495d471bd5c87c748c7296",
+  date: 1645178495607,
+  attributes: [],
+  compiler: "BOOMHUNK's Generative Art Algo",
+  external_url: "https://openseacreatures.io/3",
+  youtube_url: "https://openseacreatures.io/3",
+};
+const newMetaData = (index, dna) => ({
+  name: `${MetaName} #${index}`,
+  description: `${MetaDescription}`,
+  image: `${MetaLinkBase}${index}.jpg`,
+  dna,
+  date: Date.now(),
+  attributes: [],
+  author: "BOOMHUNK",
+});
+const attribTemplate = {
+  trait_type: "",
+  value: "",
+};
+const newMetaAttribute = (trait_type, value) => ({
+  trait_type,
+  value,
+});
 
 const readImg = async (address) => {
   try {
@@ -53,9 +85,12 @@ const parseCanvasBlendingMode = (Hierarchy) => {
 };
 
 const compositeProbs = async (AllImagesTraits = [], size) => {
-  for (const singleImgTraits of AllImagesTraits) {
+  for (let index = 0; index < AllImagesTraits.length; index++) {
+    const singleImgTraits = AllImagesTraits[index];
     var loadedImgDataArray = [];
     var loadedBlendingMs = [];
+
+    var attributes = []
     // console.log(singleImgTraits[0].metaName);
     for (let index = 0; index < singleImgTraits.length; index++) {
       const Hierarchy = singleImgTraits[index];
@@ -80,6 +115,7 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
       }
       loadedImgDataArray.push(canvas);
       loadedBlendingMs.push(parseCanvasBlendingMode(Hierarchy));
+      // console.warn(Hierarchy.address);
     }
 
     let canvas = new Skia.Canvas(size, size);
@@ -92,8 +128,16 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
       ctx.globalCompositeOperation = blendingMode;
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
-    const buff = await canvas.toBuffer("image/png");
-    await fs.writeFile(imgDestination + "builtImage_" + Date.now() + ".jpg", buff);
+    const buff = await canvas.toBuffer("jpg");
+    await fs.writeFile(`${imgDestination}${index + 1}.jpg`, buff);
+
+    //////////////////////////////////MakeMeta File//////////////////////////////////
+    const meta = newMetaData(index + 1, sha1(singleImgTraits));
+
+    console.log(meta);
+
+    //////////////////////////////////SkipMeta File//////////////////////////////////
+    //////////////////////////////////Store BigMeta//////////////////////////////////
   }
 };
 

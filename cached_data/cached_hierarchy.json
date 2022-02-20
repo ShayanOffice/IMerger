@@ -11,41 +11,37 @@
       "switchableChildren": [
         {
           "parent": "./Traits/01-Background/",
-          "metaName": "BG",
+          "metaName": "Light",
           "rarity": 100,
           "hueVariant": {},
           "extension": "jpg",
-          "direntName": "BG.jpg",
-          "address": "./Traits/01-Background/BG.jpg",
-          "blendingMode": "normal"
+          "direntName": "Light.jpg",
+          "address": "./Traits/01-Background/Light.jpg",
+          "blendingMode": "normal",
+          "ignoreMeta": false
         }
       ],
       "orderedChildren": [],
       "hueVariants": [
         {
           "colorName": "Purple",
-          "hue": "-180",
-          "rarity": 70
+          "hue": "-180"
         },
         {
           "colorName": "Fuchia",
-          "hue": "-150",
-          "rarity": 45
+          "hue": "-150"
         },
         {
           "colorName": "Crimson",
-          "hue": "-98",
-          "rarity": 50
+          "hue": "-98"
         },
         {
           "colorName": "DevilRed",
-          "hue": "-88",
-          "rarity": 30
+          "hue": "-88"
         },
         {
           "colorName": "AmberOrange",
-          "hue": "-65",
-          "rarity": 50
+          "hue": "-65"
         },
         {
           "colorName": "CornYellow",
@@ -53,8 +49,7 @@
         },
         {
           "colorName": "LimeGreen",
-          "hue": "-27",
-          "rarity": 70
+          "hue": "-27"
         },
         {
           "colorName": "KellyGreen",
@@ -66,22 +61,20 @@
         },
         {
           "colorName": "AzureBlue",
-          "hue": "100",
-          "rarity": 50
+          "hue": "100"
         },
         {
           "colorName": "NavyBlue",
-          "hue": "130",
-          "rarity": 50
+          "hue": "130"
         },
         {
           "colorName": "BlueViolet",
-          "hue": "147",
-          "rarity": 60
+          "hue": "147"
         }
       ],
       "direntName": "01-Background",
-      "address": "./Traits/01-Background/"
+      "address": "./Traits/01-Background/",
+      "ignoreMeta": false
     },
     {
       "parent": "./Traits/",
@@ -102,13 +95,15 @@
               "extension": "png",
               "direntName": "General.png",
               "address": "./Traits/02-Body/01-Back/General.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": [],
           "direntName": "01-Back",
-          "address": "./Traits/02-Body/01-Back/"
+          "address": "./Traits/02-Body/01-Back/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/02-Body/",
@@ -118,42 +113,46 @@
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "BrightReptile",
-              "rarity": 30,
+              "rarity": 80,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "BrightReptile_Screen_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/BrightReptile_Screen_30.png",
-              "blendingMode": "Screen"
+              "direntName": "BrightReptile_Screen_80.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/BrightReptile_Screen_80.png",
+              "blendingMode": "Screen",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "CamouflageSnake",
-              "rarity": 15,
+              "rarity": 30,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "CamouflageSnake_HardLight_15.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/CamouflageSnake_HardLight_15.png",
-              "blendingMode": "HardLight"
+              "direntName": "CamouflageSnake_HardLight_30.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/CamouflageSnake_HardLight_30.png",
+              "blendingMode": "HardLight",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "DarkMatter",
-              "rarity": 30,
+              "rarity": 40,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "DarkMatter_Overlay_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/DarkMatter_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "direntName": "DarkMatter_Overlay_40.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/DarkMatter_Overlay_40.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "EasternSnake",
-              "rarity": 30,
+              "rarity": 50,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "EasternSnake_Difference_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/EasternSnake_Difference_30.png",
-              "blendingMode": "Difference"
+              "direntName": "EasternSnake_Difference_50.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/EasternSnake_Difference_50.png",
+              "blendingMode": "Difference",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -163,37 +162,41 @@
               "extension": "png",
               "direntName": "Giraffe_Multiply_30.png",
               "address": "./Traits/02-Body/02-SkinPatterns/Giraffe_Multiply_30.png",
-              "blendingMode": "Multiply"
+              "blendingMode": "Multiply",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "HexInwards",
-              "rarity": 30,
+              "rarity": 40,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "HexInwards_Multiply_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/HexInwards_Multiply_30.png",
-              "blendingMode": "Multiply"
+              "direntName": "HexInwards_Multiply_40.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/HexInwards_Multiply_40.png",
+              "blendingMode": "Multiply",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "IndigoSnake",
-              "rarity": 30,
+              "rarity": 60,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "IndigoSnake_HardLight_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/IndigoSnake_HardLight_30.png",
-              "blendingMode": "HardLight"
+              "direntName": "IndigoSnake_HardLight_60.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/IndigoSnake_HardLight_60.png",
+              "blendingMode": "HardLight",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "LargeReptile",
-              "rarity": 30,
+              "rarity": 40,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "LargeReptile_Overlay_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/LargeReptile_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "direntName": "LargeReptile_Overlay_40.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/LargeReptile_Overlay_40.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -203,7 +206,8 @@
               "extension": "png",
               "direntName": "None.png",
               "address": "./Traits/02-Body/02-SkinPatterns/None.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -213,7 +217,8 @@
               "extension": "png",
               "direntName": "RareIndigoSnake_Darken_20.png",
               "address": "./Traits/02-Body/02-SkinPatterns/RareIndigoSnake_Darken_20.png",
-              "blendingMode": "Darken"
+              "blendingMode": "Darken",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -223,17 +228,19 @@
               "extension": "png",
               "direntName": "RareSnakeGiraffe_HardLight_20.png",
               "address": "./Traits/02-Body/02-SkinPatterns/RareSnakeGiraffe_HardLight_20.png",
-              "blendingMode": "HardLight"
+              "blendingMode": "HardLight",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "RareSnake",
-              "rarity": 20,
+              "rarity": 35,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "RareSnake_Difference_20.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/RareSnake_Difference_20.png",
-              "blendingMode": "Difference"
+              "direntName": "RareSnake_Difference_35.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/RareSnake_Difference_35.png",
+              "blendingMode": "Difference",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -243,37 +250,41 @@
               "extension": "png",
               "direntName": "ReptileGiraffe_Darken_20.png",
               "address": "./Traits/02-Body/02-SkinPatterns/ReptileGiraffe_Darken_20.png",
-              "blendingMode": "Darken"
+              "blendingMode": "Darken",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "Reptile",
-              "rarity": 30,
+              "rarity": 40,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "Reptile_Overlay_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/Reptile_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "direntName": "Reptile_Overlay_40.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/Reptile_Overlay_40.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "SequinSnakeWholeDark",
-              "rarity": 30,
+              "rarity": 70,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "SequinSnakeWholeDark_Overlay_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/SequinSnakeWholeDark_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "direntName": "SequinSnakeWholeDark_Overlay_70.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/SequinSnakeWholeDark_Overlay_70.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "SequinSnakeWhole",
-              "rarity": 30,
+              "rarity": 70,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "SequinSnakeWhole_Overlay_30.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/SequinSnakeWhole_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "direntName": "SequinSnakeWhole_Overlay_70.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/SequinSnakeWhole_Overlay_70.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -283,7 +294,8 @@
               "extension": "png",
               "direntName": "SequinSnake_Overlay_30.png",
               "address": "./Traits/02-Body/02-SkinPatterns/SequinSnake_Overlay_30.png",
-              "blendingMode": "Overlay"
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
@@ -293,23 +305,26 @@
               "extension": "png",
               "direntName": "Snake_Multiply_20.png",
               "address": "./Traits/02-Body/02-SkinPatterns/Snake_Multiply_20.png",
-              "blendingMode": "Multiply"
+              "blendingMode": "Multiply",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/02-SkinPatterns/",
               "metaName": "SpecialSnake",
-              "rarity": 20,
+              "rarity": 70,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "SpecialSnake_Overlay_20.png",
-              "address": "./Traits/02-Body/02-SkinPatterns/SpecialSnake_Overlay_20.png",
-              "blendingMode": "Overlay"
+              "direntName": "SpecialSnake_Overlay_70.png",
+              "address": "./Traits/02-Body/02-SkinPatterns/SpecialSnake_Overlay_70.png",
+              "blendingMode": "Overlay",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": [],
           "direntName": "02-SkinPatterns",
-          "address": "./Traits/02-Body/02-SkinPatterns/"
+          "address": "./Traits/02-Body/02-SkinPatterns/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/02-Body/",
@@ -324,27 +339,30 @@
               "extension": "png",
               "direntName": "GenericBig_30.png",
               "address": "./Traits/02-Body/03-Stomach/GenericBig_30.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/03-Stomach/",
               "metaName": "GenericMediumRound",
-              "rarity": 30,
+              "rarity": 50,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "GenericMediumRound_30.png",
-              "address": "./Traits/02-Body/03-Stomach/GenericMediumRound_30.png",
-              "blendingMode": "normal"
+              "direntName": "GenericMediumRound_50.png",
+              "address": "./Traits/02-Body/03-Stomach/GenericMediumRound_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/03-Stomach/",
               "metaName": "GenericMedium",
-              "rarity": 30,
+              "rarity": 70,
               "hueVariant": {},
               "extension": "png",
-              "direntName": "GenericMedium_30.png",
-              "address": "./Traits/02-Body/03-Stomach/GenericMedium_30.png",
-              "blendingMode": "normal"
+              "direntName": "GenericMedium_70.png",
+              "address": "./Traits/02-Body/03-Stomach/GenericMedium_70.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/03-Stomach/",
@@ -354,13 +372,15 @@
               "extension": "png",
               "direntName": "GenericSmall.png",
               "address": "./Traits/02-Body/03-Stomach/GenericSmall.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": [],
           "direntName": "03-Stomach",
-          "address": "./Traits/02-Body/03-Stomach/"
+          "address": "./Traits/02-Body/03-Stomach/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/02-Body/",
@@ -375,13 +395,15 @@
               "extension": "png",
               "direntName": "Simple.png",
               "address": "./Traits/02-Body/04-Belly/Simple.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": [],
           "direntName": "04-Belly",
-          "address": "./Traits/02-Body/04-Belly/"
+          "address": "./Traits/02-Body/04-Belly/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/02-Body/",
@@ -396,7 +418,8 @@
               "extension": "png",
               "direntName": "Mole.png",
               "address": "./Traits/02-Body/05-SkinMark/Mole.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/02-Body/05-SkinMark/",
@@ -406,18 +429,21 @@
               "extension": "png",
               "direntName": "None.png",
               "address": "./Traits/02-Body/05-SkinMark/None.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": [],
           "direntName": "05-SkinMark",
-          "address": "./Traits/02-Body/05-SkinMark/"
+          "address": "./Traits/02-Body/05-SkinMark/",
+          "ignoreMeta": false
         }
       ],
       "hueVariants": [],
       "direntName": "02-Body",
-      "address": "./Traits/02-Body/"
+      "address": "./Traits/02-Body/",
+      "ignoreMeta": false
     },
     {
       "parent": "./Traits/",
@@ -432,7 +458,8 @@
           "extension": "png",
           "direntName": "CableChainLoose_50.png",
           "address": "./Traits/03-Necklace/CableChainLoose_50.png",
-          "blendingMode": "normal"
+          "blendingMode": "normal",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/03-Necklace/",
@@ -442,7 +469,8 @@
           "extension": "png",
           "direntName": "CableChain_50.png",
           "address": "./Traits/03-Necklace/CableChain_50.png",
-          "blendingMode": "normal"
+          "blendingMode": "normal",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/03-Necklace/",
@@ -452,7 +480,8 @@
           "extension": "png",
           "direntName": "Cuban_30.png",
           "address": "./Traits/03-Necklace/Cuban_30.png",
-          "blendingMode": "normal"
+          "blendingMode": "normal",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/03-Necklace/",
@@ -462,7 +491,8 @@
           "extension": "png",
           "direntName": "None.png",
           "address": "./Traits/03-Necklace/None.png",
-          "blendingMode": "normal"
+          "blendingMode": "normal",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/03-Necklace/",
@@ -477,7 +507,8 @@
               "extension": "png",
               "direntName": "CableChain.png",
               "address": "./Traits/03-Necklace/Silver_30/CableChain.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/03-Necklace/Silver_30/",
@@ -487,7 +518,8 @@
               "extension": "png",
               "direntName": "CableChainLoose.png",
               "address": "./Traits/03-Necklace/Silver_30/CableChainLoose.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/03-Necklace/Silver_30/",
@@ -497,13 +529,15 @@
               "extension": "png",
               "direntName": "Cuban_60.png",
               "address": "./Traits/03-Necklace/Silver_30/Cuban_60.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": "unhued",
           "direntName": "Silver_30",
-          "address": "./Traits/03-Necklace/Silver_30/"
+          "address": "./Traits/03-Necklace/Silver_30/",
+          "ignoreMeta": false
         }
       ],
       "orderedChildren": [],
@@ -519,7 +553,8 @@
         }
       ],
       "direntName": "03-Necklace",
-      "address": "./Traits/03-Necklace/"
+      "address": "./Traits/03-Necklace/",
+      "ignoreMeta": false
     },
     {
       "parent": "./Traits/",
@@ -540,7 +575,8 @@
               "extension": "png",
               "direntName": "01-Hole.png",
               "address": "./Traits/04-Mouth/Bored/01-Hole.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/04-Mouth/Bored/",
@@ -561,7 +597,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/",
@@ -571,7 +608,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/",
@@ -581,13 +619,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "01-UpperFirstL",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/01-UpperFirstL/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -602,7 +642,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/",
@@ -612,7 +653,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/",
@@ -622,13 +664,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "02-UpperFirstR",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/02-UpperFirstR/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -643,7 +687,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/",
@@ -653,7 +698,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/",
@@ -663,13 +709,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "03-LowerFirstL",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/03-LowerFirstL/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -684,7 +732,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/",
@@ -694,7 +743,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/",
@@ -704,13 +754,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "04-LowerFirstR",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/04-LowerFirstR/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -725,7 +777,8 @@
                       "extension": "png",
                       "direntName": "FangGolden_20.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/FangGolden_20.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/",
@@ -735,7 +788,8 @@
                       "extension": "png",
                       "direntName": "Fang_50.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/Fang_50.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/",
@@ -745,7 +799,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/",
@@ -755,7 +810,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/",
@@ -765,13 +821,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "05-LowerSecondL",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/05-LowerSecondL/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -786,13 +844,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/06-LowerSecondR/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "06-LowerSecondR",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/06-LowerSecondR/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/06-LowerSecondR/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -807,7 +867,8 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/",
@@ -817,7 +878,8 @@
                       "extension": "png",
                       "direntName": "Golden_30.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/",
@@ -827,13 +889,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "07-LowerThirdL",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/07-LowerThirdL/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -848,13 +912,15 @@
                       "extension": "png",
                       "direntName": "None.png",
                       "address": "./Traits/04-Mouth/Bored/02-Teeth/08-LowerThirdR/None.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "08-LowerThirdR",
-                  "address": "./Traits/04-Mouth/Bored/02-Teeth/08-LowerThirdR/"
+                  "address": "./Traits/04-Mouth/Bored/02-Teeth/08-LowerThirdR/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/02-Teeth/",
@@ -864,12 +930,14 @@
                   "extension": "png",
                   "direntName": "09-Shadows.png",
                   "address": "./Traits/04-Mouth/Bored/02-Teeth/09-Shadows.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "hueVariants": "unhued",
               "direntName": "02-Teeth",
-              "address": "./Traits/04-Mouth/Bored/02-Teeth/"
+              "address": "./Traits/04-Mouth/Bored/02-Teeth/",
+              "ignoreMeta": true
             },
             {
               "parent": "./Traits/04-Mouth/Bored/",
@@ -878,19 +946,21 @@
               "switchableChildren": [
                 {
                   "parent": "./Traits/04-Mouth/Bored/03-Lips/",
-                  "metaName": "Lips",
+                  "metaName": "Generic",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
-                  "direntName": "Lips.png",
-                  "address": "./Traits/04-Mouth/Bored/03-Lips/Lips.png",
-                  "blendingMode": "normal"
+                  "direntName": "Generic.png",
+                  "address": "./Traits/04-Mouth/Bored/03-Lips/Generic.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "03-Lips",
-              "address": "./Traits/04-Mouth/Bored/03-Lips/"
+              "address": "./Traits/04-Mouth/Bored/03-Lips/",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/04-Mouth/Bored/",
@@ -905,69 +975,76 @@
                     {
                       "parent": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/",
                       "metaName": "Hipster",
-                      "rarity": 30,
+                      "rarity": 70,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Hipster_30.png",
-                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Hipster_30.png",
-                      "blendingMode": "normal"
+                      "direntName": "Hipster_70.png",
+                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Hipster_70.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/",
                       "metaName": "Long",
-                      "rarity": 30,
+                      "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Long_30.png",
-                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Long_30.png",
-                      "blendingMode": "normal"
+                      "direntName": "Long_50.png",
+                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Long_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/",
                       "metaName": "Professor",
-                      "rarity": 50,
+                      "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Professor_50.png",
-                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Professor_50.png",
-                      "blendingMode": "normal"
+                      "direntName": "Professor.png",
+                      "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/Professor.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Beard_50",
-                  "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/"
+                  "address": "./Traits/04-Mouth/Bored/04-Facials/Beard_50/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/04-Facials/",
                   "metaName": "Mustache",
-                  "rarity": 50,
+                  "rarity": 70,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Bored/04-Facials/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Bored/04-Facials/Mustache_70/",
                       "metaName": "Ben's",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Ben's.png",
-                      "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_50/Ben's.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_70/Ben's.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Bored/04-Facials/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Bored/04-Facials/Mustache_70/",
                       "metaName": "Matador",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Matador.png",
-                      "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_50/Matador.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_70/Matador.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
-                  "direntName": "Mustache_50",
-                  "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_50/"
+                  "direntName": "Mustache_70",
+                  "address": "./Traits/04-Mouth/Bored/04-Facials/Mustache_70/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/04-Facials/",
@@ -977,13 +1054,15 @@
                   "extension": "png",
                   "direntName": "None.png",
                   "address": "./Traits/04-Mouth/Bored/04-Facials/None.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "04-Facials",
-              "address": "./Traits/04-Mouth/Bored/04-Facials/"
+              "address": "./Traits/04-Mouth/Bored/04-Facials/",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/04-Mouth/Bored/",
@@ -998,7 +1077,8 @@
                   "extension": "png",
                   "direntName": "Cigar_30.png",
                   "address": "./Traits/04-Mouth/Bored/05-MouthMount/Cigar_30.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/05-MouthMount/",
@@ -1008,7 +1088,8 @@
                   "extension": "png",
                   "direntName": "Drop_50.png",
                   "address": "./Traits/04-Mouth/Bored/05-MouthMount/Drop_50.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/05-MouthMount/",
@@ -1018,7 +1099,8 @@
                   "extension": "png",
                   "direntName": "None.png",
                   "address": "./Traits/04-Mouth/Bored/05-MouthMount/None.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/04-Mouth/Bored/05-MouthMount/",
@@ -1028,1111 +1110,1220 @@
                   "extension": "png",
                   "direntName": "Piercing.png",
                   "address": "./Traits/04-Mouth/Bored/05-MouthMount/Piercing.png",
-                  "blendingMode": "normal"
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "05-MouthMount",
-              "address": "./Traits/04-Mouth/Bored/05-MouthMount/"
+              "address": "./Traits/04-Mouth/Bored/05-MouthMount/",
+              "ignoreMeta": false
             }
           ],
           "hueVariants": [],
           "direntName": "Bored",
-          "address": "./Traits/04-Mouth/Bored/"
+          "address": "./Traits/04-Mouth/Bored/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/04-Mouth/",
           "metaName": "Closed",
-          "rarity": 50,
+          "rarity": 70,
           "switchableChildren": [],
           "orderedChildren": [
             {
-              "parent": "./Traits/04-Mouth/Closed_50/",
+              "parent": "./Traits/04-Mouth/Closed_70/",
               "metaName": "01-Hole",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "01-Hole.png",
-              "address": "./Traits/04-Mouth/Closed_50/01-Hole.png",
-              "blendingMode": "normal"
+              "address": "./Traits/04-Mouth/Closed_70/01-Hole.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Closed_50/",
+              "parent": "./Traits/04-Mouth/Closed_70/",
               "metaName": "02-Facial",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/02-Facial/",
+                  "parent": "./Traits/04-Mouth/Closed_70/02-Facial/",
                   "metaName": "Beard",
                   "rarity": 50,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/",
                       "metaName": "Hipster",
-                      "rarity": 30,
+                      "rarity": 70,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Hipster_30.png",
-                      "address": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/Hipster_30.png",
-                      "blendingMode": "normal"
+                      "direntName": "Hipster_70.png",
+                      "address": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/Hipster_70.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/",
                       "metaName": "Kendal",
-                      "rarity": 30,
-                      "hueVariant": {},
-                      "extension": "png",
-                      "direntName": "Kendal_30.png",
-                      "address": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/Kendal_30.png",
-                      "blendingMode": "normal"
-                    },
-                    {
-                      "parent": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/",
-                      "metaName": "Professor",
                       "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Professor_50.png",
-                      "address": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/Professor_50.png",
-                      "blendingMode": "normal"
+                      "direntName": "Kendal_50.png",
+                      "address": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/Kendal_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
+                    },
+                    {
+                      "parent": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/",
+                      "metaName": "Professor",
+                      "rarity": 100,
+                      "hueVariant": {},
+                      "extension": "png",
+                      "direntName": "Professor.png",
+                      "address": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/Professor.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Beard_50",
-                  "address": "./Traits/04-Mouth/Closed_50/02-Facial/Beard_50/"
+                  "address": "./Traits/04-Mouth/Closed_70/02-Facial/Beard_50/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/02-Facial/",
+                  "parent": "./Traits/04-Mouth/Closed_70/02-Facial/",
                   "metaName": "Mustache",
-                  "rarity": 50,
+                  "rarity": 70,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Closed_50/02-Facial/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Closed_70/02-Facial/Mustache_70/",
                       "metaName": "Ben's",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Ben's.png",
-                      "address": "./Traits/04-Mouth/Closed_50/02-Facial/Mustache_50/Ben's.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Closed_70/02-Facial/Mustache_70/Ben's.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Closed_50/02-Facial/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Closed_70/02-Facial/Mustache_70/",
                       "metaName": "Matador",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Matador.png",
-                      "address": "./Traits/04-Mouth/Closed_50/02-Facial/Mustache_50/Matador.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Closed_70/02-Facial/Mustache_70/Matador.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
-                  "direntName": "Mustache_50",
-                  "address": "./Traits/04-Mouth/Closed_50/02-Facial/Mustache_50/"
+                  "direntName": "Mustache_70",
+                  "address": "./Traits/04-Mouth/Closed_70/02-Facial/Mustache_70/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/02-Facial/",
+                  "parent": "./Traits/04-Mouth/Closed_70/02-Facial/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Closed_50/02-Facial/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Closed_70/02-Facial/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "02-Facial",
-              "address": "./Traits/04-Mouth/Closed_50/02-Facial/"
+              "address": "./Traits/04-Mouth/Closed_70/02-Facial/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Closed_50/",
+              "parent": "./Traits/04-Mouth/Closed_70/",
               "metaName": "03-MouthMount",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/03-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Closed_70/03-MouthMount/",
                   "metaName": "Cigar",
                   "rarity": 30,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Cigar_30.png",
-                  "address": "./Traits/04-Mouth/Closed_50/03-MouthMount/Cigar_30.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Closed_70/03-MouthMount/Cigar_30.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/03-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Closed_70/03-MouthMount/",
                   "metaName": "Drop",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Drop_50.png",
-                  "address": "./Traits/04-Mouth/Closed_50/03-MouthMount/Drop_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Closed_70/03-MouthMount/Drop_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/03-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Closed_70/03-MouthMount/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Closed_50/03-MouthMount/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Closed_70/03-MouthMount/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Closed_50/03-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Closed_70/03-MouthMount/",
                   "metaName": "Piercing",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Piercing.png",
-                  "address": "./Traits/04-Mouth/Closed_50/03-MouthMount/Piercing.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Closed_70/03-MouthMount/Piercing.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "03-MouthMount",
-              "address": "./Traits/04-Mouth/Closed_50/03-MouthMount/"
+              "address": "./Traits/04-Mouth/Closed_70/03-MouthMount/",
+              "ignoreMeta": false
             }
           ],
           "hueVariants": [],
-          "direntName": "Closed_50",
-          "address": "./Traits/04-Mouth/Closed_50/"
+          "direntName": "Closed_70",
+          "address": "./Traits/04-Mouth/Closed_70/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/04-Mouth/",
           "metaName": "Opened",
-          "rarity": 10,
+          "rarity": 40,
           "switchableChildren": [],
           "orderedChildren": [
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "01-Lips",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/01-Lips/",
-                  "metaName": "Lips",
+                  "parent": "./Traits/04-Mouth/Opened_40/01-Lips/",
+                  "metaName": "Generic",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
-                  "direntName": "Lips.png",
-                  "address": "./Traits/04-Mouth/Opened_10/01-Lips/Lips.png",
-                  "blendingMode": "normal"
+                  "direntName": "Generic.png",
+                  "address": "./Traits/04-Mouth/Opened_40/01-Lips/Generic.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "01-Lips",
-              "address": "./Traits/04-Mouth/Opened_10/01-Lips/"
+              "address": "./Traits/04-Mouth/Opened_40/01-Lips/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "02-InnerMouth",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/02-InnerMouth/",
+                  "parent": "./Traits/04-Mouth/Opened_40/02-InnerMouth/",
                   "metaName": "Generic",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Generic.png",
-                  "address": "./Traits/04-Mouth/Opened_10/02-InnerMouth/Generic.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/02-InnerMouth/Generic.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "02-InnerMouth",
-              "address": "./Traits/04-Mouth/Opened_10/02-InnerMouth/"
+              "address": "./Traits/04-Mouth/Opened_40/02-InnerMouth/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
-              "metaName": "03-LilTummy",
+              "parent": "./Traits/04-Mouth/Opened_40/",
+              "metaName": "03-Tummy",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/03-LilTummy/",
+                  "parent": "./Traits/04-Mouth/Opened_40/03-Tummy/",
+                  "metaName": "LilTummy",
+                  "rarity": 30,
+                  "hueVariant": {},
+                  "extension": "png",
+                  "direntName": "LilTummy_30.png",
+                  "address": "./Traits/04-Mouth/Opened_40/03-Tummy/LilTummy_30.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
+                },
+                {
+                  "parent": "./Traits/04-Mouth/Opened_40/03-Tummy/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Opened_10/03-LilTummy/None.png",
-                  "blendingMode": "normal"
-                },
-                {
-                  "parent": "./Traits/04-Mouth/Opened_10/03-LilTummy/",
-                  "metaName": "Tummy",
-                  "rarity": 30,
-                  "hueVariant": {},
-                  "extension": "png",
-                  "direntName": "Tummy_30.png",
-                  "address": "./Traits/04-Mouth/Opened_10/03-LilTummy/Tummy_30.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/03-Tummy/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
-              "direntName": "03-LilTummy",
-              "address": "./Traits/04-Mouth/Opened_10/03-LilTummy/"
+              "direntName": "03-Tummy",
+              "address": "./Traits/04-Mouth/Opened_40/03-Tummy/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "04-Teeth",
               "rarity": 100,
               "switchableChildren": [],
               "orderedChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/",
+                  "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/",
                   "metaName": "01-LowerTooth",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "01-LowerTooth",
-                  "address": "./Traits/04-Mouth/Opened_10/04-Teeth/01-LowerTooth/"
+                  "address": "./Traits/04-Mouth/Opened_40/04-Teeth/01-LowerTooth/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/",
+                  "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/",
                   "metaName": "02-UpperTooth",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/",
+                      "parent": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "02-UpperTooth",
-                  "address": "./Traits/04-Mouth/Opened_10/04-Teeth/02-UpperTooth/"
+                  "address": "./Traits/04-Mouth/Opened_40/04-Teeth/02-UpperTooth/",
+                  "ignoreMeta": false
                 }
               ],
               "hueVariants": "unhued",
               "direntName": "04-Teeth",
-              "address": "./Traits/04-Mouth/Opened_10/04-Teeth/"
+              "address": "./Traits/04-Mouth/Opened_40/04-Teeth/",
+              "ignoreMeta": true
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "05-Facial",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/05-Facial/",
+                  "parent": "./Traits/04-Mouth/Opened_40/05-Facial/",
                   "metaName": "Beard",
                   "rarity": 50,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/",
                       "metaName": "Hipster",
-                      "rarity": 30,
+                      "rarity": 70,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Hipster_30.png",
-                      "address": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/Hipster_30.png",
-                      "blendingMode": "normal"
+                      "direntName": "Hipster_70.png",
+                      "address": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/Hipster_70.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/",
                       "metaName": "Long",
-                      "rarity": 30,
-                      "hueVariant": {},
-                      "extension": "png",
-                      "direntName": "Long_30.png",
-                      "address": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/Long_30.png",
-                      "blendingMode": "normal"
-                    },
-                    {
-                      "parent": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/",
-                      "metaName": "Professor",
                       "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Professor_50.png",
-                      "address": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/Professor_50.png",
-                      "blendingMode": "normal"
+                      "direntName": "Long_50.png",
+                      "address": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/Long_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
+                    },
+                    {
+                      "parent": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/",
+                      "metaName": "Professor",
+                      "rarity": 100,
+                      "hueVariant": {},
+                      "extension": "png",
+                      "direntName": "Professor.png",
+                      "address": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/Professor.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Beard_50",
-                  "address": "./Traits/04-Mouth/Opened_10/05-Facial/Beard_50/"
+                  "address": "./Traits/04-Mouth/Opened_40/05-Facial/Beard_50/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/05-Facial/",
+                  "parent": "./Traits/04-Mouth/Opened_40/05-Facial/",
                   "metaName": "Mustache",
-                  "rarity": 50,
+                  "rarity": 70,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/05-Facial/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Opened_40/05-Facial/Mustache_70/",
                       "metaName": "Ben's",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Ben's.png",
-                      "address": "./Traits/04-Mouth/Opened_10/05-Facial/Mustache_50/Ben's.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/05-Facial/Mustache_70/Ben's.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Opened_10/05-Facial/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Opened_40/05-Facial/Mustache_70/",
                       "metaName": "Matador",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Matador.png",
-                      "address": "./Traits/04-Mouth/Opened_10/05-Facial/Mustache_50/Matador.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Opened_40/05-Facial/Mustache_70/Matador.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
-                  "direntName": "Mustache_50",
-                  "address": "./Traits/04-Mouth/Opened_10/05-Facial/Mustache_50/"
+                  "direntName": "Mustache_70",
+                  "address": "./Traits/04-Mouth/Opened_40/05-Facial/Mustache_70/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/05-Facial/",
+                  "parent": "./Traits/04-Mouth/Opened_40/05-Facial/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Opened_10/05-Facial/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/05-Facial/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "05-Facial",
-              "address": "./Traits/04-Mouth/Opened_10/05-Facial/"
+              "address": "./Traits/04-Mouth/Opened_40/05-Facial/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "06-MouthMount",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/06-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Opened_40/06-MouthMount/",
                   "metaName": "Drop",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Drop_50.png",
-                  "address": "./Traits/04-Mouth/Opened_10/06-MouthMount/Drop_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/06-MouthMount/Drop_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/06-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Opened_40/06-MouthMount/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Opened_10/06-MouthMount/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/06-MouthMount/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/06-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Opened_40/06-MouthMount/",
                   "metaName": "Piercing",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Piercing.png",
-                  "address": "./Traits/04-Mouth/Opened_10/06-MouthMount/Piercing.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/06-MouthMount/Piercing.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "06-MouthMount",
-              "address": "./Traits/04-Mouth/Opened_10/06-MouthMount/"
+              "address": "./Traits/04-Mouth/Opened_40/06-MouthMount/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "07-Toung",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/07-Toung/",
+                  "parent": "./Traits/04-Mouth/Opened_40/07-Toung/",
                   "metaName": "Generic",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Generic.png",
-                  "address": "./Traits/04-Mouth/Opened_10/07-Toung/Generic.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/07-Toung/Generic.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "07-Toung",
-              "address": "./Traits/04-Mouth/Opened_10/07-Toung/"
+              "address": "./Traits/04-Mouth/Opened_40/07-Toung/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Opened_10/",
+              "parent": "./Traits/04-Mouth/Opened_40/",
               "metaName": "08-InnerElement",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Opened_10/08-InnerElement/",
+                  "parent": "./Traits/04-Mouth/Opened_40/08-InnerElement/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Opened_10/08-InnerElement/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Opened_40/08-InnerElement/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "08-InnerElement",
-              "address": "./Traits/04-Mouth/Opened_10/08-InnerElement/"
+              "address": "./Traits/04-Mouth/Opened_40/08-InnerElement/",
+              "ignoreMeta": false
             }
           ],
           "hueVariants": [],
-          "direntName": "Opened_10",
-          "address": "./Traits/04-Mouth/Opened_10/"
+          "direntName": "Opened_40",
+          "address": "./Traits/04-Mouth/Opened_40/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/04-Mouth/",
           "metaName": "Smiling",
-          "rarity": 40,
+          "rarity": 70,
           "switchableChildren": [],
           "orderedChildren": [
             {
-              "parent": "./Traits/04-Mouth/Smiling_40/",
+              "parent": "./Traits/04-Mouth/Smiling_70/",
               "metaName": "01-Hole",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "01-Hole.png",
-              "address": "./Traits/04-Mouth/Smiling_40/01-Hole.png",
-              "blendingMode": "normal"
+              "address": "./Traits/04-Mouth/Smiling_70/01-Hole.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Smiling_40/",
+              "parent": "./Traits/04-Mouth/Smiling_70/",
               "metaName": "02-Teeth",
               "rarity": 100,
               "switchableChildren": [],
               "orderedChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "01-UpperFirstL",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "01-UpperFirstL",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/01-UpperFirstL/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/01-UpperFirstL/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "02-UpperFirstR",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "02-UpperFirstR",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/02-UpperFirstR/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/02-UpperFirstR/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "03-LowerFirstL",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "03-LowerFirstL",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/03-LowerFirstL/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/03-LowerFirstL/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "04-LowerFirstR",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "04-LowerFirstR",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/04-LowerFirstR/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/04-LowerFirstR/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "05-LowerSecondL",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
                       "metaName": "FangGolden",
                       "rarity": 20,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "FangGolden_20.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/FangGolden_20.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/FangGolden_20.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
                       "metaName": "Fang",
                       "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Fang_50.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/Fang_50.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/Fang_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
                       "metaName": "Goldenv",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Goldenv.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/Goldenv.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/Goldenv.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "05-LowerSecondL",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/05-LowerSecondL/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/05-LowerSecondL/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "06-LowerSecondR",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
                       "metaName": "FangGolden",
                       "rarity": 20,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "FangGolden_20.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/FangGolden_20.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/FangGolden_20.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
                       "metaName": "Fang",
                       "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Fang_50.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/Fang_50.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/Fang_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "06-LowerSecondR",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/06-LowerSecondR/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/06-LowerSecondR/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "07-LowerThirdL",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "07-LowerThirdL",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/07-LowerThirdL/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/07-LowerThirdL/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "08-LowerThirdR",
                   "rarity": 100,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/",
                       "metaName": "Generic",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Generic.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/Generic.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/Generic.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/",
                       "metaName": "Golden",
                       "rarity": 30,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Golden_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/Golden_30.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/Golden_30.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/",
                       "metaName": "None",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "None.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/None.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/None.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "08-LowerThirdR",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/08-LowerThirdR/"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/08-LowerThirdR/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/02-Teeth/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
                   "metaName": "09-Shadows",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "09-Shadows.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/09-Shadows.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/09-Shadows.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "hueVariants": "unhued",
               "direntName": "02-Teeth",
-              "address": "./Traits/04-Mouth/Smiling_40/02-Teeth/"
+              "address": "./Traits/04-Mouth/Smiling_70/02-Teeth/",
+              "ignoreMeta": true
             },
             {
-              "parent": "./Traits/04-Mouth/Smiling_40/",
+              "parent": "./Traits/04-Mouth/Smiling_70/",
               "metaName": "03-Lips",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/03-Lips/",
-                  "metaName": "Lips",
+                  "parent": "./Traits/04-Mouth/Smiling_70/03-Lips/",
+                  "metaName": "Generic",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
-                  "direntName": "Lips.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/03-Lips/Lips.png",
-                  "blendingMode": "normal"
+                  "direntName": "Generic.png",
+                  "address": "./Traits/04-Mouth/Smiling_70/03-Lips/Generic.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "03-Lips",
-              "address": "./Traits/04-Mouth/Smiling_40/03-Lips/"
+              "address": "./Traits/04-Mouth/Smiling_70/03-Lips/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Smiling_40/",
+              "parent": "./Traits/04-Mouth/Smiling_70/",
               "metaName": "04-Facials",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/",
                   "metaName": "Beard",
                   "rarity": 50,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/",
                       "metaName": "Hipster",
-                      "rarity": 30,
+                      "rarity": 70,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Hipster_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/Hipster_30.png",
-                      "blendingMode": "normal"
+                      "direntName": "Hipster_70.png",
+                      "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/Hipster_70.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/",
                       "metaName": "Long",
-                      "rarity": 30,
-                      "hueVariant": {},
-                      "extension": "png",
-                      "direntName": "Long_30.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/Long_30.png",
-                      "blendingMode": "normal"
-                    },
-                    {
-                      "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/",
-                      "metaName": "Professor",
                       "rarity": 50,
                       "hueVariant": {},
                       "extension": "png",
-                      "direntName": "Professor_50.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/Professor_50.png",
-                      "blendingMode": "normal"
+                      "direntName": "Long_50.png",
+                      "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/Long_50.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
+                    },
+                    {
+                      "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/",
+                      "metaName": "Professor",
+                      "rarity": 100,
+                      "hueVariant": {},
+                      "extension": "png",
+                      "direntName": "Professor.png",
+                      "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/Professor.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Beard_50",
-                  "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Beard_50/"
+                  "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Beard_50/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/",
                   "metaName": "Mustache",
-                  "rarity": 50,
+                  "rarity": 70,
                   "switchableChildren": [
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/Mustache_70/",
                       "metaName": "Ben's",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Ben's.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Mustache_50/Ben's.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Mustache_70/Ben's.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     },
                     {
-                      "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/Mustache_50/",
+                      "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/Mustache_70/",
                       "metaName": "Matador",
                       "rarity": 100,
                       "hueVariant": {},
                       "extension": "png",
                       "direntName": "Matador.png",
-                      "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Mustache_50/Matador.png",
-                      "blendingMode": "normal"
+                      "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Mustache_70/Matador.png",
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
-                  "direntName": "Mustache_50",
-                  "address": "./Traits/04-Mouth/Smiling_40/04-Facials/Mustache_50/"
+                  "direntName": "Mustache_70",
+                  "address": "./Traits/04-Mouth/Smiling_70/04-Facials/Mustache_70/",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/04-Facials/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/04-Facials/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/04-Facials/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/04-Facials/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": [],
               "direntName": "04-Facials",
-              "address": "./Traits/04-Mouth/Smiling_40/04-Facials/"
+              "address": "./Traits/04-Mouth/Smiling_70/04-Facials/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/04-Mouth/Smiling_40/",
+              "parent": "./Traits/04-Mouth/Smiling_70/",
               "metaName": "05-MouthMount",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/05-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/05-MouthMount/",
                   "metaName": "Cigar",
                   "rarity": 30,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Cigar_30.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/05-MouthMount/Cigar_30.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/05-MouthMount/Cigar_30.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/05-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/05-MouthMount/",
                   "metaName": "Drop",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Drop_50.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/05-MouthMount/Drop_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/05-MouthMount/Drop_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/05-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/05-MouthMount/",
                   "metaName": "None",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "None.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/05-MouthMount/None.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/05-MouthMount/None.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/04-Mouth/Smiling_40/05-MouthMount/",
+                  "parent": "./Traits/04-Mouth/Smiling_70/05-MouthMount/",
                   "metaName": "Piercing",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Piercing.png",
-                  "address": "./Traits/04-Mouth/Smiling_40/05-MouthMount/Piercing.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/04-Mouth/Smiling_70/05-MouthMount/Piercing.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "05-MouthMount",
-              "address": "./Traits/04-Mouth/Smiling_40/05-MouthMount/"
+              "address": "./Traits/04-Mouth/Smiling_70/05-MouthMount/",
+              "ignoreMeta": false
             }
           ],
           "hueVariants": [],
-          "direntName": "Smiling_40",
-          "address": "./Traits/04-Mouth/Smiling_40/"
+          "direntName": "Smiling_70",
+          "address": "./Traits/04-Mouth/Smiling_70/",
+          "ignoreMeta": false
         }
       ],
       "orderedChildren": [],
@@ -2189,7 +2380,8 @@
         }
       ],
       "direntName": "04-Mouth",
-      "address": "./Traits/04-Mouth/"
+      "address": "./Traits/04-Mouth/",
+      "ignoreMeta": false
     },
     {
       "parent": "./Traits/",
@@ -2220,13 +2412,15 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Cloesed_30/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Cloesed_30",
-                  "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Cloesed_30/"
+                  "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Cloesed_30/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/",
@@ -2247,7 +2441,8 @@
                           "extension": "png",
                           "direntName": "Angry_30.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/Angry_30.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/",
@@ -2257,7 +2452,8 @@
                           "extension": "png",
                           "direntName": "Idle.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/Idle.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/",
@@ -2267,13 +2463,15 @@
                           "extension": "png",
                           "direntName": "WideOpen_50.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/WideOpen_50.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
                       "hueVariants": [],
                       "direntName": "01-Base",
-                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/"
+                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/01-Base/",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/",
@@ -2288,7 +2486,8 @@
                           "extension": "png",
                           "direntName": "None.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/02-Overlay/None.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/02-Overlay/",
@@ -2298,13 +2497,15 @@
                           "extension": "png",
                           "direntName": "Weins_30.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/02-Overlay/Weins_30.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
                       "hueVariants": "unhued",
                       "direntName": "02-Overlay",
-                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/02-Overlay/"
+                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/02-Overlay/",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/",
@@ -2319,7 +2520,8 @@
                           "extension": "png",
                           "direntName": "Generic.png",
                           "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/03-Pupil/Generic.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
@@ -2345,12 +2547,14 @@
                         }
                       ],
                       "direntName": "03-Pupil",
-                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/03-Pupil/"
+                      "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/03-Pupil/",
+                      "ignoreMeta": false
                     }
                   ],
                   "hueVariants": [],
                   "direntName": "Opened",
-                  "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/"
+                  "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/Opened/",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
@@ -2368,7 +2572,7 @@
                 {
                   "colorName": "Crimson",
                   "hue": "-98",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "DevilRed",
@@ -2378,12 +2582,11 @@
                 {
                   "colorName": "FerrariRed",
                   "hue": "-65",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "AmberOrange",
-                  "hue": "-43",
-                  "rarity": 50
+                  "hue": "-43"
                 },
                 {
                   "colorName": "CornYellow",
@@ -2400,26 +2603,28 @@
                 },
                 {
                   "colorName": "JungleGreen",
-                  "hue": "53"
+                  "hue": "53",
+                  "rarity": 70
                 },
                 {
                   "colorName": "AzureBlue",
                   "hue": "100",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "NavyBlue",
                   "hue": "130",
-                  "rarity": 50
+                  "rarity": 40
                 },
                 {
                   "colorName": "BlueViolet",
                   "hue": "147",
-                  "rarity": 60
+                  "rarity": 70
                 }
               ],
               "direntName": "01-leftEye",
-              "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/"
+              "address": "./Traits/05-Eyes/TwoEyes/01-leftEye/",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/05-Eyes/TwoEyes/",
@@ -2439,13 +2644,15 @@
                       "extension": "png",
                       "direntName": "Generic.png",
                       "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Cloesed_30/Generic.png",
-                      "blendingMode": "normal"
+                      "blendingMode": "normal",
+                      "ignoreMeta": false
                     }
                   ],
                   "orderedChildren": [],
                   "hueVariants": [],
                   "direntName": "Cloesed_30",
-                  "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Cloesed_30/"
+                  "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Cloesed_30/",
+                  "ignoreMeta": false
                 },
                 {
                   "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/",
@@ -2466,7 +2673,8 @@
                           "extension": "png",
                           "direntName": "Angry_30.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/Angry_30.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/",
@@ -2476,7 +2684,8 @@
                           "extension": "png",
                           "direntName": "Idle.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/Idle.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/",
@@ -2486,13 +2695,15 @@
                           "extension": "png",
                           "direntName": "WideOpen_50.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/WideOpen_50.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
                       "hueVariants": [],
                       "direntName": "01-Base",
-                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/"
+                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/01-Base/",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/",
@@ -2507,7 +2718,8 @@
                           "extension": "png",
                           "direntName": "None.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/02-Overlay/None.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         },
                         {
                           "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/02-Overlay/",
@@ -2517,13 +2729,15 @@
                           "extension": "png",
                           "direntName": "Weins_30.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/02-Overlay/Weins_30.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
                       "hueVariants": "unhued",
                       "direntName": "02-Overlay",
-                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/02-Overlay/"
+                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/02-Overlay/",
+                      "ignoreMeta": false
                     },
                     {
                       "parent": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/",
@@ -2538,7 +2752,8 @@
                           "extension": "png",
                           "direntName": "Generic.png",
                           "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/03-Pupil/Generic.png",
-                          "blendingMode": "normal"
+                          "blendingMode": "normal",
+                          "ignoreMeta": false
                         }
                       ],
                       "orderedChildren": [],
@@ -2564,12 +2779,14 @@
                         }
                       ],
                       "direntName": "03-Pupil",
-                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/03-Pupil/"
+                      "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/03-Pupil/",
+                      "ignoreMeta": false
                     }
                   ],
                   "hueVariants": [],
                   "direntName": "Opened",
-                  "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/"
+                  "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/Opened/",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
@@ -2587,7 +2804,7 @@
                 {
                   "colorName": "Crimson",
                   "hue": "-98",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "DevilRed",
@@ -2597,12 +2814,11 @@
                 {
                   "colorName": "FerrariRed",
                   "hue": "-65",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "AmberOrange",
-                  "hue": "-43",
-                  "rarity": 50
+                  "hue": "-43"
                 },
                 {
                   "colorName": "CornYellow",
@@ -2619,37 +2835,41 @@
                 },
                 {
                   "colorName": "JungleGreen",
-                  "hue": "53"
+                  "hue": "53",
+                  "rarity": 70
                 },
                 {
                   "colorName": "AzureBlue",
                   "hue": "100",
-                  "rarity": 50
+                  "rarity": 80
                 },
                 {
                   "colorName": "NavyBlue",
                   "hue": "130",
-                  "rarity": 50
+                  "rarity": 40
                 },
                 {
                   "colorName": "BlueViolet",
                   "hue": "147",
-                  "rarity": 60
+                  "rarity": 70
                 }
               ],
               "direntName": "02-rightEye",
-              "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/"
+              "address": "./Traits/05-Eyes/TwoEyes/02-rightEye/",
+              "ignoreMeta": false
             }
           ],
           "hueVariants": [],
           "direntName": "TwoEyes",
-          "address": "./Traits/05-Eyes/TwoEyes/"
+          "address": "./Traits/05-Eyes/TwoEyes/",
+          "ignoreMeta": false
         }
       ],
       "orderedChildren": [],
       "hueVariants": [],
       "direntName": "05-Eyes",
-      "address": "./Traits/05-Eyes/"
+      "address": "./Traits/05-Eyes/",
+      "ignoreMeta": false
     },
     {
       "parent": "./Traits/",
@@ -2669,7 +2889,8 @@
               "extension": "png",
               "direntName": "Generic.png",
               "address": "./Traits/06-OnTheTop/Crown_30/Generic.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/06-OnTheTop/Crown_30/",
@@ -2679,7 +2900,8 @@
               "extension": "png",
               "direntName": "King_30.png",
               "address": "./Traits/06-OnTheTop/Crown_30/King_30.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
               "parent": "./Traits/06-OnTheTop/Crown_30/",
@@ -2689,330 +2911,363 @@
               "extension": "png",
               "direntName": "Queen_50.png",
               "address": "./Traits/06-OnTheTop/Crown_30/Queen_50.png",
-              "blendingMode": "normal"
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": "unhued",
           "direntName": "Crown_30",
-          "address": "./Traits/06-OnTheTop/Crown_30/"
+          "address": "./Traits/06-OnTheTop/Crown_30/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/06-OnTheTop/",
           "metaName": "etc",
-          "rarity": 30,
+          "rarity": 40,
           "switchableChildren": [
             {
-              "parent": "./Traits/06-OnTheTop/etc_30/",
+              "parent": "./Traits/06-OnTheTop/etc_40/",
               "metaName": "AngelRing",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "AngelRing.png",
-              "address": "./Traits/06-OnTheTop/etc_30/AngelRing.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/etc_40/AngelRing.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": "unhued",
-          "direntName": "etc_30",
-          "address": "./Traits/06-OnTheTop/etc_30/"
+          "direntName": "etc_40",
+          "address": "./Traits/06-OnTheTop/etc_40/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/06-OnTheTop/",
           "metaName": "Hair",
-          "rarity": 70,
+          "rarity": 100,
           "switchableChildren": [
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Black",
               "rarity": 100,
               "switchableChildren": [
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "CurlyLong",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "CurlyLong_50.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/CurlyLong_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/CurlyLong_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "Curly",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Curly_50.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/Curly_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/Curly_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "FauxHawk",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "FauxHawk.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/FauxHawk.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/FauxHawk.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "FringeUp",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "FringeUp.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/FringeUp.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/FringeUp.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "Long",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Long_50.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/Long_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/Long_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "Punk",
                   "rarity": 50,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Punk_50.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/Punk_50.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/Punk_50.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "Quiff",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Quiff.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/Quiff.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/Quiff.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "SemiBald",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "SemiBald.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/SemiBald.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/SemiBald.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "ShortCut",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "ShortCut.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/ShortCut.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/ShortCut.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "SideFringe",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "SideFringe.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/SideFringe.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/SideFringe.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "SideParted",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "SideParted.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/SideParted.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/SideParted.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "Taisho",
                   "rarity": 35,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "Taisho_35.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/Taisho_35.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/Taisho_35.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "UnderCut",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "UnderCut.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/UnderCut.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/UnderCut.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 },
                 {
-                  "parent": "./Traits/06-OnTheTop/Hair_70/Black/",
+                  "parent": "./Traits/06-OnTheTop/Hair/Black/",
                   "metaName": "UnderCutFringe",
                   "rarity": 100,
                   "hueVariant": {},
                   "extension": "png",
                   "direntName": "UnderCutFringe.png",
-                  "address": "./Traits/06-OnTheTop/Hair_70/Black/UnderCutFringe.png",
-                  "blendingMode": "normal"
+                  "address": "./Traits/06-OnTheTop/Hair/Black/UnderCutFringe.png",
+                  "blendingMode": "normal",
+                  "ignoreMeta": false
                 }
               ],
               "orderedChildren": [],
               "hueVariants": "unhued",
               "direntName": "Black",
-              "address": "./Traits/06-OnTheTop/Hair_70/Black/"
+              "address": "./Traits/06-OnTheTop/Hair/Black/",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "CurlyLong",
               "rarity": 30,
               "hueVariant": {},
               "extension": "png",
               "direntName": "CurlyLong_30.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/CurlyLong_30.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/CurlyLong_30.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Curly",
               "rarity": 30,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Curly_30.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/Curly_30.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/Curly_30.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "FauxHawk",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "FauxHawk_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/FauxHawk_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/FauxHawk_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "FringeUp",
               "rarity": 40,
               "hueVariant": {},
               "extension": "png",
               "direntName": "FringeUp_40.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/FringeUp_40.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/FringeUp_40.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Long",
               "rarity": 30,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Long_30.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/Long_30.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/Long_30.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Punk",
               "rarity": 30,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Punk_30.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/Punk_30.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/Punk_30.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Quiff",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Quiff_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/Quiff_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/Quiff_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "SemiBald",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "SemiBald_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/SemiBald_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/SemiBald_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "ShortCut",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "ShortCut_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/ShortCut_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/ShortCut_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "SideFringe",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "SideFringe_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/SideFringe_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/SideFringe_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "SideParted",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "SideParted_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/SideParted_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/SideParted_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "Taisho",
               "rarity": 20,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Taisho_20.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/Taisho_20.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/Taisho_20.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "UnderCutFringe",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "UnderCutFringe_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/UnderCutFringe_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/UnderCutFringe_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Hair_70/",
+              "parent": "./Traits/06-OnTheTop/Hair/",
               "metaName": "UnderCut",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "UnderCut_50.png",
-              "address": "./Traits/06-OnTheTop/Hair_70/UnderCut_50.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Hair/UnderCut_50.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
@@ -3057,33 +3312,36 @@
               "rarity": 30
             }
           ],
-          "direntName": "Hair_70",
-          "address": "./Traits/06-OnTheTop/Hair_70/"
+          "direntName": "Hair",
+          "address": "./Traits/06-OnTheTop/Hair/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/06-OnTheTop/",
           "metaName": "Horns",
-          "rarity": 10,
+          "rarity": 30,
           "switchableChildren": [
             {
-              "parent": "./Traits/06-OnTheTop/Horns_10/",
+              "parent": "./Traits/06-OnTheTop/Horns_30/",
               "metaName": "Generic",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Generic.png",
-              "address": "./Traits/06-OnTheTop/Horns_10/Generic.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Horns_30/Generic.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Horns_10/",
+              "parent": "./Traits/06-OnTheTop/Horns_30/",
               "metaName": "OutwardsGeneric",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "OutwardsGeneric.png",
-              "address": "./Traits/06-OnTheTop/Horns_10/OutwardsGeneric.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Horns_30/OutwardsGeneric.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
@@ -3117,53 +3375,58 @@
               "hue": "92"
             }
           ],
-          "direntName": "Horns_10",
-          "address": "./Traits/06-OnTheTop/Horns_10/"
+          "direntName": "Horns_30",
+          "address": "./Traits/06-OnTheTop/Horns_30/",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/06-OnTheTop/",
           "metaName": "None",
-          "rarity": 100,
+          "rarity": 90,
           "hueVariant": {},
           "extension": "png",
-          "direntName": "None.png",
-          "address": "./Traits/06-OnTheTop/None.png",
-          "blendingMode": "normal"
+          "direntName": "None_90.png",
+          "address": "./Traits/06-OnTheTop/None_90.png",
+          "blendingMode": "normal",
+          "ignoreMeta": false
         },
         {
           "parent": "./Traits/06-OnTheTop/",
           "metaName": "Wearable",
-          "rarity": 40,
+          "rarity": 70,
           "switchableChildren": [
             {
-              "parent": "./Traits/06-OnTheTop/Wearable_40/",
+              "parent": "./Traits/06-OnTheTop/Wearable_70/",
               "metaName": "BaseballCap",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "BaseballCap.png",
-              "address": "./Traits/06-OnTheTop/Wearable_40/BaseballCap.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Wearable_70/BaseballCap.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Wearable_40/",
+              "parent": "./Traits/06-OnTheTop/Wearable_70/",
               "metaName": "Hat",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Hat.png",
-              "address": "./Traits/06-OnTheTop/Wearable_40/Hat.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Wearable_70/Hat.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheTop/Wearable_40/",
+              "parent": "./Traits/06-OnTheTop/Wearable_70/",
               "metaName": "Headphones",
               "rarity": 35,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Headphones_35.png",
-              "address": "./Traits/06-OnTheTop/Wearable_40/Headphones_35.png",
-              "blendingMode": "normal"
+              "address": "./Traits/06-OnTheTop/Wearable_70/Headphones_35.png",
+              "blendingMode": "normal",
+              "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
@@ -3208,8 +3471,7 @@
             },
             {
               "colorName": "Orange",
-              "hue": "-151",
-              "rarity": 70
+              "hue": "-151"
             },
             {
               "colorName": "Red",
@@ -3217,21 +3479,23 @@
               "rarity": 30
             }
           ],
-          "direntName": "Wearable_40",
-          "address": "./Traits/06-OnTheTop/Wearable_40/"
+          "direntName": "Wearable_70",
+          "address": "./Traits/06-OnTheTop/Wearable_70/",
+          "ignoreMeta": false
         }
       ],
       "orderedChildren": [],
       "hueVariants": [],
       "direntName": "06-OnTheTop",
-      "address": "./Traits/06-OnTheTop/"
+      "address": "./Traits/06-OnTheTop/",
+      "ignoreMeta": false
     }
   ],
   "hueVariants": [
     {
       "colorName": "Purple",
       "hue": "-180",
-      "rarity": 70
+      "rarity": 800
     },
     {
       "colorName": "Fuchia",
@@ -3241,7 +3505,7 @@
     {
       "colorName": "Crimson",
       "hue": "-98",
-      "rarity": 50
+      "rarity": 80
     },
     {
       "colorName": "DevilRed",
@@ -3251,16 +3515,17 @@
     {
       "colorName": "FerrariRed",
       "hue": "-65",
-      "rarity": 50
+      "rarity": 80
     },
     {
       "colorName": "AmberOrange",
       "hue": "-43",
-      "rarity": 50
+      "rarity": 70
     },
     {
       "colorName": "CornYellow",
-      "hue": "-30"
+      "hue": "-30",
+      "rarity": 50
     },
     {
       "colorName": "LimeGreen",
@@ -3273,24 +3538,26 @@
     },
     {
       "colorName": "JungleGreen",
-      "hue": "53"
+      "hue": "53",
+      "rarity": 70
     },
     {
       "colorName": "AzureBlue",
       "hue": "100",
-      "rarity": 50
+      "rarity": 80
     },
     {
       "colorName": "NavyBlue",
       "hue": "130",
-      "rarity": 50
+      "rarity": 40
     },
     {
       "colorName": "BlueViolet",
       "hue": "147",
-      "rarity": 60
+      "rarity": 70
     }
   ],
   "direntName": "",
-  "address": "./Traits/"
+  "address": "./Traits/",
+  "ignoreMeta": false
 }

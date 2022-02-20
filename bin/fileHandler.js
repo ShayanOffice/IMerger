@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { cacheDir, traitsDir, cachedHierarchyFileName } from './config.js';
+import { CacheDir, TraitsDir, CachedHierarchyFileName } from './config.js';
 
 
 export const readDir = async (traitsDir) =>
@@ -7,7 +7,7 @@ export const readDir = async (traitsDir) =>
 
 export const HierarchyToFile = async (cachedHierarchy) => {
   await fs.writeFile(
-    cacheDir + cachedHierarchyFileName,
+    CacheDir + CachedHierarchyFileName,
     JSON.stringify(cachedHierarchy, null, 2),
     function (err) {
       if (err) console.log(err);
@@ -16,7 +16,7 @@ export const HierarchyToFile = async (cachedHierarchy) => {
 };
 
 export const HierarchyFromFile = async () => {
-  const fileDir = cacheDir + cachedHierarchyFileName;
+  const fileDir = CacheDir + CachedHierarchyFileName;
   const data = await fs.readFile(fileDir);
   return JSON.parse(data);
 };

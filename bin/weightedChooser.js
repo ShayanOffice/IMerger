@@ -42,10 +42,10 @@ export const weightedChoose = (items) => {
   const possibleChoices = [];
   // compare each item's rarity with "fact" and if it's higher than the "fact", => push.
   for (const item of items) {
+    if (!item.rarity) item.rarity = 100;
     if (item.rarity >= fact) possibleChoices.push(item);
   }
-  // make arandom choice from "possibleChoices".
-  console.log(randomChoice(possibleChoices));
+  // make a random choice from "possibleChoices".
   return randomChoice(possibleChoices);
 };
 

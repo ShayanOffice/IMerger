@@ -1,11 +1,11 @@
 //  https://github.com/ashbeech/moralis-mutants-nft-engine
 //  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
-import { choose } from "./bin/chooser";
-import { compose } from "./bin/composer";
-import { size } from "./bin/config";
+import { choose } from "./bin/chooser.js";
+import { compose } from "./bin/composer.js";
+import { Size } from "./bin/config.js";
 
 const main = async () => {
-  const probArr = await choose(60);
-  const img = await compose(probArr, size);
+  const probArr = await choose(100);
+  const img = await compose(probArr, Size);
 };
 main();

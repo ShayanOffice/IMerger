@@ -1,0 +1,20 @@
+{
+  "name": "Your Collection #1",
+  "description": "Friendly OpenSea Creature that enjoys long swims in the ocean.",
+  "external_url": "https://openseacreatures.io/3",
+  "youtube_url": "https://openseacreatures.io/3",
+  "image": "ipfs://NewUriToReplace/1.png",
+  "dna": "e84638f79025d035e7495d471bd5c87c748c7296",
+  "date": 1645178495607,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Eyeball",
+      "value": "Red"
+    }
+  ],
+  "compiler": "BOOMHUNK's Generative Art Algo"
+}

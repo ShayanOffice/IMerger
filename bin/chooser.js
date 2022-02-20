@@ -1,16 +1,18 @@
-import { traitsDir } from "./config.js";
+import { TraitsDir } from "./config.js";
 import { HierarchyFromFile } from "./fileHandler.js";
+import { weightedChoose } from "./weightedChooser.js";
 let allProbabilities = [];
-
 
 const selectTraits = async (
   Hierarchy,
   CurrentIterTraits,
   parentHueVariant,
-  isUnhued = false
+  isUnhued = false,
+  isMetaIgnored = false
 ) => {
   let counter = 0;
   var currentHueVariant;
+  // console.log(Hierarchy.address);
   if (!Hierarchy.extension) {
     //it's a folder entry
     /////////////////////HandleVariant//////////////////////
@@ -18,14 +20,8 @@ const selectTraits = async (
       Array.isArray(Hierarchy.hueVariants) &&
       Hierarchy.hueVariants.length > 0
     )
-      currentHueVariant = randomChoice(Hierarchy.hueVariants);
+      currentHueVariant = weightedChoose(Hierarchy.hueVariants);
     else {
-      // console.log(
-      //   "this is " +
-      //     Hierarchy.metaName +
-      //     " inheritting it's parent's color: " +
-      //     parentHueVariant.colorName
-      // );
       if (Hierarchy.hueVariants === "unhued") isUnhued = true;
       currentHueVariant = parentHueVariant;
     }
@@ -35,7 +31,7 @@ const selectTraits = async (
       for (const hir of Hierarchy.orderedChildren)
         await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
     } else if (Hierarchy.switchableChildren.length > 0) {
-      const hir = randomChoice(Hierarchy.switchableChildren);
+      const hir = weightedChoose(Hierarchy.switchableChildren);
       await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
     } else {
       console.error("Given Hierarchy is Empty");
