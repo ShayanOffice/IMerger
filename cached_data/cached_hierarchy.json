@@ -44,20 +44,49 @@
           "hue": "-65"
         },
         {
-          "colorName": "CornYellow",
-          "hue": "-53"
+          "parent": "./Traits/01-Background/",
+          "metaName": "Mountain",
+          "rarity": 100,
+          "hueVariant": {},
+          "extension": "png",
+          "direntName": "Mountain.png",
+          "address": "./Traits/01-Background/Mountain.png",
+          "blendingMode": "normal"
         },
         {
           "colorName": "LimeGreen",
           "hue": "-27"
         },
         {
-          "colorName": "KellyGreen",
-          "hue": "0"
-        },
+          "parent": "./Traits/01-Background/",
+          "metaName": "Snow",
+          "rarity": 100,
+          "hueVariant": {},
+          "extension": "png",
+          "direntName": "Snow.png",
+          "address": "./Traits/01-Background/Snow.png",
+          "blendingMode": "normal"
+        }
+      ],
+      "orderedChildren": [],
+      "hueVariants": [],
+      "direntName": "01-Background",
+      "address": "./Traits/01-Background/"
+    },
+    {
+      "parent": "./Traits/",
+      "metaName": "02-Body",
+      "rarity": 100,
+      "switchableChildren": [
         {
-          "colorName": "JungleGreen",
-          "hue": "53"
+          "parent": "./Traits/02-Body/",
+          "metaName": "Alien",
+          "rarity": 100,
+          "hueVariant": {},
+          "extension": "png",
+          "direntName": "Alien.png",
+          "address": "./Traits/02-Body/Alien.png",
+          "blendingMode": "normal"
         },
         {
           "colorName": "AzureBlue",
@@ -78,18 +107,18 @@
     },
     {
       "parent": "./Traits/",
-      "metaName": "02-Body",
+      "metaName": "03-Top",
       "rarity": 100,
       "switchableChildren": [],
       "orderedChildren": [
         {
-          "parent": "./Traits/02-Body/",
-          "metaName": "01-Back",
+          "parent": "./Traits/03-Top/",
+          "metaName": "01-Eyes",
           "rarity": 100,
           "switchableChildren": [
             {
-              "parent": "./Traits/02-Body/01-Back/",
-              "metaName": "General",
+              "parent": "./Traits/03-Top/01-Eyes/",
+              "metaName": "Angry",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
@@ -155,9 +184,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "Giraffe",
-              "rarity": 30,
+              "parent": "./Traits/03-Top/02-Head/",
+              "metaName": "Gold",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Giraffe_Multiply_30.png",
@@ -199,8 +228,8 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "None",
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Bowler",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
@@ -210,9 +239,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "RareIndigoSnake",
-              "rarity": 20,
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Cowboy",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "RareIndigoSnake_Darken_20.png",
@@ -221,9 +250,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "RareSnakeGiraffe",
-              "rarity": 20,
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Empty",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "RareSnakeGiraffe_HardLight_20.png",
@@ -243,9 +272,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "ReptileGiraffe",
-              "rarity": 20,
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Pink Punk",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "ReptileGiraffe_Darken_20.png",
@@ -287,9 +316,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "SequinSnake",
-              "rarity": 30,
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Red Bandana",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "SequinSnake_Overlay_30.png",
@@ -298,9 +327,9 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/02-SkinPatterns/",
-              "metaName": "Snake",
-              "rarity": 20,
+              "parent": "./Traits/03-Top/03-Headwear/",
+              "metaName": "Sailor",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Snake_Multiply_20.png",
@@ -327,14 +356,14 @@
           "ignoreMeta": false
         },
         {
-          "parent": "./Traits/02-Body/",
-          "metaName": "03-Stomach",
+          "parent": "./Traits/03-Top/",
+          "metaName": "04-Mouth",
           "rarity": 100,
           "switchableChildren": [
             {
-              "parent": "./Traits/02-Body/03-Stomach/",
-              "metaName": "GenericBig",
-              "rarity": 30,
+              "parent": "./Traits/03-Top/04-Mouth/",
+              "metaName": "Full Beard",
+              "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "GenericBig_30.png",
@@ -365,8 +394,8 @@
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/02-Body/03-Stomach/",
-              "metaName": "GenericSmall",
+              "parent": "./Traits/03-Top/04-Mouth/",
+              "metaName": "Lock Beard",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
@@ -388,8 +417,8 @@
           "rarity": 100,
           "switchableChildren": [
             {
-              "parent": "./Traits/02-Body/04-Belly/",
-              "metaName": "Simple",
+              "parent": "./Traits/03-Top/04-Mouth/",
+              "metaName": "Surprise",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
@@ -406,8 +435,8 @@
           "ignoreMeta": false
         },
         {
-          "parent": "./Traits/02-Body/",
-          "metaName": "05-SkinMark",
+          "parent": "./Traits/03-Top/",
+          "metaName": "05-Nose",
           "rarity": 100,
           "switchableChildren": [
             {
@@ -447,13 +476,13 @@
     },
     {
       "parent": "./Traits/",
-      "metaName": "03-Necklace",
+      "metaName": "04-Outfit",
       "rarity": 100,
       "switchableChildren": [
         {
-          "parent": "./Traits/03-Necklace/",
-          "metaName": "CableChainLoose",
-          "rarity": 50,
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Blue Jacket",
+          "rarity": 100,
           "hueVariant": {},
           "extension": "png",
           "direntName": "CableChainLoose_50.png",
@@ -462,9 +491,9 @@
           "ignoreMeta": false
         },
         {
-          "parent": "./Traits/03-Necklace/",
-          "metaName": "CableChain",
-          "rarity": 50,
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Gap",
+          "rarity": 100,
           "hueVariant": {},
           "extension": "png",
           "direntName": "CableChain_50.png",
@@ -473,9 +502,9 @@
           "ignoreMeta": false
         },
         {
-          "parent": "./Traits/03-Necklace/",
-          "metaName": "Cuban",
-          "rarity": 30,
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Hoodie",
+          "rarity": 100,
           "hueVariant": {},
           "extension": "png",
           "direntName": "Cuban_30.png",
@@ -484,8 +513,8 @@
           "ignoreMeta": false
         },
         {
-          "parent": "./Traits/03-Necklace/",
-          "metaName": "None",
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Lumberjack",
           "rarity": 100,
           "hueVariant": {},
           "extension": "png",
@@ -543,13 +572,24 @@
       "orderedChildren": [],
       "hueVariants": [
         {
-          "colorName": "Golden",
-          "hue": "0",
-          "rarity": 30
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Shirt with holes",
+          "rarity": 100,
+          "hueVariant": {},
+          "extension": "png",
+          "direntName": "Shirt with holes.png",
+          "address": "./Traits/04-Outfit/Shirt with holes.png",
+          "blendingMode": "normal"
         },
         {
-          "colorName": "Bronz",
-          "hue": "-18"
+          "parent": "./Traits/04-Outfit/",
+          "metaName": "Tanktop",
+          "rarity": 100,
+          "hueVariant": {},
+          "extension": "png",
+          "direntName": "Tanktop.png",
+          "address": "./Traits/04-Outfit/Tanktop.png",
+          "blendingMode": "normal"
         }
       ],
       "direntName": "03-Necklace",
@@ -558,12 +598,12 @@
     },
     {
       "parent": "./Traits/",
-      "metaName": "04-Mouth",
+      "metaName": "05-Sunglasses",
       "rarity": 100,
       "switchableChildren": [
         {
-          "parent": "./Traits/04-Mouth/",
-          "metaName": "Bored",
+          "parent": "./Traits/05-Sunglasses/",
+          "metaName": "Aviator",
           "rarity": 100,
           "switchableChildren": [],
           "orderedChildren": [
@@ -3557,6 +3597,7 @@
       "rarity": 70
     }
   ],
+  "hueVariants": [],
   "direntName": "",
   "address": "./Traits/",
   "ignoreMeta": false

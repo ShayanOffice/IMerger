@@ -8,11 +8,11 @@ const selectTraits = async (
   CurrentIterTraits,
   parentHueVariant,
   isUnhued = false,
-  isMetaIgnored = false
+  ignoreMeta = false
 ) => {
   let counter = 0;
   var currentHueVariant;
-  // console.log(Hierarchy.address);
+  if (ignoreMeta) Hierarchy.ignoreMeta = true;
   if (!Hierarchy.extension) {
     //it's a folder entry
     /////////////////////HandleVariant//////////////////////
@@ -29,10 +29,22 @@ const selectTraits = async (
 
     if (Hierarchy.orderedChildren.length > 0) {
       for (const hir of Hierarchy.orderedChildren)
-        await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
+        await selectTraits(
+          hir,
+          CurrentIterTraits,
+          currentHueVariant,
+          isUnhued,
+          Hierarchy.ignoreMeta
+        );
     } else if (Hierarchy.switchableChildren.length > 0) {
       const hir = weightedChoose(Hierarchy.switchableChildren);
-      await selectTraits(hir, CurrentIterTraits, currentHueVariant, isUnhued);
+      await selectTraits(
+        hir,
+        CurrentIterTraits,
+        currentHueVariant,
+        isUnhued,
+        Hierarchy.ignoreMeta
+      );
     } else {
       console.error("Given Hierarchy is Empty");
       return;
