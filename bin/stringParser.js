@@ -32,15 +32,22 @@ const parseMetaAddress = (address) => {
     const element = array[index];
     if (/[0-9]*-/.test(element)) {
       var category = element.replace(/[0-9]*-/, ``);
-
+      // console.log(category, metaNames.join(" "));
       if (metaNames.length !== 0 && metaNames[0] !== "None")
         return newMetaAttribute(category, metaNames.join(" "));
 
       return;
     } else {
-      var metaName = element.replace(/\..*/, ``);
+      var hasFileExt = false;
+      var metaName = element;
+      if (/\..*/.test(metaName)) {
+        metaName = metaName.replace(/\..*/, ``);
+        hasFileExt = true;
+      }
       metaName = metaName.replace(/_[0-9 a-z A-Z]+/g, ``);
-      metaNames.push(metaName);
+      if (!hasFileExt) {
+        if (/[A-Z].*/.test(metaName)) metaNames.push(metaName);
+      } else metaNames.push(metaName);
     }
   }
 };
@@ -53,7 +60,7 @@ export const parseMetaAttribute = (Hierarchy) => {
     Hierarchy.hueVariant !== "unhued" &&
     metaAttrib?.value !== "None"
   ) {
-    metaAttrib.value = metaAttrib.value + " " + Hierarchy.hueVariant.colorName;
+    metaAttrib.value = Hierarchy.hueVariant.colorName + " " + metaAttrib.value;
   }
   return metaAttrib;
 };
@@ -100,7 +107,7 @@ export const parseFileName = (fileName) => {
 };
 
 // const test = () => {
-//   // parseMetaAttribute(address);
-//   parseMetaAttribute(orderedFolderAddress3);
+//   parseMetaAddress(address);
+//   // parseMetaAddress(orderedFolderAddress3);
 // };
 // test();

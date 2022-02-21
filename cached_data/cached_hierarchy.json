@@ -2879,46 +2879,46 @@
         {
           "parent": "./Traits/06-OnTheHead/",
           "metaName": "Crown",
-          "rarity": 30,
+          "rarity": 20,
           "switchableChildren": [
             {
-              "parent": "./Traits/06-OnTheHead/Crown_30/",
+              "parent": "./Traits/06-OnTheHead/Crown_20/",
               "metaName": "Generic",
               "rarity": 100,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Generic.png",
-              "address": "./Traits/06-OnTheHead/Crown_30/Generic.png",
+              "address": "./Traits/06-OnTheHead/Crown_20/Generic.png",
               "blendingMode": "normal",
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheHead/Crown_30/",
+              "parent": "./Traits/06-OnTheHead/Crown_20/",
               "metaName": "King",
               "rarity": 30,
               "hueVariant": {},
               "extension": "png",
               "direntName": "King_30.png",
-              "address": "./Traits/06-OnTheHead/Crown_30/King_30.png",
+              "address": "./Traits/06-OnTheHead/Crown_20/King_30.png",
               "blendingMode": "normal",
               "ignoreMeta": false
             },
             {
-              "parent": "./Traits/06-OnTheHead/Crown_30/",
+              "parent": "./Traits/06-OnTheHead/Crown_20/",
               "metaName": "Queen",
               "rarity": 50,
               "hueVariant": {},
               "extension": "png",
               "direntName": "Queen_50.png",
-              "address": "./Traits/06-OnTheHead/Crown_30/Queen_50.png",
+              "address": "./Traits/06-OnTheHead/Crown_20/Queen_50.png",
               "blendingMode": "normal",
               "ignoreMeta": false
             }
           ],
           "orderedChildren": [],
           "hueVariants": "unhued",
-          "direntName": "Crown_30",
-          "address": "./Traits/06-OnTheHead/Crown_30/",
+          "direntName": "Crown_20",
+          "address": "./Traits/06-OnTheHead/Crown_20/",
           "ignoreMeta": false
         },
         {
