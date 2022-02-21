@@ -91,6 +91,7 @@ const parseCanvasBlendingMode = (Hierarchy) => {
 const compositeProbs = async (
   AllImagesTraits = [],
   AllImgAttributes = [],
+  MadeChoices = [],
   size
 ) => {
   for (let index = 0; index < AllImagesTraits.length; index++) {
@@ -136,10 +137,7 @@ const compositeProbs = async (
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
     const buff = await canvas.toBuffer("jpg");
-    await fs.writeFile(
-      `${ImagesDir}${index + ChoicesMade.data.length}.jpg`,
-      buff
-    );
+    await fs.writeFile(`${ImagesDir}${index + MadeChoices.length}.jpg`, buff);
 
     //////////////////////////////////MakeMeta File//////////////////////////////////
     var namesCombined = "";
@@ -150,10 +148,10 @@ const compositeProbs = async (
     var sha = sha1(namesCombined);
     ChoicesMade.data.push(sha);
     await MadeChoicesToFile(ChoicesMade);
-    const meta = newMetaData(index + ChoicesMade.data.length, sha);
+    const meta = newMetaData(index + MadeChoices.length, sha);
     meta.attributes = AllImgAttributes[index];
     await fs.writeFile(
-      `${MetaDatasDir}${index + ChoicesMade.data.length}.json`,
+      `${MetaDatasDir}${index + MadeChoices.length}.json`,
       JSON.stringify(meta, null, 2)
     );
     console.log(meta);
@@ -170,8 +168,13 @@ export const compose = async (
   size
 ) => {
   try {
-    ChoicesMade.data = MadeChoices;
-    const img = await compositeProbs(AllImagesTraits, AllImgAttributes, size);
+    ChoicesMade.data = await JSON.parse(JSON.stringify(MadeChoices));
+    const img = await compositeProbs(
+      AllImagesTraits,
+      AllImgAttributes,
+      MadeChoices,
+      size
+    );
   } catch (err) {
     console.log(err);
   }
