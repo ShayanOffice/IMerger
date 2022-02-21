@@ -84,13 +84,16 @@ const parseCanvasBlendingMode = (Hierarchy) => {
   return BlendingMode;
 };
 
-const compositeProbs = async (AllImagesTraits = [], size) => {
+const compositeProbs = async (
+  AllImagesTraits = [],
+  AllImgAttributes = [],
+  size
+) => {
   for (let index = 0; index < AllImagesTraits.length; index++) {
     const singleImgTraits = AllImagesTraits[index];
     var loadedImgDataArray = [];
     var loadedBlendingMs = [];
-
-    var attributes = []
+    
     // console.log(singleImgTraits[0].metaName);
     for (let index = 0; index < singleImgTraits.length; index++) {
       const Hierarchy = singleImgTraits[index];
@@ -133,7 +136,7 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
 
     //////////////////////////////////MakeMeta File//////////////////////////////////
     const meta = newMetaData(index + 1, sha1(singleImgTraits));
-
+    meta.attributes = AllImgAttributes[index];
     console.log(meta);
 
     //////////////////////////////////SkipMeta File//////////////////////////////////
@@ -141,9 +144,13 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
   }
 };
 
-export const compose = async (AllImagesTraits = [], size) => {
+export const compose = async (
+  AllImagesTraits = [],
+  AllImgAttributes = [],
+  size
+) => {
   try {
-    const img = await compositeProbs(AllImagesTraits, size);
+    const img = await compositeProbs(AllImagesTraits, AllImgAttributes, size);
   } catch (err) {
     console.log(err);
   }

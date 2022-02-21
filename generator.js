@@ -5,7 +5,8 @@ import { compose } from "./bin/composer.js";
 import { Size } from "./bin/config.js";
 
 const main = async () => {
-  const probArr = await choose(100);
-  const img = await compose(probArr, Size);
+  const probsHolderArr = await choose(2);
+  // console.log(probsHolderArr[1]);
+  const img = await compose(probsHolderArr[0],probsHolderArr[1], Size);
 };
 main();
