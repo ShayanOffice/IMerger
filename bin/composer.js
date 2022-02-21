@@ -9,6 +9,7 @@ import {
   ImagesDir,
   MetaDatasDir,
 } from "./config.js";
+import { MadeChoicesToFile } from "./fileHandler.js";
 // import { Canvas } from "skia-canvas/lib";
 var ChoicesMade = { data: [] };
 const metaTemplate = {
@@ -136,16 +137,25 @@ const compositeProbs = async (
     }
     const buff = await canvas.toBuffer("jpg");
     await fs.writeFile(
-      `${imgDestination}${index + MadeChoices.data.length}.jpg`,
+      `${ImagesDir}${index + ChoicesMade.data.length}.jpg`,
       buff
     );
 
     //////////////////////////////////MakeMeta File//////////////////////////////////
-    const meta = newMetaData(
-      index + MadeChoices.data.length,
-      sha1(singleImgTraits)
-    );
+    var namesCombined = "";
+    for (const trait of singleImgTraits) {
+      namesCombined += trait.metaName;
+    }
+    // console.log(namesCombined);
+    var sha = sha1(namesCombined);
+    ChoicesMade.data.push(sha);
+    await MadeChoicesToFile(ChoicesMade);
+    const meta = newMetaData(index + ChoicesMade.data.length, sha);
     meta.attributes = AllImgAttributes[index];
+    await fs.writeFile(
+      `${MetaDatasDir}${index + ChoicesMade.data.length}.json`,
+      JSON.stringify(meta, null, 2)
+    );
     console.log(meta);
 
     //////////////////////////////////SkipMeta File//////////////////////////////////
