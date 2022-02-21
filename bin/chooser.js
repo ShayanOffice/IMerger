@@ -1,10 +1,11 @@
-import { TraitsDir } from "./config.js";
-import { HierarchyFromFile } from "./fileHandler.js";
+import sha1 from "sha1";
+import { HowManyToMake } from "./config.js";
+import { HierarchyFromFile, MadeChoicesFromFile } from "./fileHandler.js";
 import { parseMetaAttribute } from "./stringParser.js";
 import { weightedChoose } from "./weightedChooser.js";
 let AllImgProbabilities = [];
 let AllImgAttributes = [];
-
+let MadeChoices = [];
 const ContainsAttrib = (attributesArr, attribute) => {
   for (const attrib of attributesArr) {
     if (JSON.stringify(attrib) === JSON.stringify(attribute)) return true;
@@ -99,7 +100,17 @@ const makeProbabilities = async (rootHierarchy, Count) => {
     //make a copy so we don't touch the main object referenced.
     const defH = await JSON.parse(JSON.stringify(rootHierarchy));
     await selectTraits(defH, currentImgTraits, currentImgAttributes, emptyHue);
-    if (!AllImgProbabilities.includes(currentImgTraits)) {
+    //+check if already didnt made this choice
+    var namesCombined = "";
+    for (const trait of currentImgTraits) {
+      namesCombined += trait.metaName;
+    }
+    // console.log(namesCombined);
+    var sha = sha1(namesCombined);
+    if (
+      !AllImgProbabilities.includes(currentImgTraits) &&
+      !MadeChoices.includes(sha)
+    ) {
       AllImgProbabilities.push(currentImgTraits);
       AllImgAttributes.push(currentImgAttributes);
       counter++;
@@ -107,11 +118,17 @@ const makeProbabilities = async (rootHierarchy, Count) => {
   }
 };
 
-export const choose = async (Count) => {
+export const choose = async () => {
   try {
+    // read already made probs if any
+    const obj = await MadeChoicesFromFile();
+    MadeChoices = obj.data;
+    console.log(MadeChoices);
     const Hierarchy = await HierarchyFromFile();
-    await makeProbabilities(Hierarchy, Count);
-    return [AllImgProbabilities, AllImgAttributes];
+    await makeProbabilities(Hierarchy, HowManyToMake - MadeChoices.length);
+    const allChoices = { AllImgProbabilities, AllImgAttributes, MadeChoices};
+
+    return allChoices;
   } catch (err) {
     console.log(err);
   }

@@ -2,12 +2,15 @@ import Skia from "skia-canvas";
 import { promises as fs } from "fs";
 import sha1 from "sha1";
 import { ImageFilters } from "./canvas-filters/imagefilters.js";
-import { MetaDescription, MetaName, MetaLinkBase } from "./config.js";
+import {
+  MetaDescription,
+  MetaName,
+  MetaLinkBase,
+  ImagesDir,
+  MetaDatasDir,
+} from "./config.js";
 // import { Canvas } from "skia-canvas/lib";
-
-const imgDestination = "./built/Images/";
-const metaDestination = "./built/MetaDatas/";
-
+var ChoicesMade = { data: [] };
 const metaTemplate = {
   name: "Your Collection #1",
   description: "Friendly OpenSea Creature that enjoys long swims in the ocean.",
@@ -93,7 +96,7 @@ const compositeProbs = async (
     const singleImgTraits = AllImagesTraits[index];
     var loadedImgDataArray = [];
     var loadedBlendingMs = [];
-    
+
     // console.log(singleImgTraits[0].metaName);
     for (let index = 0; index < singleImgTraits.length; index++) {
       const Hierarchy = singleImgTraits[index];
@@ -132,10 +135,16 @@ const compositeProbs = async (
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
     const buff = await canvas.toBuffer("jpg");
-    await fs.writeFile(`${imgDestination}${index + 1}.jpg`, buff);
+    await fs.writeFile(
+      `${imgDestination}${index + MadeChoices.data.length}.jpg`,
+      buff
+    );
 
     //////////////////////////////////MakeMeta File//////////////////////////////////
-    const meta = newMetaData(index + 1, sha1(singleImgTraits));
+    const meta = newMetaData(
+      index + MadeChoices.data.length,
+      sha1(singleImgTraits)
+    );
     meta.attributes = AllImgAttributes[index];
     console.log(meta);
 
@@ -147,30 +156,12 @@ const compositeProbs = async (
 export const compose = async (
   AllImagesTraits = [],
   AllImgAttributes = [],
+  MadeChoices = [],
   size
 ) => {
   try {
+    ChoicesMade.data = MadeChoices;
     const img = await compositeProbs(AllImagesTraits, AllImgAttributes, size);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-const makeOne = async () => {
-  try {
-    let canvas = new Skia.Canvas(4096, 4096);
-    let ctx = canvas.getContext("2d");
-    let base = await Skia.loadImage(baseImgAddress);
-    let over = await Skia.loadImage(overlayImgAddress);
-    // ctx.filter = `hue-rotate(2700rad)`;
-    ctx.drawImage(base, 0, 0, 4096, 4096);
-    var imageData = ctx.getImageData(0, 0, 4096, 4096);
-    var filtered = ImageFilters.HSLAdjustment(imageData, -180, 0, 0);
-    ctx.putImageData(filtered, 0, 0);
-    ctx.globalCompositeOperation = "screen";
-    ctx.drawImage(over, 0, 0, 4096, 4096);
-    const buff = await canvas.toBuffer("image/png");
-    await fs.writeFile("./test.png", buff);
   } catch (err) {
     console.log(err);
   }
