@@ -4,6 +4,8 @@ import {
   TraitsDir,
   CachedHierarchyFileName,
   MadeChoicesFileName,
+  ImagesDir,
+  MetaDatasDir,
 } from "./config.js";
 
 export const readDir = async (TraitsDir) =>
@@ -57,3 +59,27 @@ export const HueVariantsFromFolder = async (fileDir) => {
   const data = await fs.readFile(fileDir);
   return JSON.parse(data);
 };
+
+export const CleanUpUnmatchedBuilds = async () => {
+  const ImgDirents = await readDir(ImagesDir);
+  const MetaDirents = await readDir(MetaDatasDir);
+  for (const imgDirent of ImgDirents) {
+    var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
+    console.log(imgName);
+    for (const metaDirent of MetaDirents) {
+      var hasMatch = false;
+      var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
+      console.log(mDataName);
+      if (imgName === mDataName) {
+        hasMatch = true;
+        break;
+      }
+    }
+    if (!hasMatch) {
+      // console.log(ImagesDir + imgDirent.name);
+      await fs.rm(ImagesDir + imgDirent.name);
+    }
+  }
+};
+
+CleanUpUnmatchedBuilds();
