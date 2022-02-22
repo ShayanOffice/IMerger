@@ -1,16 +1,19 @@
 file handler should parse huevariants in each folder.
-unhue none.png.
+whole fx instead of just hue
+unhue None.png
+move mole upper
 resize
-move mole above
 black and colored facials
 darkerSkin
 darkBg
 bg elements
 eyeglasses
 eyeVariants
+Clothes
+bodyBaseVariants
 compression
 Make room for future species
-make script that creates a json file to fill out each trait's name and specific data
+make script that creates a json file to fill out each traits name and specific data
 
 
 support all photoshop blending modes.
@@ -18,13 +21,18 @@ add fx objects instead of just hue
 0) chooser could also read from available hierarchy.
 1) Make the chooser.js choose randomly.
     calculate all possibilities and if target count is higher stop when reached tha roof.
-
-2) Then make an array and run the compositor.js from chooser.js on it.
-    .log what it's doing.
-3) make the rarity functionality.
-    .parse rarity amount inside each hierarchy.
-    .make chooser follow rarity rules.
-    .Hue and Fx Capabilities
+                                                                                DONE    <=  2) Then make an array and run the compositor.js from
+                                                                                                chooser.js on it.
+                                                                                                .log what its doing.
+                                                                                DONE    <=  3) make the rarity functionality.
+                                                                                                .parse rarity amount inside each hierarchy.
+                                                                                                .make chooser follow rarity rules.
+                                                                                                .Hue and Fx Capabilities
 4) polish it.
+    .Improve Resumability.
+    .Make Use of .lnk Files.
+    .Generate an overrider template that can customize cached hierarchies properties:
+        .Run a script to generate the template containing all hierarchies shadows excluding address, parent,switchable and orderedChilderen from cachedHierarchy.
+        .decide whether to alter the data while choosing or not (inside config.js)
 .work with shortcuts
 5) make the desired metadata.
