@@ -1,4 +1,4 @@
-import { TraitsDir } from "./config.js";
+import { HowManyToMake, TraitsDir } from "./config.js";
 import {
   HierarchyToFile,
   readDir,
@@ -76,12 +76,8 @@ const parseAndAddDirent = (
   directory,
   dirent,
   currentHierarchy,
-  ordered = true,
-  inherittedIgnoreMeta = false
+  ordered = true
 ) => {
-  if (inherittedIgnoreMeta === true) {
-    console.log("Inheritted ignoreMeta: ", currentHierarchy.metaName);
-  }
   if (dirent.isFile()) {
     const parsedNameObj = parseFileName(dirent.name);
     const address = directory + dirent.name;
@@ -94,7 +90,6 @@ const parseAndAddDirent = (
       dirent.name,
       address,
       parsedNameObj.blendingMode,
-      inherittedIgnoreMeta
     );
     if (ordered) currentHierarchy.orderedChildren.push(newImageData);
     else currentHierarchy.switchableChildren.push(newImageData);
@@ -108,8 +103,7 @@ const parseAndAddDirent = (
       parsedNameObj.rarity,
       [],
       dirent.name,
-      address,
-      inherittedIgnoreMeta
+      address
     );
     if (ordered) currentHierarchy.orderedChildren.push(NewHierarchy);
     else currentHierarchy.switchableChildren.push(NewHierarchy);
@@ -120,8 +114,7 @@ const parseAndAddDirent = (
 
 const cacheHierarchy = async (
   directory = TraitsDir,
-  currentHierarchy = Hierarchy,
-  inherittedIgnoreMeta = false
+  currentHierarchy = Hierarchy
 ) => {
   try {
     const Dirents = await readDir(directory);
@@ -165,8 +158,7 @@ const cacheHierarchy = async (
             directory,
             dirent,
             currentHierarchy,
-            false,
-            currentHierarchy.ignoreMeta
+            false
           );
         }
 

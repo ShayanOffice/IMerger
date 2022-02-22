@@ -1,7 +1,14 @@
 file handler should parse huevariants in each folder.
+<<<<<<< HEAD
 whole fx instead of just hue
 unhue None.png
 move mole upper
+=======
+unhue none.png.
+resize
+move mole above
+black and colored facials
+>>>>>>> 0125f659e42bd01792d6dc80be6cfeaef4d50a7a
 darkerSkin
 darkBg
 bg elements
@@ -27,9 +34,13 @@ add fx objects instead of just hue
                                                                                                 .make chooser follow rarity rules.
                                                                                                 .Hue and Fx Capabilities
 4) polish it.
+<<<<<<< HEAD
     .Improve Resumability.
     .Make Use of .lnk Files.
     .Generate an overrider template that can customize cached hierarchies properties:
         .Run a script to generate the template containing all hierarchies shadows excluding address, parent,switchable and orderedChilderen from cachedHierarchy.
         .decide whether to alter the data while choosing or not (inside config.js)
+=======
+.work with shortcuts
+>>>>>>> 0125f659e42bd01792d6dc80be6cfeaef4d50a7a
 5) make the desired metadata.

@@ -1,11 +1,22 @@
-import { TraitsDir } from "./config.js";
-import { HierarchyFromFile } from "./fileHandler.js";
+import sha1 from "sha1";
+import { HowManyToMake } from "./config.js";
+import { HierarchyFromFile, MadeChoicesFromFile } from "./fileHandler.js";
+import { parseMetaAttribute } from "./stringParser.js";
 import { weightedChoose } from "./weightedChooser.js";
-let allProbabilities = [];
+let AllImgProbabilities = [];
+let AllImgAttributes = [];
+let MadeChoices = [];
+const ContainsAttrib = (attributesArr, attribute) => {
+  for (const attrib of attributesArr) {
+    if (JSON.stringify(attrib) === JSON.stringify(attribute)) return true;
+  }
+  return false;
+};
 
 const selectTraits = async (
   Hierarchy,
   CurrentIterTraits,
+  CurrentImgAttributes,
   parentHueVariant,
   isUnhued = false,
   ignoreMeta = false
@@ -32,15 +43,27 @@ const selectTraits = async (
         await selectTraits(
           hir,
           CurrentIterTraits,
+          CurrentImgAttributes,
           currentHueVariant,
           isUnhued,
           Hierarchy.ignoreMeta
         );
     } else if (Hierarchy.switchableChildren.length > 0) {
-      const hir = weightedChoose(Hierarchy.switchableChildren);
+      const childHr = weightedChoose(Hierarchy.switchableChildren);
+      // Check the Chosen Child Type if it's numbered parse and add attrib.
+      if (
+        childHr.orderedChildren &&
+        childHr.orderedChildren.length > 0 &&
+        !Hierarchy.ignoreMeta
+      ) {
+        const attrib = parseMetaAttribute(childHr);
+        if (!ContainsAttrib(CurrentImgAttributes, attrib) && attrib)
+          CurrentImgAttributes.push(attrib);
+      }
       await selectTraits(
-        hir,
+        childHr,
         CurrentIterTraits,
+        CurrentImgAttributes,
         currentHueVariant,
         isUnhued,
         Hierarchy.ignoreMeta
@@ -56,31 +79,56 @@ const selectTraits = async (
       if (parentHueVariant.hue) Hierarchy.hueVariant = parentHueVariant;
     }
     /////////////////////HandleVariant//////////////////////
+    // add attrib.
+    if (!Hierarchy.ignoreMeta) {
+      const attrib = parseMetaAttribute(Hierarchy);
+      if (!ContainsAttrib(CurrentImgAttributes, attrib) && attrib)
+        CurrentImgAttributes.push(attrib);
+    }
     await CurrentIterTraits.push(Hierarchy);
   }
 };
 
 const makeProbabilities = async (rootHierarchy, Count) => {
-  let currentProbability = [];
+  let currentImgTraits = [];
+  let currentImgAttributes = [];
   let counter = 0;
   while (counter < Count) {
-    currentProbability = [];
+    currentImgTraits = [];
+    currentImgAttributes = [];
     let emptyHue = {};
     //make a copy so we don't touch the main object referenced.
     const defH = await JSON.parse(JSON.stringify(rootHierarchy));
-    await selectTraits(defH, currentProbability, emptyHue);
-    if (!allProbabilities.includes(currentProbability)) {
-      allProbabilities.push(currentProbability);
+    await selectTraits(defH, currentImgTraits, currentImgAttributes, emptyHue);
+    //+check if already didnt made this choice
+    var namesCombined = "";
+    for (const trait of currentImgTraits) {
+      namesCombined += trait.metaName;
+    }
+    // console.log(namesCombined);
+    var sha = sha1(namesCombined);
+    if (
+      !AllImgProbabilities.includes(currentImgTraits) &&
+      !MadeChoices.includes(sha)
+    ) {
+      AllImgProbabilities.push(currentImgTraits);
+      AllImgAttributes.push(currentImgAttributes);
       counter++;
     }
   }
 };
 
-export const choose = async (Count) => {
+export const choose = async () => {
   try {
+    // read already made probs if any
+    const obj = await MadeChoicesFromFile();
+    MadeChoices = obj.data;
+    console.log(MadeChoices);
     const Hierarchy = await HierarchyFromFile();
-    await makeProbabilities(Hierarchy, Count);
-    return allProbabilities;
+    await makeProbabilities(Hierarchy, HowManyToMake - MadeChoices.length);
+    const allChoices = { AllImgProbabilities, AllImgAttributes, MadeChoices};
+
+    return allChoices;
   } catch (err) {
     console.log(err);
   }
