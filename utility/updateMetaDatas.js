@@ -28,9 +28,9 @@ const updateMetas = async () => {
 
     if (metaData.description !== MetaDescription)
       metaData.description = MetaDescription;
-    const isCIDAddress = !/.*\/$/.test(MetaLinkBase);
+    const addressEndsWithSlash = /.*\/$/.test(MetaLinkBase);
 
-    const appendedName = isCIDAddress ? '' : mDName + '.' + ImgType;
+    const appendedName = !addressEndsWithSlash ? `/${mDName}.${ImgType}` : `${mDName}.${ImgType}`;
     if (metaData.image !== MetaLinkBase + appendedName)
       metaData.image = MetaLinkBase + appendedName;
 

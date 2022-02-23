@@ -13,13 +13,16 @@ import {
   ImgType,
 } from '../config.js';
 
-export const newMetaData = (index, dna) => {
+export const newMetaData = (number, dna) => {
   var imageAddress = '';
-  const isCIDAddress = !/.*\/$/.test(MetaLinkBase);
-  const appendedName = isCIDAddress ? '' : index + '.' + ImgType;
+  const addressEndsWithSlash = /.*\/$/.test(MetaLinkBase);
+
+  const appendedName = !addressEndsWithSlash
+    ? `/${number}.${ImgType}`
+    : `${number}.${ImgType}`;
   imageAddress = MetaLinkBase + appendedName;
   return {
-    name: `${MetaName} #${index}`,
+    name: `${MetaName} #${number}`,
     description: `${MetaDescription}`,
     image: imageAddress,
     dna,
