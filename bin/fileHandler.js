@@ -9,7 +9,8 @@ import {
   MetaName,
   MetaLinkBase,
   MetaDescription,
-} from './config.js';
+  MetaAuthor,
+} from '../config.js';
 
 export const newMetaData = (index, dna) => ({
   name: `${MetaName} #${index}`,
@@ -18,7 +19,7 @@ export const newMetaData = (index, dna) => ({
   dna,
   date: Date.now(),
   attributes: [],
-  author: 'BOOMHUNK',
+  author: MetaAuthor,
 });
 
 export const newMetaAttribute = (trait_type, value) => ({

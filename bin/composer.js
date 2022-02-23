@@ -1,13 +1,6 @@
 import Skia from 'skia-canvas';
 import sha1 from 'sha1';
 import { ImageFilters } from './canvas-filters/imagefilters.js';
-import {
-  MetaDescription,
-  MetaName,
-  MetaLinkBase,
-  ImagesDir,
-  MetaDatasDir,
-} from './config.js';
 import { Output } from './fileHandler.js';
 // import { Canvas } from "skia-canvas/lib";
 var ChoicesMade = { data: [] };
