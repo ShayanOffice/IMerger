@@ -1,4 +1,5 @@
 import Jimp from "jimp";
+import { ImgType } from "../config";
 const destination = "built/";
 
 const readJimpImg = (address) =>
@@ -74,7 +75,7 @@ const compositeProbs = async (AllImagesTraits = [], size) => {
         .composite(jimpImg, 0, 0, { mode: blendingMode })
         .quality(100);
     }
-    await finalJimp.write(destination + "builtImage_" + Date.now() + ".jpg");
+    await finalJimp.write(destination + "builtImage_" + Date.now() + "." + ImgType);
     // console.log(singleImgTraits);
   }
 };

@@ -196,7 +196,7 @@ export const Output = async (ChoicesMade, sha, attributes, imageBuffer) => {
   const metaData = newMetaData(fileNumber, sha);
   metaData.attributes = attributes;
 
-  const imgFileName = `${ImagesDir}${fileNumber}.jpg`;
+  const imgFileName = `${ImagesDir}${fileNumber}.${ImgType}`;
   const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
 
   await fs.writeFile(imgFileName, imageBuffer);

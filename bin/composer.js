@@ -2,6 +2,7 @@ import Skia from 'skia-canvas';
 import sha1 from 'sha1';
 import { ImageFilters } from './canvas-filters/imagefilters.js';
 import { Output } from './fileHandler.js';
+import { ImgType } from '../config.js';
 // import { Canvas } from "skia-canvas/lib";
 var ChoicesMade = { data: [] };
 const metaTemplate = {
@@ -124,7 +125,7 @@ const compositeProbs = async (
     }
     // console.log(namesCombined);
     var sha = sha1(namesCombined);
-    const buff = await canvas.toBuffer('jpg');
+    const buff = await canvas.toBuffer(ImgType);
 
     await Output(ChoicesMade, sha, AllImgAttributes[index], buff);
   }
