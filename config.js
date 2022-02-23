@@ -6,7 +6,7 @@ export const CachedHierarchyFileName = 'cached_hierarchy.json';
 export const MadeChoicesFileName = 'made_choices.json';
 export const Size = 4096;
 export const HowManyToMake = 15;
-
+export const ImgType = 'jpg';
 export const CachBeforeStart = true;
 export const ResyncBeforeStart = true;
 

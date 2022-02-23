@@ -1,4 +1,4 @@
-import { HowManyToMake, TraitsDir } from "./config.js";
+import { HowManyToMake, TraitsDir } from "../config.js";
 import {
   HierarchyToFile,
   readDir,

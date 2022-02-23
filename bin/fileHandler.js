@@ -10,17 +10,24 @@ import {
   MetaLinkBase,
   MetaDescription,
   MetaAuthor,
+  ImgType,
 } from '../config.js';
 
-export const newMetaData = (index, dna) => ({
-  name: `${MetaName} #${index}`,
-  description: `${MetaDescription}`,
-  image: `${MetaLinkBase}${index}.jpg`,
-  dna,
-  date: Date.now(),
-  attributes: [],
-  author: MetaAuthor,
-});
+export const newMetaData = (index, dna) => {
+  var imageAddress = '';
+  const isCIDAddress = !/.*\/$/.test(MetaLinkBase);
+  const appendedName = isCIDAddress ? '' : index + '.' + ImgType;
+  imageAddress = MetaLinkBase + appendedName;
+  return {
+    name: `${MetaName} #${index}`,
+    description: `${MetaDescription}`,
+    image: imageAddress,
+    dna,
+    date: Date.now(),
+    attributes: [],
+    author: MetaAuthor,
+  };
+};
 
 export const newMetaAttribute = (trait_type, value) => ({
   trait_type,
@@ -174,7 +181,6 @@ export const FindNextEmptyBuildIndex = async () => {
   });
   for (let index = 0; index < metaDirents.length; index++) {
     const mDirentName = metaDirents[index].name.replace(/(.+)(\..+)/, `$1`);
-    console.log(mDirentName);
     if (index != parseInt(mDirentName)) {
       return index;
     }
@@ -191,7 +197,9 @@ export const Output = async (ChoicesMade, sha, attributes, imageBuffer) => {
   const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
 
   await fs.writeFile(imgFileName, imageBuffer);
+  console.log('Saved Image File: ', imgFileName);
   await fs.writeFile(metaFileName, JSON.stringify(metaData, null, 2));
+  console.log('Saved Meta File: ', metaFileName);
   console.log(metaData);
   ChoicesMade.data.splice(fileNumber, 0, sha);
   await MadeChoicesToFile(ChoicesMade);

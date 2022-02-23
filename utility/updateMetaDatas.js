@@ -7,6 +7,7 @@ import {
   ImagesDir,
   MetaDatasDir,
   MetaAuthor,
+  ImgType,
 } from '../config.js';
 
 const updateMetas = async () => {
@@ -18,18 +19,20 @@ const updateMetas = async () => {
       await fs.readFile(MetaDatasDir + metaDirent.name)
     );
 
-    const imageExtension = metaData.image.replace(
-      /(.*)\/(.*\/)*(.+)(\..+)/,
-      '$4'
-    );
+    // const imageExtension = metaData.image.replace(
+    //   /(.*)\/(.*\/)*(.+)(\..+)/,
+    //   '$4'
+    // );
     if (metaData.name !== MetaName + ' #' + mDName)
       metaData.name = MetaName + ' #' + mDName;
 
     if (metaData.description !== MetaDescription)
       metaData.description = MetaDescription;
+    const isCIDAddress = !/.*\/$/.test(MetaLinkBase);
 
-    if (metaData.image !== MetaLinkBase + mDName + imageExtension)
-      metaData.image = MetaLinkBase + mDName + imageExtension;
+    const appendedName = isCIDAddress ? '' : mDName + '.' + ImgType;
+    if (metaData.image !== MetaLinkBase + appendedName)
+      metaData.image = MetaLinkBase + appendedName;
 
     if (metaData.author !== MetaAuthor) metaData.author = MetaAuthor;
 

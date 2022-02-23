@@ -1,7 +1,6 @@
 //  https://github.com/ashbeech/moralis-mutants-nft-engine
 //  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
 import { promises as fs } from 'fs';
-import { dirname } from 'path';
 import { choose } from './bin/chooser.js';
 import { compose } from './bin/composer.js';
 import {
@@ -11,7 +10,7 @@ import {
   ImagesDir,
   MetaDatasDir,
   CacheDir,
-} from './bin/config.js';
+} from './config.js';
 import { ReSyncBuilt } from './bin/fileHandler.js';
 import { Cache } from './bin/explorer.js';
 

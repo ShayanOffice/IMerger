@@ -1,5 +1,5 @@
 import sha1 from "sha1";
-import { HowManyToMake } from "./config.js";
+import { HowManyToMake } from "../config.js";
 import { HierarchyFromFile, MadeChoicesFromFile } from "./fileHandler.js";
 import { parseMetaAttribute } from "./stringParser.js";
 import { weightedChoose } from "./weightedChooser.js";
