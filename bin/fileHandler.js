@@ -61,25 +61,87 @@ export const HueVariantsFromFolder = async (fileDir) => {
 };
 
 export const CleanUpUnmatchedBuilds = async () => {
-  const ImgDirents = await readDir(ImagesDir);
-  const MetaDirents = await readDir(MetaDatasDir);
-  for (const imgDirent of ImgDirents) {
+  const imgDirents = await readDir(ImagesDir);
+  const metaDirents = await readDir(MetaDatasDir);
+  for (const imgDirent of imgDirents) {
     var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
-    console.log(imgName);
-    for (const metaDirent of MetaDirents) {
+    for (const metaDirent of metaDirents) {
       var hasMatch = false;
       var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
-      console.log(mDataName);
       if (imgName === mDataName) {
         hasMatch = true;
         break;
       }
     }
     if (!hasMatch) {
-      // console.log(ImagesDir + imgDirent.name);
       await fs.rm(ImagesDir + imgDirent.name);
+    }
+  }
+
+  for (const metaDirent of metaDirents) {
+    var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
+    for (const imgDirent of imgDirents) {
+      var hasMatch = false;
+      var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
+      if (imgName === mDataName) {
+        hasMatch = true;
+        break;
+      }
+    }
+    if (!hasMatch) {
+      await fs.rm(MetaDatasDir + metaDirent.name);
     }
   }
 };
 
-CleanUpUnmatchedBuilds();
+export const CleanUpUnmatchedCachedSha1s = async () => {
+  const metaDirents = await readDir(MetaDatasDir);
+  const madeChoices = await MadeChoicesFromFile();
+
+  for (let index = madeChoices.data.length - 1; index >= 0; index--) {
+    const cachedSha = madeChoices.data[index];
+    for (const metaDirent of metaDirents) {
+      const metaFile = await JSON.parse(
+        await fs.readFile(MetaDatasDir + metaDirent.name)
+      );
+      const fileSha = metaFile.dna;
+      var hasMatch = false;
+      if (cachedSha === fileSha) {
+        hasMatch = true;
+        break;
+      }
+    }
+    if (!hasMatch) madeChoices.data.splice(index, 1);
+  }
+  await MadeChoicesToFile(madeChoices);
+
+  for (const metaDirent of metaDirents) {
+    const metaFile = await JSON.parse(
+      await fs.readFile(MetaDatasDir + metaDirent.name)
+    );
+    const fileSha = metaFile.dna;
+    for (const cachedSha of madeChoices.data) {
+      var hasMatch = false;
+      if (cachedSha === fileSha) {
+        hasMatch = true;
+        break;
+      }
+    }
+    if (!hasMatch) {
+      await fs.rm(MetaDatasDir + metaDirent.name);
+      var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
+      const imgDirents = await readDir(ImagesDir);
+      for (const imgDirent of imgDirents) {
+        var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
+        if (imgName === mDataName) {
+          await fs.rm(ImagesDir + imgDirent.name);
+        }
+      }
+    }
+  }
+};
+
+export const ReSyncBuilt = async () => {
+  await CleanUpUnmatchedBuilds();
+  await CleanUpUnmatchedCachedSha1s();
+};
