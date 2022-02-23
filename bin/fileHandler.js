@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import { promises as fs } from 'fs';
 import {
   CacheDir,
   TraitsDir,
@@ -6,12 +6,13 @@ import {
   MadeChoicesFileName,
   ImagesDir,
   MetaDatasDir,
-} from "./config.js";
+} from './config.js';
 
 export const readDir = async (TraitsDir) =>
   await fs.readdir(TraitsDir, { withFileTypes: true });
 
 export const HierarchyToFile = async (cachedHierarchy) => {
+
   await fs.writeFile(
     CacheDir + CachedHierarchyFileName,
     JSON.stringify(cachedHierarchy, null, 2),

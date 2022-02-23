@@ -172,7 +172,7 @@ const cacheHierarchy = async (
   }
 };
 
-const cache = async () => {
+export const Cache = async () => {
   try {
     await cacheHierarchy();
     await HierarchyToFile(Hierarchy);
@@ -182,4 +182,3 @@ const cache = async () => {
   }
 };
 
-cache();
