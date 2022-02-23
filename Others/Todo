@@ -16,6 +16,7 @@ Make room for future species
 make script that creates a json file to fill out each traits name and specific data
 
 
+ordered folder names have fixed digit count so they get sorted correctly when reading dirents.
 support all photoshop blending modes.
 add fx objects instead of just hue
 0) chooser could also read from available hierarchy.

@@ -1,5 +1,4 @@
 import Skia from 'skia-canvas';
-import { promises as fs } from 'fs';
 import sha1 from 'sha1';
 import { ImageFilters } from './canvas-filters/imagefilters.js';
 import {
@@ -9,7 +8,7 @@ import {
   ImagesDir,
   MetaDatasDir,
 } from './config.js';
-import { FindNextEmptyBuildIndex, MadeChoicesToFile } from './fileHandler.js';
+import { Output } from './fileHandler.js';
 // import { Canvas } from "skia-canvas/lib";
 var ChoicesMade = { data: [] };
 const metaTemplate = {
@@ -23,23 +22,12 @@ const metaTemplate = {
   external_url: 'https://openseacreatures.io/3',
   youtube_url: 'https://openseacreatures.io/3',
 };
-const newMetaData = (index, dna) => ({
-  name: `${MetaName} #${index}`,
-  description: `${MetaDescription}`,
-  image: `${MetaLinkBase}${index}.jpg`,
-  dna,
-  date: Date.now(),
-  attributes: [],
-  author: 'BOOMHUNK',
-});
+
 const attribTemplate = {
   trait_type: '',
   value: '',
 };
-const newMetaAttribute = (trait_type, value) => ({
-  trait_type,
-  value,
-});
+
 
 const readImg = async (address) => {
   try {
@@ -137,30 +125,15 @@ const compositeProbs = async (
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
     //* //////////////////////////// Find Empty index //////////////////////////// *//
-    const fileNumber = await FindNextEmptyBuildIndex();
-    const buff = await canvas.toBuffer('jpg');
-    await fs.writeFile(`${ImagesDir}${fileNumber}.jpg`, buff);
-
-    //////////////////////////////////MakeMeta File//////////////////////////////////
     var namesCombined = '';
     for (const trait of singleImgTraits) {
       namesCombined += trait.metaName;
     }
     // console.log(namesCombined);
     var sha = sha1(namesCombined);
+    const buff = await canvas.toBuffer('jpg');
 
-    ChoicesMade.data.splice(fileNumber, 0, sha);
-    await MadeChoicesToFile(ChoicesMade);
-    const meta = newMetaData(fileNumber, sha);
-    meta.attributes = AllImgAttributes[index];
-    await fs.writeFile(
-      `${MetaDatasDir}${fileNumber}.json`,
-      JSON.stringify(meta, null, 2)
-    );
-    console.log(meta);
-
-    //////////////////////////////////SkipMeta File//////////////////////////////////
-    //////////////////////////////////Store BigMeta//////////////////////////////////
+    await Output(ChoicesMade, sha, AllImgAttributes[index], buff);
   }
 };
 

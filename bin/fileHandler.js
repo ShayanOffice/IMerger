@@ -6,7 +6,25 @@ import {
   MadeChoicesFileName,
   ImagesDir,
   MetaDatasDir,
+  MetaName,
+  MetaLinkBase,
+  MetaDescription,
 } from './config.js';
+
+export const newMetaData = (index, dna) => ({
+  name: `${MetaName} #${index}`,
+  description: `${MetaDescription}`,
+  image: `${MetaLinkBase}${index}.jpg`,
+  dna,
+  date: Date.now(),
+  attributes: [],
+  author: 'BOOMHUNK',
+});
+
+export const newMetaAttribute = (trait_type, value) => ({
+  trait_type,
+  value,
+});
 
 export const readDir = async (TraitsDir) =>
   await fs.readdir(TraitsDir, { withFileTypes: true });
@@ -148,12 +166,32 @@ export const ReSyncBuilt = async () => {
 
 export const FindNextEmptyBuildIndex = async () => {
   const metaDirents = await readDir(MetaDatasDir);
+  metaDirents.sort((a, b) => {
+    const aNum = parseInt(a.name.replace(/(.+)(\..+)/, `$1`));
+    const bNum = parseInt(b.name.replace(/(.+)(\..+)/, `$1`));
+    return aNum - bNum;
+  });
   for (let index = 0; index < metaDirents.length; index++) {
     const mDirentName = metaDirents[index].name.replace(/(.+)(\..+)/, `$1`);
-    if (index !== parseInt(mDirentName)) {
+    console.log(mDirentName);
+    if (index != parseInt(mDirentName)) {
       return index;
     }
   }
-  console.log(metaDirents.length);
   return metaDirents.length;
+};
+
+export const Output = async (ChoicesMade, sha, attributes, imageBuffer) => {
+  const fileNumber = await FindNextEmptyBuildIndex();
+  const metaData = newMetaData(fileNumber, sha);
+  metaData.attributes = attributes;
+
+  const imgFileName = `${ImagesDir}${fileNumber}.jpg`;
+  const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
+
+  await fs.writeFile(imgFileName, imageBuffer);
+  await fs.writeFile(metaFileName, JSON.stringify(metaData, null, 2));
+  console.log(metaData);
+  ChoicesMade.data.splice(fileNumber, 0, sha);
+  await MadeChoicesToFile(ChoicesMade);
 };
