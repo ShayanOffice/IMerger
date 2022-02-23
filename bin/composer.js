@@ -1,27 +1,27 @@
-import Skia from "skia-canvas";
-import { promises as fs } from "fs";
-import sha1 from "sha1";
-import { ImageFilters } from "./canvas-filters/imagefilters.js";
+import Skia from 'skia-canvas';
+import { promises as fs } from 'fs';
+import sha1 from 'sha1';
+import { ImageFilters } from './canvas-filters/imagefilters.js';
 import {
   MetaDescription,
   MetaName,
   MetaLinkBase,
   ImagesDir,
   MetaDatasDir,
-} from "./config.js";
-import { MadeChoicesToFile } from "./fileHandler.js";
+} from './config.js';
+import { FindNextEmptyBuildIndex, MadeChoicesToFile } from './fileHandler.js';
 // import { Canvas } from "skia-canvas/lib";
 var ChoicesMade = { data: [] };
 const metaTemplate = {
-  name: "Your Collection #1",
-  description: "Friendly OpenSea Creature that enjoys long swims in the ocean.",
-  image: "ipfs://NewUriToReplace/1.png",
-  dna: "e84638f79025d035e7495d471bd5c87c748c7296",
+  name: 'Your Collection #1',
+  description: 'Friendly OpenSea Creature that enjoys long swims in the ocean.',
+  image: 'ipfs://NewUriToReplace/1.png',
+  dna: 'e84638f79025d035e7495d471bd5c87c748c7296',
   date: 1645178495607,
   attributes: [],
   compiler: "BOOMHUNK's Generative Art Algo",
-  external_url: "https://openseacreatures.io/3",
-  youtube_url: "https://openseacreatures.io/3",
+  external_url: 'https://openseacreatures.io/3',
+  youtube_url: 'https://openseacreatures.io/3',
 };
 const newMetaData = (index, dna) => ({
   name: `${MetaName} #${index}`,
@@ -30,11 +30,11 @@ const newMetaData = (index, dna) => ({
   dna,
   date: Date.now(),
   attributes: [],
-  author: "BOOMHUNK",
+  author: 'BOOMHUNK',
 });
 const attribTemplate = {
-  trait_type: "",
-  value: "",
+  trait_type: '',
+  value: '',
 };
 const newMetaAttribute = (trait_type, value) => ({
   trait_type,
@@ -54,35 +54,35 @@ const parseCanvasBlendingMode = (Hierarchy) => {
   var blendingModeName = Hierarchy.blendingMode.toLowerCase();
   var BlendingMode;
   switch (blendingModeName) {
-    case "normal":
-      BlendingMode = "source-over";
+    case 'normal':
+      BlendingMode = 'source-over';
       break;
-    case "multiply":
-      BlendingMode = "multiply";
+    case 'multiply':
+      BlendingMode = 'multiply';
       break;
-    case "screen":
-      BlendingMode = "screen";
+    case 'screen':
+      BlendingMode = 'screen';
       break;
-    case "overlay":
-      BlendingMode = "overlay";
+    case 'overlay':
+      BlendingMode = 'overlay';
       break;
-    case "darken":
-      BlendingMode = "darken";
+    case 'darken':
+      BlendingMode = 'darken';
       break;
-    case "lighten":
-      BlendingMode = "lighten";
+    case 'lighten':
+      BlendingMode = 'lighten';
       break;
-    case "hardlight":
-      BlendingMode = "hard-light";
+    case 'hardlight':
+      BlendingMode = 'hard-light';
       break;
-    case "difference":
-      BlendingMode = "difference";
+    case 'difference':
+      BlendingMode = 'difference';
       break;
-    case "exclusion":
-      BlendingMode = "exclusion";
+    case 'exclusion':
+      BlendingMode = 'exclusion';
       break;
     default:
-      BlendingMode = "source-over";
+      BlendingMode = 'source-over';
       break;
   }
   return BlendingMode;
@@ -104,7 +104,7 @@ const compositeProbs = async (
       const Hierarchy = singleImgTraits[index];
       const Img = await readImg(Hierarchy.address);
       let canvas = new Skia.Canvas(size, size);
-      let ctx = canvas.getContext("2d");
+      let ctx = canvas.getContext('2d');
       ctx.drawImage(Img, 0, 0, size, size);
       var imageData = ctx.getImageData(0, 0, size, size);
       if (Hierarchy.hueVariant.colorName) {
@@ -119,7 +119,7 @@ const compositeProbs = async (
           0
         );
         ctx.putImageData(imageData, 0, 0);
-        console.log("Done");
+        console.log('Done');
       }
       loadedImgDataArray.push(canvas);
       loadedBlendingMs.push(parseCanvasBlendingMode(Hierarchy));
@@ -127,7 +127,7 @@ const compositeProbs = async (
     }
 
     let canvas = new Skia.Canvas(size, size);
-    let ctx = canvas.getContext("2d");
+    let ctx = canvas.getContext('2d');
 
     for (let index = 0; index < loadedImgDataArray.length; index++) {
       const loadedCanv = loadedImgDataArray[index];
@@ -136,22 +136,25 @@ const compositeProbs = async (
       ctx.globalCompositeOperation = blendingMode;
       ctx.drawCanvas(loadedCanv, 0, 0);
     }
-    const buff = await canvas.toBuffer("jpg");
-    await fs.writeFile(`${ImagesDir}${index + MadeChoices.length}.jpg`, buff);
+    //* //////////////////////////// Find Empty index //////////////////////////// *//
+    const fileNumber = await FindNextEmptyBuildIndex();
+    const buff = await canvas.toBuffer('jpg');
+    await fs.writeFile(`${ImagesDir}${fileNumber}.jpg`, buff);
 
     //////////////////////////////////MakeMeta File//////////////////////////////////
-    var namesCombined = "";
+    var namesCombined = '';
     for (const trait of singleImgTraits) {
       namesCombined += trait.metaName;
     }
     // console.log(namesCombined);
     var sha = sha1(namesCombined);
-    ChoicesMade.data.push(sha);
+
+    ChoicesMade.data.splice(fileNumber, 0, sha);
     await MadeChoicesToFile(ChoicesMade);
-    const meta = newMetaData(index + MadeChoices.length, sha);
+    const meta = newMetaData(fileNumber, sha);
     meta.attributes = AllImgAttributes[index];
     await fs.writeFile(
-      `${MetaDatasDir}${index + MadeChoices.length}.json`,
+      `${MetaDatasDir}${fileNumber}.json`,
       JSON.stringify(meta, null, 2)
     );
     console.log(meta);

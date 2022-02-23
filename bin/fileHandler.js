@@ -12,7 +12,6 @@ export const readDir = async (TraitsDir) =>
   await fs.readdir(TraitsDir, { withFileTypes: true });
 
 export const HierarchyToFile = async (cachedHierarchy) => {
-
   await fs.writeFile(
     CacheDir + CachedHierarchyFileName,
     JSON.stringify(cachedHierarchy, null, 2),
@@ -61,7 +60,7 @@ export const HueVariantsFromFolder = async (fileDir) => {
   return JSON.parse(data);
 };
 
-export const CleanUpUnmatchedBuilds = async () => {
+const CleanUpUnmatchedBuilds = async () => {
   const imgDirents = await readDir(ImagesDir);
   const metaDirents = await readDir(MetaDatasDir);
   for (const imgDirent of imgDirents) {
@@ -95,7 +94,7 @@ export const CleanUpUnmatchedBuilds = async () => {
   }
 };
 
-export const CleanUpUnmatchedCachedSha1s = async () => {
+const CleanUpUnmatchedCachedSha1s = async () => {
   const metaDirents = await readDir(MetaDatasDir);
   const madeChoices = await MadeChoicesFromFile();
 
@@ -145,4 +144,16 @@ export const CleanUpUnmatchedCachedSha1s = async () => {
 export const ReSyncBuilt = async () => {
   await CleanUpUnmatchedBuilds();
   await CleanUpUnmatchedCachedSha1s();
+};
+
+export const FindNextEmptyBuildIndex = async () => {
+  const metaDirents = await readDir(MetaDatasDir);
+  for (let index = 0; index < metaDirents.length; index++) {
+    const mDirentName = metaDirents[index].name.replace(/(.+)(\..+)/, `$1`);
+    if (index !== parseInt(mDirentName)) {
+      return index;
+    }
+  }
+  console.log(metaDirents.length);
+  return metaDirents.length;
 };
