@@ -52,8 +52,8 @@ const selectTraits = async (
       const childHr = weightedChoose(Hierarchy.switchableChildren);
       // Check the Chosen Child Type if it's numbered parse and add attrib.
       if (
-        childHr.orderedChildren &&
-        childHr.orderedChildren.length > 0 &&
+        childHr?.orderedChildren &&
+        childHr?.orderedChildren.length > 0 &&
         !Hierarchy.ignoreMeta
       ) {
         const attrib = parseMetaAttribute(childHr);
@@ -103,7 +103,7 @@ const makeProbabilities = async (rootHierarchy, Count) => {
     //+check if already didnt made this choice
     var namesCombined = "";
     for (const trait of currentImgTraits) {
-      namesCombined += trait.metaName;
+      if (!trait.ignoreMeta) namesCombined += trait.metaName;
     }
     // console.log(namesCombined);
     var sha = sha1(namesCombined);
@@ -126,7 +126,7 @@ export const choose = async () => {
     console.log(MadeChoices);
     const Hierarchy = await HierarchyFromFile();
     await makeProbabilities(Hierarchy, HowManyToMake - MadeChoices.length);
-    const allChoices = { AllImgProbabilities, AllImgAttributes, MadeChoices};
+    const allChoices = { AllImgProbabilities, AllImgAttributes, MadeChoices };
 
     return allChoices;
   } catch (err) {

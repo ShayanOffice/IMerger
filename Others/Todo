@@ -1,40 +1,56 @@
-file handler should parse huevariants in each folder.
-whole fx instead of just hue
-unhue None.png
-move mole upper
-resize
 Fix Too Much Teeth Variations
+move mole upper
+CleanUp Hair artifacts
 black and colored facials
+Make room for future species
+Think About a Better Overall Hierarchy(Make it more Complex and Beautiful).
 darkerSkin
+clothes and BodyVariants
+otherSkinPatterns
+eyeVariants
+eyeglasses
 darkBg
 bg elements
-eyeglasses
-eyeVariants
-Clothes
-bodyBaseVariants
-compression
-Make room for future species
-make script that creates a json file to fill out each traits name and specific data
 
 
-ordered folder names have fixed digit count so they get sorted correctly when reading dirents.
-support all photoshop blending modes.
-add fx objects instead of just hue
+
+Done:------------------------------------------------------------------------------------------------------------------------------------------------------
+
 0) chooser could also read from available hierarchy.
 1) Make the chooser.js choose randomly.
     calculate all possibilities and if target count is higher stop when reached tha roof.
-                                                                                DONE    <=  2) Then make an array and run the compositor.js from
-                                                                                                chooser.js on it.
-                                                                                                .log what its doing.
-                                                                                DONE    <=  3) make the rarity functionality.
-                                                                                                .parse rarity amount inside each hierarchy.
-                                                                                                .make chooser follow rarity rules.
-                                                                                                .Hue and Fx Capabilities
+2) Then make an array and run the compositor.js from
+chooser.js on it.
+    .log what its doing.
+3) make the rarity functionality.
+    .parse rarity amount inside each hierarchy.
+    .make chooser follow rarity rules.
+    .Hue Capability
+
 4) polish it.
     .Improve Resumability.
+    .resize ability.
+5) make the desired metadata.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+4) polish it.
     .Make Use of .lnk Files.
+    .unhue None.png
+    .ordered folder names have fixed digit count so they get sorted correctly when reading dirents.
+    .support all photoshop blending modes.
+    .add fx objects instead of just hue
     .Generate an overrider template that can customize cached hierarchies properties:
         .Run a script to generate the template containing all hierarchies shadows excluding address, parent,switchable and orderedChilderen from cachedHierarchy.
         .decide whether to alter the data while choosing or not (inside config.js)
-.work with shortcuts
-5) make the desired metadata.
+    .file handler should parse huevariants in each folder.
+    .compression
+
+
+
+6) Wrute a PhotoShop Script to Export The Hierarchy as Desired.

@@ -1,8 +1,8 @@
 //  https://github.com/ashbeech/moralis-mutants-nft-engine
 //  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
-import { promises as fs } from 'fs';
-import { choose } from './bin/chooser.js';
-import { compose } from './bin/composer.js';
+import { promises as fs } from "fs";
+import { choose } from "./bin/chooser.js";
+import { compose } from "./bin/composer.js";
 import {
   Size,
   ResyncBeforeStart,
@@ -10,9 +10,9 @@ import {
   ImagesDir,
   MetaDatasDir,
   CacheDir,
-} from './config.js';
-import { ReSyncBuilt } from './bin/fileHandler.js';
-import { Cache } from './bin/explorer.js';
+} from "./config.js";
+import { ReSyncBuilt } from "./bin/fileHandler.js";
+import { Cache } from "./bin/explorer.js";
 
 const main = async () => {
   await fs.mkdir(CacheDir, { recursive: true }, function (err) {
@@ -29,12 +29,7 @@ const main = async () => {
   if (CachBeforeStart) await Cache();
 
   const { AllImgProbabilities, AllImgAttributes, MadeChoices } = await choose();
-  // console.log(probsHolderArr[1]);
-  const img = await compose(
-    AllImgProbabilities,
-    AllImgAttributes,
-    MadeChoices,
-    Size
-  );
+
+  await compose(AllImgProbabilities, AllImgAttributes, MadeChoices, Size);
 };
 main();
