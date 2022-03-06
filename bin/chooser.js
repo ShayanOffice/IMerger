@@ -6,6 +6,7 @@ import { weightedChoose } from "./weightedChooser.js";
 let AllImgProbabilities = [];
 let AllImgAttributes = [];
 let MadeChoices = [];
+let UnwrittenChoiceHashes = [];
 const ContainsAttrib = (attributesArr, attribute) => {
   for (const attrib of attributesArr) {
     if (JSON.stringify(attrib) === JSON.stringify(attribute)) return true;
@@ -24,21 +25,21 @@ const selectTraits = async (
   let counter = 0;
   var currentHueVariant;
   if (ignoreMeta) Hierarchy.ignoreMeta = true;
-  if (!Hierarchy.extension) {
+  if (!Hierarchy?.extension) {
     //it's a folder entry
     /////////////////////HandleVariant//////////////////////
     if (
-      Array.isArray(Hierarchy.hueVariants) &&
+      Array.isArray(Hierarchy?.hueVariants) &&
       Hierarchy.hueVariants.length > 0
     )
       currentHueVariant = weightedChoose(Hierarchy.hueVariants);
     else {
-      if (Hierarchy.hueVariants === "unhued") isUnhued = true;
+      if (Hierarchy?.hueVariants === "unhued") isUnhued = true;
       currentHueVariant = parentHueVariant;
     }
     /////////////////////HandleVariant//////////////////////
 
-    if (Hierarchy.orderedChildren.length > 0) {
+    if (Hierarchy?.orderedChildren.length > 0) {
       for (const hir of Hierarchy.orderedChildren)
         await selectTraits(
           hir,
@@ -48,7 +49,7 @@ const selectTraits = async (
           isUnhued,
           Hierarchy.ignoreMeta
         );
-    } else if (Hierarchy.switchableChildren.length > 0) {
+    } else if (Hierarchy?.switchableChildren.length > 0) {
       const childHr = weightedChoose(Hierarchy.switchableChildren);
       // Check the Chosen Child Type if it's numbered parse and add attrib.
       if (
@@ -107,10 +108,8 @@ const makeProbabilities = async (rootHierarchy, Count) => {
     }
     // console.log(namesCombined);
     var sha = sha1(namesCombined);
-    if (
-      !AllImgProbabilities.includes(currentImgTraits) &&
-      !MadeChoices.includes(sha)
-    ) {
+    if (!UnwrittenChoiceHashes.includes(sha) && !MadeChoices.includes(sha)) {
+      UnwrittenChoiceHashes.push(sha);
       AllImgProbabilities.push(currentImgTraits);
       AllImgAttributes.push(currentImgAttributes);
       counter++;
