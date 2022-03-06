@@ -1,16 +1,18 @@
-Fix Too Much Teeth Variations
-move mole upper
-CleanUp Hair artifacts
-black and colored facials
-Make room for future species
-Think About a Better Overall Hierarchy(Make it more Complex and Beautiful).
-darkerSkin
-clothes and BodyVariants
+Think About a Better Overall Hierarchy(Make it more Complex and Beautiful) & Make room for future species.
+Set Better Rarity Percentages
+More Mouthes
+darkSkin
+WhiteSkin
+inner Elements
+clothes BodyVariants
 otherSkinPatterns
 eyeVariants
 eyeglasses
 darkBg
 bg elements
+check for maximum choices and cap all possibilities.
+
+
 
 
 
@@ -30,6 +32,11 @@ chooser.js on it.
 4) polish it.
     .Improve Resumability.
     .resize ability.
+    .Fix Too Much Teeth Variations
+    .move mole upper
+    .CleanUp Hair artifacts
+    .Tummy Colors
+    .Black and colored facials
 5) make the desired metadata.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -41,6 +48,7 @@ chooser.js on it.
 
 4) polish it.
     .Make Use of .lnk Files.
+    check for maximum choices and cap all possibilities.
     .unhue None.png
     .ordered folder names have fixed digit count so they get sorted correctly when reading dirents.
     .support all photoshop blending modes.
