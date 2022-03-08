@@ -84,7 +84,7 @@ export const MadeChoicesFromFile = async () => {
   return ChoicesMade;
 };
 
-export const HueVariantsFromFolder = async (fileDir) => {
+export const ReadObjFromFile = async (fileDir) => {
   const data = await fs.readFile(fileDir);
   return JSON.parse(data);
 };

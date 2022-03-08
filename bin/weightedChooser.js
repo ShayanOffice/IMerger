@@ -1,9 +1,9 @@
 var items = [
-  { name: "thirty%", rarity: 30 },
-  { name: "twenty%", rarity: 20 },
-  { name: "ten%", rarity: 10 },
-  { name: "none", rarity: 100 },
-  { name: "none2", rarity: 100 },
+  { name: 'thirty%', rarity: 30 },
+  { name: 'twenty%', rarity: 20 },
+  { name: 'ten%', rarity: 10 },
+  { name: 'none', rarity: 100 },
+  { name: 'none2', rarity: 100 },
 ];
 
 const makeACopyOfObj = (obj) => {
@@ -35,15 +35,32 @@ const randomChoice = (array) => {
   return array[rndI];
 };
 
-export const weightedChoose = (items) => {
+export const weightedChoose = (hierarchies, blackList = undefined) => {
+  const listToWorkWith = [];
+  if (blackList && blackList.length > 0) {
+    for (const hr of hierarchies) {
+      if (!blackList.includes(hr.metaName)) listToWorkWith.push(hr);
+    }
+  } else {
+    listToWorkWith = hierarchies;
+  }
   // choose a random int less than 100 ./ "fact"
   const fact = Math.floor(Math.random() * 100);
   // make a smaller item's list to choose from./  "possibleChoices"
   const possibleChoices = [];
   // compare each item's rarity with "fact" and if it's higher than the "fact", => push.
-  for (const item of items) {
+  const highestRarity = 0;
+  for (const item of listToWorkWith) {
+    if (item.rarity > highestRarity) highestRarity = item.rarity;
     if (!item.rarity) item.rarity = 100;
     if (item.rarity >= fact) possibleChoices.push(item);
+  }
+
+  // if by accident a folder doesnt contain any item with derault(100) rarity possibility, use the items with the highest rate:
+  if (highestRarity < 100) {
+    for (const item of listToWorkWith) {
+      if (item.rarity === highestRarity) possibleChoices.push(item);
+    }
   }
   // make a random choice from "possibleChoices".
   return randomChoice(possibleChoices);

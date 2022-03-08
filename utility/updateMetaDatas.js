@@ -19,10 +19,6 @@ const updateMetas = async () => {
       await fs.readFile(MetaDatasDir + metaDirent.name)
     );
 
-    // const imageExtension = metaData.image.replace(
-    //   /(.*)\/(.*\/)*(.+)(\..+)/,
-    //   '$4'
-    // );
     if (metaData.name !== MetaName + ' #' + mDName)
       metaData.name = MetaName + ' #' + mDName;
 

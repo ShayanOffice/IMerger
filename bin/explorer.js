@@ -1,10 +1,6 @@
-import { HowManyToMake, TraitsDir } from "../config.js";
-import {
-  HierarchyToFile,
-  readDir,
-  HueVariantsFromFolder,
-} from "./fileHandler.js";
-import { parseFileName, parseFolderName } from "./stringParser.js";
+import { HowManyToMake, TraitsDir } from '../config.js';
+import { HierarchyToFile, readDir, ReadObjFromFile } from './fileHandler.js';
+import { parseFileName, parseFolderName } from './stringParser.js';
 
 const Hierarchy = {
   parent: './',
@@ -13,7 +9,7 @@ const Hierarchy = {
   switchableChildren: [],
   orderedChildren: [],
   hueVariants: [],
-  direntName: "",
+  direntName: '',
   address: TraitsDir,
   ignoreMeta: false,
 };
@@ -23,8 +19,8 @@ const createHierarchy = (
   metaName = '',
   rarity = 100,
   hueVariants = [],
-  direntName = "",
-  address = "",
+  direntName = '',
+  address = '',
   ignoreMeta = false
 ) => ({
   parent: parentH.address,
@@ -43,10 +39,10 @@ const BlendingImage = {
   metaName: '',
   rarity: 100,
   hueVariant: {},
-  extension: "",
-  direntName: "",
-  address: "",
-  blendingMode: "normal",
+  extension: '',
+  direntName: '',
+  address: '',
+  blendingMode: 'normal',
   ignoreMeta: false,
 };
 
@@ -55,10 +51,10 @@ const createBlendingImage = (
   metaName = '',
   rarity = 100,
   hueVariant = {},
-  extension = "",
-  direntName = "",
-  address = "",
-  blendingMode = "normal",
+  extension = '',
+  direntName = '',
+  address = '',
+  blendingMode = 'normal',
   ignoreMeta = false
 ) => ({
   parent: parentH.address,
@@ -89,7 +85,7 @@ const parseAndAddDirent = (
       parsedNameObj.extension,
       dirent.name,
       address,
-      parsedNameObj.blendingMode,
+      parsedNameObj.blendingMode
     );
     if (ordered) currentHierarchy.orderedChildren.push(newImageData);
     else currentHierarchy.switchableChildren.push(newImageData);
@@ -128,7 +124,10 @@ const cacheHierarchy = async (
         //add it to current Hierarchy.
         const fileDir = directory + dirent.name;
         // console.log(fileDir);
-        currentHierarchy.hueVariants = await HueVariantsFromFolder(fileDir);
+        currentHierarchy.hueVariants = await ReadObjFromFile(fileDir);
+      } else if (dirent.name === 'remember.json') {
+        const fileDir = directory + dirent.name;
+        currentHierarchy.remember = await ReadObjFromFile(fileDir);
       } else if (dirent.name === 'unhued') {
         currentHierarchy.hueVariants = 'unhued';
       } else if (dirent.name === 'ignoremeta') {
@@ -182,3 +181,4 @@ export const Cache = async () => {
   }
 };
 
+// Cache();
