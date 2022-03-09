@@ -40,15 +40,36 @@ const iterateAndSelectTraits = async (
     ////////////////////////////////////////////////////////
 
     if (Hierarchy?.orderedChildren.length > 0) {
+      const remember = Hierarchy?.remember;
+      const blacklist = [];
+      for (const mapping of remember?.mappings) {
+        if (mapping.autoMapByName) {
+          console.error(
+            'Hierarchy "' +
+              Hierarchy.metaName +
+              '"is with Ordered Children; thus it Can\'t Have autoMapByName=true.'
+          );
+        } else {
+          for (const targetTraitName of mapping.chosenTraits) {
+            for (const trait of CurrentIterTraits) {
+              // Check if target was in our selection array
+              if (trait.metaName === targetTraitName) {
+                blacklist.concat(mapping.blacklist);
+              }
+            }
+          }
+        }
+      }
       for (const hir of Hierarchy.orderedChildren)
-        await iterateAndSelectTraits(
-          hir,
-          CurrentIterTraits,
-          CurrentImgAttributes,
-          currentHueVariant,
-          isUnhued,
-          Hierarchy.ignoreMeta
-        );
+        if (!blacklist.includes(hir.metaName))
+          await iterateAndSelectTraits(
+            hir,
+            CurrentIterTraits,
+            CurrentImgAttributes,
+            currentHueVariant,
+            isUnhued,
+            Hierarchy.ignoreMeta
+          );
     } else if (Hierarchy?.switchableChildren.length > 0) {
       const remember = Hierarchy?.remember;
 
@@ -61,7 +82,7 @@ const iterateAndSelectTraits = async (
       const childHr = undefined;
       const blacklist = [];
       for (const mapping of remember?.mappings) {
-        if (mapping?.autoMapByName) {
+        if (mapping.autoMapByName) {
           // get selected child
           for (const targetTraitName of mapping.chosenTraits) {
             for (const t of CurrentIterTraits) {
