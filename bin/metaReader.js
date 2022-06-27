@@ -1,4 +1,4 @@
-import { ReadObjFromFile } from './bin/fileHandler.js';
+import { ReadObjFromFile } from './fileHandler.js';
 async function Main() {
   const read = await ReadObjFromFile('./built/MetaDatas/0.json');
   const obj = {};
