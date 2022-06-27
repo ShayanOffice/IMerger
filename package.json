@@ -19,6 +19,7 @@
   "dependencies": {
     "canvas-filters": "^1.0.1",
     "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
     "sha1": "^1.1.1",
     "skia-canvas": "^0.9.29"
   },
