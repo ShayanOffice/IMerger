@@ -12,20 +12,20 @@ async function Main() {
 Main();
 // Have a conversion dictionary to set each coresponding trait in the later evolution stage
 // {
-//   Background:
-//    {
-//    'Forest' => 'forestPrime',
-//    'Snowy' => 'snowyPrime',
+//   'Background=>BG':
+//    [
+//    'Forest=>forestPrime',
+//    'Snowy=>snowyPrime',
 //      .
 //      .
 //      .
-//    },
-//    Body:
-//    {
+//    ],
+//    'Body':
+//    [
 //    .
 //    .
 //    .
-//    }
+//    ]
 // }
 // then read the created meta data for the generated nft
 // and check if the selected trait_Type exists in our conversion dictionary.keys,
