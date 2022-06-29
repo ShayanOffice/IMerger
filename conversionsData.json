@@ -1,0 +1,4 @@
+{
+  "Background=>BG": ["Forest=>forestPrime", "Mountain=>MountainPrime"],
+  "Body=>Base": ["Zombie=>zombiePrime", "Gold=>goldPrime"]
+}
