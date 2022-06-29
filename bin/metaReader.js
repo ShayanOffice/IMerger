@@ -63,3 +63,12 @@ Main();
 // and check if the selected trait_Type exists in our conversion dictionary.keys,
 //  then => check its value if it exists in the coresponding dictionary collection
 // then look for the set value, otherwise randomly select one.
+
+
+
+// New!
+// now we have some traits already chosen, but obviously some categories are to be
+// iterated and gone in to the "trait choosing" process,
+// so when choosing between a category's traits, first check if we have a prechosen trait, 
+// if so, select that, 
+// else , go through the default process of weighted choice making.
