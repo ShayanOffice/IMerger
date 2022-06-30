@@ -1,3 +1,4 @@
+
 var items = [
   { name: 'thirty%', rarity: 30 },
   { name: 'twenty%', rarity: 20 },
@@ -6,16 +7,7 @@ var items = [
   { name: 'none2', rarity: 100 },
 ];
 
-const makeACopyOfObj = (obj) => {
-  const clone = JSON.parse(JSON.stringify(obj));
-  return clone;
-};
 
-const makeACopyOfArray = (array) => {
-  var ObjCopy = makeACopyOfObj({ data: array });
-  var clone = ObjCopy.data;
-  return clone;
-};
 
 const makeRarityRanksList = (arrayOfItems = []) => {
   var sortedItems = makeACopyOfArray(arrayOfItems);
@@ -36,7 +28,7 @@ const randomChoice = (array) => {
 };
 
 export const weightedChoose = (hierarchies, blackList = undefined) => {
-  const listToWorkWith = [];
+  let listToWorkWith = [];
   if (blackList && blackList.length > 0) {
     for (const hr of hierarchies) {
       if (!blackList.includes(hr.metaName)) listToWorkWith.push(hr);
@@ -49,7 +41,7 @@ export const weightedChoose = (hierarchies, blackList = undefined) => {
   // make a smaller item's list to choose from./  "possibleChoices"
   const possibleChoices = [];
   // compare each item's rarity with "fact" and if it's higher than the "fact", => push.
-  const highestRarity = 0;
+  let highestRarity = 0;
   for (const item of listToWorkWith) {
     if (item.rarity > highestRarity) highestRarity = item.rarity;
     if (!item.rarity) item.rarity = 100;

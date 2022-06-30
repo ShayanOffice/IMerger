@@ -22,6 +22,7 @@ const parseMetaAddress = (address) => {
     const element = array[index];
     if (element === "" || element === ".") array.splice(index, 1);
   }
+  // check if last child is a numbered fileName pop it to avoid setting it as category name.
   if (/[0-9]*-/.test(array[array.length - 1])) {
     if (/\.[a-z]+/.test(array[array.length - 1])) return;
     else array.pop();
@@ -35,23 +36,41 @@ const parseMetaAddress = (address) => {
       // console.log(category, metaNames.join(" "));
       if (metaNames.length !== 0 && metaNames[0] !== "None")
         return newMetaAttribute(category, metaNames.join(" "));
-
       return;
     } else {
       var hasFileExt = false;
       var metaName = element;
+      // check if it's a file
       if (/\..*/.test(metaName)) {
         metaName = metaName.replace(/\..*/, ``);
         hasFileExt = true;
       }
+      // remove rarity numbers and blending mode
       metaName = metaName.replace(/_[0-9 a-z A-Z]+/g, ``);
+      // if it's a folder and it doesn't begin with uppercase letters, add it to the attribute naming array
       if (!hasFileExt) {
-        if (/[A-Z].*/.test(metaName)) metaNames.push(metaName);
+        if (/^[A-Z].*/.test(metaName)) {
+          // console.log(metaName);
+          metaNames.push(metaName);
+        }
       } else metaNames.push(metaName);
     }
   }
 };
-
+export const parseParentMetaName = (Hierarchy) => {
+  var address = Hierarchy.address;
+  var array = address.split("/");
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    if (element === "" || element === ".") array.splice(index, 1);
+  }
+  var parentName = array[array.length - 2];
+  parentName = parentName.replace(/_[0-9 a-z A-Z]+/g, ``);
+  parentName = parentName.replace(/[0-9]*-/, ``);
+  parentName = parentName.replace(/\s*/, ``);
+  // console.warn(parentName);
+  return parentName;
+};
 export const parseMetaAttribute = (Hierarchy) => {
   var metaAttrib = parseMetaAddress(Hierarchy.address);
   if (
@@ -85,7 +104,7 @@ export const parseFolderName = (folderName) => {
 
 export const parseFileName = (fileName) => {
   var array = fileName.split("_");
-  var metaName = array[0].replace(/(.+)(\..+)/, `$1`);
+  var metaName = array[0].replace(/(.*-+)*(.+)(\..+)/, `$2`);
   var extension = array[array.length - 1].replace(/(.+)\.(.+)/, `$2`);
   array[array.length - 1] = array[array.length - 1].replace(/(.+)\.(.+)/, `$1`);
   array.shift();

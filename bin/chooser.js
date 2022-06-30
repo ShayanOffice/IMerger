@@ -1,9 +1,15 @@
-import sha1 from 'sha1';
-import { HowManyToMake } from '../config.js';
-import { HierarchyFromFile, MadeChoicesFromFile } from './fileHandler.js';
-import { parseMetaAttribute } from './stringParser.js';
-import { weightedChoose } from './weightedChooser.js';
+import sha1 from "sha1";
+import { HowManyToMake } from "../config.js";
+import {
+  HierarchyFromFile,
+  MadeChoicesFromFile,
+  MakeACopyOfObj,
+  MakeACopyOfArray,
+} from "./fileHandler.js";
+import { parseMetaAttribute } from "./stringParser.js";
+import { weightedChoose } from "./weightedChooser.js";
 let AllImgProbabilities = [];
+let AllMaskedNames = [];
 let AllImgAttributes = [];
 let MadeChoices = [];
 let UnwrittenChoiceHashes = [];
@@ -18,6 +24,7 @@ const iterateAndSelectTraits = async (
   Hierarchy,
   CurrentIterTraits,
   CurrentImgAttributes,
+  currentMask,
   parentHueVariant,
   isUnhued = false,
   ignoreMeta = false
@@ -34,27 +41,44 @@ const iterateAndSelectTraits = async (
     )
       currentHueVariant = weightedChoose(Hierarchy.hueVariants);
     else {
-      if (Hierarchy?.hueVariants === 'unhued') isUnhued = true;
+      if (Hierarchy?.hueVariants === "unhued") isUnhued = true;
       currentHueVariant = parentHueVariant;
+    }
+    ////////////////////////////////////////////////////////
+    /////////////////////HandleMasks//////////////////////
+    if (Hierarchy?.masks) {
+      // console.log(Hierarchy.masks);
+      currentMask = Hierarchy.masks;
+      for (const name of Object.keys(currentMask)) {
+        if (!AllMaskedNames.includes(name)) AllMaskedNames.push(name);
+      }
     }
     ////////////////////////////////////////////////////////
 
     if (Hierarchy?.orderedChildren.length > 0) {
       const remember = Hierarchy?.remember;
-      const blacklist = [];
-      for (const mapping of remember?.mappings) {
-        if (mapping.autoMapByName) {
-          console.error(
-            'Hierarchy "' +
-              Hierarchy.metaName +
-              '"is with Ordered Children; thus it Can\'t Have autoMapByName=true.'
-          );
-        } else {
-          for (const targetTraitName of mapping.chosenTraits) {
-            for (const trait of CurrentIterTraits) {
-              // Check if target was in our selection array
-              if (trait.metaName === targetTraitName) {
-                blacklist.concat(mapping.blacklist);
+      let blacklist = [];
+      if (remember) {
+        for (const mapping of remember.mappings) {
+          if (mapping.autoMapByName) {
+            console.error(
+              'Hierarchy "' +
+                Hierarchy.address +
+                "\"is with Ordered Children; thus it Can't Have autoMapByName=true."
+            );
+          } else if (mapping.whiteList) {
+            console.error(
+              'Hierarchy "' +
+                Hierarchy.address +
+                "\"is with Ordered Children; thus it Can't Have whitelist mappings."
+            );
+          } else {
+            for (const targetTraitName of mapping.chosenTraits) {
+              for (const trait of CurrentIterTraits) {
+                // Check if target was in our selection array
+                if (trait.metaName === targetTraitName) {
+                  blacklist = blacklist.concat(mapping.blacklist);
+                }
               }
             }
           }
@@ -66,6 +90,7 @@ const iterateAndSelectTraits = async (
             hir,
             CurrentIterTraits,
             CurrentImgAttributes,
+            currentMask,
             currentHueVariant,
             isUnhued,
             Hierarchy.ignoreMeta
@@ -73,46 +98,63 @@ const iterateAndSelectTraits = async (
     } else if (Hierarchy?.switchableChildren.length > 0) {
       const remember = Hierarchy?.remember;
 
-      // return console.error(
-      //   'You must specify a target category name to "remember" into the" ' +
-      //     Hierarchy.address +
-      //     'remember.json"'
-      // );
-
-      const childHr = undefined;
-      const blacklist = [];
-      for (const mapping of remember?.mappings) {
-        if (mapping.autoMapByName) {
-          // get selected child
-          for (const targetTraitName of mapping.chosenTraits) {
-            for (const t of CurrentIterTraits) {
-              const traitParentName = t.address.replace(/.*\/(.+)\/.*/, `$1`);
-              if (traitParentName === targetTraitName) {
-                // t is the selected child
-                // select the child with the same name.
-                for (const hr of Hierarchy.switchableChildren) {
-                  if (hr.metaName === t.metaName) childHr = hr;
+      let childHr = undefined;
+      let blacklist = [];
+      let finalList = Hierarchy.switchableChildren;
+      if (remember) {
+        // console.log(remember);
+        for (const mapping of remember.mappings) {
+          if (mapping.autoMapByName) {
+            // get selected child
+            for (const targetTraitName of mapping.chosenTraits) {
+              for (const t of CurrentIterTraits) {
+                const traitParentName = t.address.replace(/.*\/(.+)\/.*/, `$1`);
+                if (traitParentName === targetTraitName) {
+                  // t is the selected child
+                  // select the child with the same name.
+                  for (const hr of Hierarchy.switchableChildren) {
+                    if (hr.metaName === t.metaName) childHr = hr;
+                  }
                 }
               }
             }
-          }
-        } else {
-          for (const targetTraitName of mapping.chosenTraits) {
-            for (const trait of CurrentIterTraits) {
-              // Check if target was in our selection array
-              if (trait.metaName === targetTraitName) {
-                blacklist.concat(mapping.blacklist);
+          } else {
+            for (const targetTraitName of mapping.chosenTraits) {
+              for (const trait of CurrentIterTraits) {
+                // Check if target was in our selection array then use this mapping.
+                // console.log(trait.metaName);
+                if (trait.metaName === targetTraitName) {
+                  if (mapping.blacklist.length > 0)
+                    blacklist = blacklist.concat(mapping.blacklist);
+                  else if (mapping.whitelist.length > 0) {
+                    for (let i = 0; i < finalList.length; i++) {
+                      const child = finalList[i];
+                      var isInWL = false;
+                      for (const wlName of mapping.whitelist) {
+                        if (wlName === child.metaName) {
+                          isInWL = true;
+                          break;
+                        }
+                      }
+                      // if child wasn't in WL after we searched inside it.
+                      if (!isInWL) {
+                        console.log("removed", child.metaName);
+                        finalList.splice(i, 1);
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
-      if (!childHr)
-        childHr = weightedChoose(Hierarchy.switchableChildren, blacklist);
+      // set childHr if it wasn't force Chosen by autoMapByName.
+      if (!childHr) childHr = weightedChoose(finalList, blacklist);
 
-      await handleAttributeAndIterate(childHr);
+      await handleAttributeAndIterate(childHr, currentMask);
     } else {
-      console.error('Given Hierarchy is Empty');
+      console.error('Given Hierarchy "' + Hierarchy.address + '" is Empty');
       return;
     }
   } else {
@@ -121,7 +163,9 @@ const iterateAndSelectTraits = async (
     if (!isUnhued) {
       if (parentHueVariant.hue) Hierarchy.hueVariant = parentHueVariant;
     }
-    /////////////////////HandleVariant//////////////////////
+    /////////////////////HandleMask//////////////////////
+    if (currentMask) Hierarchy.masks = currentMask;
+    // console.log(currentMask);
     // add attrib.
     if (!Hierarchy.ignoreMeta) {
       const attrib = parseMetaAttribute(Hierarchy);
@@ -131,7 +175,7 @@ const iterateAndSelectTraits = async (
     await CurrentIterTraits.push(Hierarchy);
   }
 
-  async function handleAttributeAndIterate(childHr) {
+  async function handleAttributeAndIterate(childHr, currentMask) {
     // Check the Chosen Child Type if it's numbered parse and add attrib.
     if (
       childHr?.orderedChildren &&
@@ -146,6 +190,7 @@ const iterateAndSelectTraits = async (
       childHr,
       CurrentIterTraits,
       CurrentImgAttributes,
+      currentMask,
       currentHueVariant,
       isUnhued,
       Hierarchy.ignoreMeta
@@ -162,16 +207,18 @@ const makeProbabilities = async (rootHierarchy, Count) => {
     currentImgAttributes = [];
     let emptyHue = {};
     //make a copy so we don't touch the main object referenced.
-    const defH = await JSON.parse(JSON.stringify(rootHierarchy));
+    const defH = await MakeACopyOfObj(rootHierarchy);
+
     await iterateAndSelectTraits(
       defH,
       currentImgTraits,
       currentImgAttributes,
+      defH.masks,
       emptyHue
     );
 
     //+check if already didn't made this choice
-    var namesCombined = '';
+    var namesCombined = "";
     for (const trait of currentImgTraits) {
       if (!trait.ignoreMeta) namesCombined += trait.metaName;
     }
@@ -194,8 +241,13 @@ export const choose = async () => {
     console.log(MadeChoices);
     const Hierarchy = await HierarchyFromFile();
     await makeProbabilities(Hierarchy, HowManyToMake - MadeChoices.length);
-    const allChoices = { AllImgProbabilities, AllImgAttributes, MadeChoices };
-
+    const allChoices = {
+      AllImgProbabilities,
+      AllImgAttributes,
+      MadeChoices,
+      AllMaskedNames,
+    };
+    // console.table(AllMaskedNames);
     return allChoices;
   } catch (err) {
     console.log(err);
@@ -203,3 +255,5 @@ export const choose = async () => {
 };
 
 // choose();
+// 88966131-9 ( dakheli 401 402) azimi Italya Felestin
+// 677942

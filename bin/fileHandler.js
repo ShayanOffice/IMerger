@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { promises as fs } from "fs";
 import {
   CacheDir,
   TraitsDir,
@@ -11,10 +11,10 @@ import {
   MetaDescription,
   MetaAuthor,
   ImgType,
-} from '../config.js';
+} from "../config.js";
 
 export const newMetaData = (number, dna) => {
-  var imageAddress = '';
+  var imageAddress = "";
   const addressEndsWithSlash = /.*\/$/.test(MetaLinkBase);
 
   const appendedName = !addressEndsWithSlash
@@ -200,10 +200,21 @@ export const Output = async (ChoicesMade, sha, attributes, imageBuffer) => {
   const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
 
   await fs.writeFile(imgFileName, imageBuffer);
-  console.log('Saved Image File: ', imgFileName);
+  console.log("Saved Image File: ", imgFileName);
   await fs.writeFile(metaFileName, JSON.stringify(metaData, null, 2));
-  console.log('Saved Meta File: ', metaFileName);
+  console.log("Saved Meta File: ", metaFileName);
   console.log(metaData);
   ChoicesMade.data.splice(fileNumber, 0, sha);
   await MadeChoicesToFile(ChoicesMade);
+};
+
+export const MakeACopyOfObj = async (obj) => {
+  const clone = JSON.parse(JSON.stringify(obj));
+  return clone;
+};
+
+export const MakeACopyOfArray = async (array) => {
+  var ObjCopy = MakeACopyOfObj({ data: array });
+  var clone = ObjCopy.data;
+  return clone;
 };

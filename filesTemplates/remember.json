@@ -1,0 +1,25 @@
+{
+    "mappings":[{
+        "chosenTraits":["if these traits of the target category were chosen, consider mapping as follows.."],
+        "autoMapByName": false,
+        "blacklist":["all traits to ignore if the trait(s) was selected before / Either this or whitelist"],
+        "whitelist":["all traits to count for choosing if the trait(s) was selected before / Either this or blacklist"]
+    }]
+}
+Example:{
+    "mappings": [
+      {
+        "chosenTraits": ["GenericBody"],
+        "autoMapByName": false,
+        "blacklist": [],
+        "whitelist": ["genericBodyPattern"]
+      },
+      {
+        "chosenTraits": ["FatBody"],
+        "autoMapByName": false,
+        "blacklist": [],
+        "whitelist": ["fatBodyPattern"]
+      }
+    ]
+  }
+  

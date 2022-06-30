@@ -28,8 +28,15 @@ const main = async () => {
   if (ResyncBeforeStart) await ReSyncBuilt();
   if (CachBeforeStart) await Cache();
 
-  const { AllImgProbabilities, AllImgAttributes, MadeChoices } = await choose();
+  const { AllImgProbabilities, AllImgAttributes, MadeChoices, AllMaskedNames } =
+    await choose();
 
-  await compose(AllImgProbabilities, AllImgAttributes, MadeChoices, Size);
+  await compose(
+    AllImgProbabilities,
+    AllImgAttributes,
+    MadeChoices,
+    AllMaskedNames,
+    Size
+  );
 };
 main();

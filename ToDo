@@ -1,0 +1,8 @@
+
+                                ------When Generating First Stage------
+Make a file with all image addresses used in making the first stage of NFTs <References File>
+Make a conversion file (a dictionary to set coresponding address of any used image in the reference file) <Conversions File>
+                                ------When Generating Second Stage------
+for each category when choosing,look for a conversion inside the <Conversions File>  to seee if there's been a coresponding address
+if found one, look inside <cached_hierarchies.json> of the second generation and find the specified address
+then force select it.
