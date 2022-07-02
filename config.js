@@ -5,6 +5,7 @@ export const MetaDatasDir = './built/MetaDatas/';
 export const choicesDetailsDir = './built/ChoicesDetails/';
 export const CachedHierarchyFileName = 'cached_hierarchy.json';
 export const MadeChoicesFileName = 'made_choices.json';
+export const EvolutionDictionaryFileName = 'evolution_dictionary.json';
 export const Size = 2048;
 export const HowManyToMake = 10;
 export const Displace = false;

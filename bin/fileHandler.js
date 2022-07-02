@@ -90,6 +90,13 @@ export const ReadObjFromFile = async (fileDir) => {
   return JSON.parse(data);
 };
 
+export const WriteObjToFile = async (obj, fileDir) => {
+  await fs.writeFile(fileDir, JSON.stringify(obj, null, 2), function (err) {
+    if (err) console.log(err);
+  });
+  return obj;
+};
+
 const CleanUpUnmatchedBuilds = async () => {
   const imgDirents = await readDir(ImagesDir);
   const metaDirents = await readDir(MetaDatasDir);
@@ -99,36 +106,6 @@ const CleanUpUnmatchedBuilds = async () => {
   await SyncTwoBuildDirectories(metaDirents, imgDirents, MetaDatasDir);
   await SyncTwoBuildDirectories(choicesDetails, metaDirents, choicesDetailsDir);
   await SyncTwoBuildDirectories(metaDirents, choicesDetails, MetaDatasDir);
-
-  // for (const imgDirent of imgDirents) {
-  //   var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
-  //   for (const metaDirent of metaDirents) {
-  //     var hasMatch = false;
-  //     var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
-  //     if (imgName === mDataName) {
-  //       hasMatch = true;
-  //       break;
-  //     }
-  //   }
-  //   if (!hasMatch) {
-  //     await fs.rm(ImagesDir + imgDirent.name);
-  //   }
-  // }
-
-  // for (const metaDirent of metaDirents) {
-  //   var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
-  //   for (const imgDirent of imgDirents) {
-  //     var hasMatch = false;
-  //     var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
-  //     if (imgName === mDataName) {
-  //       hasMatch = true;
-  //       break;
-  //     }
-  //   }
-  //   if (!hasMatch) {
-  //     await fs.rm(MetaDatasDir + metaDirent.name);
-  //   }
-  // }
 };
 
 const CleanUpUnmatchedCachedSha1s = async () => {
