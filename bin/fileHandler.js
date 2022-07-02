@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import { promises as fs } from 'fs';
 import {
   CacheDir,
   TraitsDir,
@@ -6,15 +6,16 @@ import {
   MadeChoicesFileName,
   ImagesDir,
   MetaDatasDir,
+  choicesDetailsDir,
   MetaName,
   MetaLinkBase,
   MetaDescription,
   MetaAuthor,
   ImgType,
-} from "../config.js";
+} from '../config.js';
 
 export const newMetaData = (number, dna) => {
-  var imageAddress = "";
+  var imageAddress = '';
   const addressEndsWithSlash = /.*\/$/.test(MetaLinkBase);
 
   const appendedName = !addressEndsWithSlash
@@ -92,35 +93,42 @@ export const ReadObjFromFile = async (fileDir) => {
 const CleanUpUnmatchedBuilds = async () => {
   const imgDirents = await readDir(ImagesDir);
   const metaDirents = await readDir(MetaDatasDir);
-  for (const imgDirent of imgDirents) {
-    var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
-    for (const metaDirent of metaDirents) {
-      var hasMatch = false;
-      var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
-      if (imgName === mDataName) {
-        hasMatch = true;
-        break;
-      }
-    }
-    if (!hasMatch) {
-      await fs.rm(ImagesDir + imgDirent.name);
-    }
-  }
+  const choicesDetails = await readDir(choicesDetailsDir);
 
-  for (const metaDirent of metaDirents) {
-    var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
-    for (const imgDirent of imgDirents) {
-      var hasMatch = false;
-      var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
-      if (imgName === mDataName) {
-        hasMatch = true;
-        break;
-      }
-    }
-    if (!hasMatch) {
-      await fs.rm(MetaDatasDir + metaDirent.name);
-    }
-  }
+  await SyncTwoBuildDirectories(imgDirents, metaDirents, ImagesDir);
+  await SyncTwoBuildDirectories(metaDirents, imgDirents, MetaDatasDir);
+  await SyncTwoBuildDirectories(choicesDetails, metaDirents, choicesDetailsDir);
+  await SyncTwoBuildDirectories(metaDirents, choicesDetails, MetaDatasDir);
+
+  // for (const imgDirent of imgDirents) {
+  //   var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
+  //   for (const metaDirent of metaDirents) {
+  //     var hasMatch = false;
+  //     var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
+  //     if (imgName === mDataName) {
+  //       hasMatch = true;
+  //       break;
+  //     }
+  //   }
+  //   if (!hasMatch) {
+  //     await fs.rm(ImagesDir + imgDirent.name);
+  //   }
+  // }
+
+  // for (const metaDirent of metaDirents) {
+  //   var mDataName = metaDirent.name.replace(/(.+)(\..+)/, `$1`);
+  //   for (const imgDirent of imgDirents) {
+  //     var hasMatch = false;
+  //     var imgName = imgDirent.name.replace(/(.+)(\..+)/, `$1`);
+  //     if (imgName === mDataName) {
+  //       hasMatch = true;
+  //       break;
+  //     }
+  //   }
+  //   if (!hasMatch) {
+  //     await fs.rm(MetaDatasDir + metaDirent.name);
+  //   }
+  // }
 };
 
 const CleanUpUnmatchedCachedSha1s = async () => {
@@ -191,21 +199,29 @@ export const FindNextEmptyBuildIndex = async () => {
   return metaDirents.length;
 };
 
-export const Output = async (ChoicesMade, sha, attributes, imageBuffer) => {
+export const Output = async (
+  ChoicesMade,
+  sha,
+  attributes,
+  Hirs,
+  imageBuffer
+) => {
   const fileNumber = await FindNextEmptyBuildIndex();
   const metaData = newMetaData(fileNumber, sha);
   metaData.attributes = attributes;
 
   const imgFileName = `${ImagesDir}${fileNumber}.${ImgType}`;
   const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
+  const choicesDetailsName = `${choicesDetailsDir}${fileNumber}.json`;
 
   await fs.writeFile(imgFileName, imageBuffer);
-  console.log("Saved Image File: ", imgFileName);
+  console.log('Saved Image File: ', imgFileName);
   await fs.writeFile(metaFileName, JSON.stringify(metaData, null, 2));
-  console.log("Saved Meta File: ", metaFileName);
+  console.log('Saved Meta File: ', metaFileName);
   console.log(metaData);
   ChoicesMade.data.splice(fileNumber, 0, sha);
   await MadeChoicesToFile(ChoicesMade);
+  await fs.writeFile(choicesDetailsName, JSON.stringify(Hirs, null, 2));
 };
 
 export const MakeACopyOfObj = async (obj) => {
@@ -217,4 +233,21 @@ export const MakeACopyOfArray = async (array) => {
   var ObjCopy = MakeACopyOfObj({ data: array });
   var clone = ObjCopy.data;
   return clone;
+};
+
+const SyncTwoBuildDirectories = async (DirentAs, DirentBs, DirentADir) => {
+  for (const DirentA of DirentAs) {
+    var direntAName = DirentA.name.replace(/(.+)(\..+)/, `$1`);
+    for (const DirentB of DirentBs) {
+      var hasMatch = false;
+      var direntBName = DirentB.name.replace(/(.+)(\..+)/, `$1`);
+      if (direntBName === direntAName) {
+        hasMatch = true;
+        break;
+      }
+    }
+    if (!hasMatch) {
+      await fs.rm(DirentADir + DirentA.name);
+    }
+  }
 };

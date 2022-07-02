@@ -2,6 +2,7 @@ export const TraitsDir = './Traits/';
 export const CacheDir = './cached_data/';
 export const ImagesDir = './built/Images/';
 export const MetaDatasDir = './built/MetaDatas/';
+export const choicesDetailsDir = './built/ChoicesDetails/';
 export const CachedHierarchyFileName = 'cached_hierarchy.json';
 export const MadeChoicesFileName = 'made_choices.json';
 export const Size = 2048;

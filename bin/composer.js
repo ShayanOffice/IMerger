@@ -232,7 +232,7 @@ const compositeProbs = async (
     var sha = sha1(namesCombined);
     const buff = await canvas.toBuffer(ImgType);
 
-    await Output(ChoicesMade, sha, AllImgAttributes[index], buff);
+    await Output(ChoicesMade, sha, AllImgAttributes[index], singleImgTraits, buff);
   }
 };
 
