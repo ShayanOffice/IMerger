@@ -241,6 +241,8 @@ export const choose = async () => {
     console.log(MadeChoices);
     const Hierarchy = await HierarchyFromFile();
     await makeProbabilities(Hierarchy, HowManyToMake - MadeChoices.length);
+
+    // console.log(AllImgProbabilities);
     const allChoices = {
       AllImgProbabilities,
       AllImgAttributes,
