@@ -1,9 +1,13 @@
-import { ReadObjFromFile, WriteObjToFile, readDir } from '../bin/fileHandler.js';
+import {
+  ReadObjFromFile,
+  WriteObjToFile,
+  readDir,
+} from "../bin/fileHandler.js";
 import {
   CacheDir,
   choicesDetailsDir,
   EvolutionDictionaryFileName,
-} from '../config.js';
+} from "../config.js";
 
 async function Main() {
   const choicesDetails = await readDir(choicesDetailsDir);
@@ -16,7 +20,7 @@ async function Main() {
     const obj = evolutionDictionary ? evolutionDictionary : {};
     for (let i = 0; i < read.length; i++) {
       const address = read[i].address;
-      obj[address] = '';
+      obj[address] = address;
     }
     // console.log(obj);
     await WriteObjToFile(sortObj(obj), CacheDir + EvolutionDictionaryFileName);
@@ -31,7 +35,7 @@ const sortObj = (obj) => {
   arr.sort();
   const sortedObj = {};
   for (const key of arr) {
-    sortedObj[key] = '';
+    sortedObj[key] = key;
   }
   return sortedObj;
 };
