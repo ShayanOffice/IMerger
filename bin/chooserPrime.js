@@ -156,6 +156,7 @@ const iterateAndSelectTraits = async (
 
       // look for matching address inside of PreGenChoicesArray[preChoiceCurrentIndex] for each of childHRs
       for (const chosenImgTraits of PreGenChoicesArray[preChoiceCurrentIndex]) {
+        // console.log(PreGenChoicesArray);
         for (const chosenTrait of chosenImgTraits) {
           for (const childHR of Hierarchy.switchableChildren) {
             if (chosenTrait.address.includes(childHR.address)) {

@@ -105,7 +105,7 @@ dist
 
 # Traits Directory
 ignore/
-Traits/
-Traits - Copy/
+Traits*/
 cached_data/
 built/
+built Before/

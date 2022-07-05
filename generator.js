@@ -80,6 +80,7 @@ const getPreGenChoices = async (
     );
     const PreChosenImgTraitsTo = [];
     for (const trait of PreChosenImgTraitsFrom) {
+      console.log(trait);
       for (const key of Object.keys(evolutionDictionary)) {
         if (key == trait.address) {
           const convertedImgHr = findImgHrByProperty(
