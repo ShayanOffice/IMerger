@@ -5,17 +5,17 @@ import {
 } from "../bin/fileHandler.js";
 import {
   CacheDir,
-  choicesDetailsDir,
+  ChoicesDetailsDir,
   EvolutionDictionaryFileName,
 } from "../config.js";
 
 async function Main() {
-  const choicesDetails = await readDir(choicesDetailsDir);
+  const choicesDetails = await readDir(ChoicesDetailsDir);
   for (const chosenTraits of choicesDetails) {
     const evolutionDictionary = await ReadObjFromFile(
       CacheDir + EvolutionDictionaryFileName
     );
-    const read = await ReadObjFromFile(choicesDetailsDir + chosenTraits.name);
+    const read = await ReadObjFromFile(ChoicesDetailsDir + chosenTraits.name);
 
     const obj = evolutionDictionary ? evolutionDictionary : {};
     for (let i = 0; i < read.length; i++) {

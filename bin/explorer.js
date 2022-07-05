@@ -71,6 +71,32 @@ const createBlendingImage = (
   ignoreMeta,
 });
 
+/////////////////////////////Helper Methodes/////////////////////////////
+
+var foundImgHrByProperty;
+export const findImgHrByProperty = (rootHr, propKey, propValue) => {
+  var children =
+    rootHr.orderedChildren.length > 0
+      ? rootHr.orderedChildren
+      : rootHr.switchableChildren;
+  for (const childHr of children) {
+    if (!childHr.extension || childHr.extension == '') {
+      findImgHrByProperty(childHr, propKey, propValue);
+    } else {
+      if (childHr[propKey] == propValue) {
+        // console.log(childHr);
+        foundImgHrByProperty = childHr;
+      }
+    }
+  }
+  while (!foundImgHrByProperty) {
+    console.log('Waiting...');
+  }
+  return foundImgHrByProperty;
+};
+
+/////////////////////////////Helper Methodes/////////////////////////////
+
 const parseAddHierarchy = (
   directory,
   dirent,
@@ -147,7 +173,7 @@ const cacheHierarchy = async (
       } else {
         if (currentHierarchy.childCount) currentHierarchy.childCount++;
         else currentHierarchy.childCount = 1;
-        
+
         let cached;
         if (/[0-9]+-/.test(dirent.name)) {
           if (!hasOrderedChilds && hasSetOrderedOrNot) {
@@ -189,6 +215,7 @@ export const Cache = async () => {
   try {
     await cacheHierarchy();
     await HierarchyToFile(Hierarchy);
+    return Hierarchy;
     // console.log(theWritten.orderedChildren[3]);
   } catch (err) {
     console.log(err);

@@ -6,12 +6,13 @@ import {
   MadeChoicesFileName,
   ImagesDir,
   MetaDatasDir,
-  choicesDetailsDir,
+  ChoicesDetailsDir,
   MetaName,
   MetaLinkBase,
   MetaDescription,
   MetaAuthor,
   ImgType,
+  fromPreGenerated,
 } from '../config.js';
 
 export const newMetaData = (number, dna) => {
@@ -100,12 +101,18 @@ export const WriteObjToFile = async (obj, fileDir) => {
 const CleanUpUnmatchedBuilds = async () => {
   const imgDirents = await readDir(ImagesDir);
   const metaDirents = await readDir(MetaDatasDir);
-  const choicesDetails = await readDir(choicesDetailsDir);
+  const choicesDetails = await readDir(ChoicesDetailsDir);
 
   await SyncTwoBuildDirectories(imgDirents, metaDirents, ImagesDir);
   await SyncTwoBuildDirectories(metaDirents, imgDirents, MetaDatasDir);
-  await SyncTwoBuildDirectories(choicesDetails, metaDirents, choicesDetailsDir);
-  await SyncTwoBuildDirectories(metaDirents, choicesDetails, MetaDatasDir);
+  if (!fromPreGenerated) {
+    await SyncTwoBuildDirectories(
+      choicesDetails,
+      metaDirents,
+      ChoicesDetailsDir
+    );
+    await SyncTwoBuildDirectories(metaDirents, choicesDetails, MetaDatasDir);
+  }
 };
 
 const CleanUpUnmatchedCachedSha1s = async () => {
@@ -189,7 +196,7 @@ export const Output = async (
 
   const imgFileName = `${ImagesDir}${fileNumber}.${ImgType}`;
   const metaFileName = `${MetaDatasDir}${fileNumber}.json`;
-  const choicesDetailsName = `${choicesDetailsDir}${fileNumber}.json`;
+  const choicesDetailsName = `${ChoicesDetailsDir}${fileNumber}.json`;
 
   await fs.writeFile(imgFileName, imageBuffer);
   console.log('Saved Image File: ', imgFileName);
