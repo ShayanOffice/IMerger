@@ -1,7 +1,8 @@
 //  https://github.com/ashbeech/moralis-mutants-nft-engine
 //  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
 import { promises as fs } from 'fs';
-import { choose } from './bin/chooserPrime.js';
+import { choose } from './bin/chooser.js';
+import { choose as usePreChosen } from './bin/chooserPrime.js';
 import { compose } from './bin/composer.js';
 import {
   Size,
@@ -12,6 +13,7 @@ import {
   ChoicesDetailsDir,
   EvolutionDictionaryFileName,
   CacheDir,
+  fromPreGenerated,
 } from './config.js';
 import {
   ReSyncBuilt,
@@ -28,15 +30,18 @@ const main = async () => {
   var rootHr = await HierarchyFromFile();
   if (ResyncBeforeStart) await ReSyncBuilt();
   if (CacheBeforeStart || !rootHr || rootHr == {}) rootHr = await Cache();
-
+  // if (fromPreGenerated) {
   var PreGenImgsArray = await getPreGenChoices(
     ChoicesDetailsDir,
     CacheDir + EvolutionDictionaryFileName,
     rootHr
   );
-
   const { AllImgProbabilities, AllImgAttributes, MadeChoices, AllMaskedNames } =
-    await choose(PreGenImgsArray);
+    await usePreChosen(PreGenImgsArray);
+  // } else {
+  // const { AllImgProbabilities, AllImgAttributes, MadeChoices, AllMaskedNames } =
+  //   await choose();
+  // }
 
   await compose(
     AllImgProbabilities,
@@ -80,7 +85,6 @@ const getPreGenChoices = async (
     );
     const PreChosenImgTraitsTo = [];
     for (const trait of PreChosenImgTraitsFrom) {
-      console.log(trait);
       for (const key of Object.keys(evolutionDictionary)) {
         if (key == trait.address) {
           const convertedImgHr = findImgHrByProperty(
@@ -95,5 +99,6 @@ const getPreGenChoices = async (
     }
     allPreChosenTraitArrays.push(PreChosenImgTraitsTo);
   }
+
   return allPreChosenTraitArrays;
 };

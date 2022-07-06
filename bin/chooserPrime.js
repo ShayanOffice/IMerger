@@ -155,16 +155,13 @@ const iterateAndSelectTraits = async (
       }
 
       // look for matching address inside of PreGenChoicesArray[preChoiceCurrentIndex] for each of childHRs
-      for (const chosenImgTraits of PreGenChoicesArray[preChoiceCurrentIndex]) {
-        // console.log(PreGenChoicesArray);
-        for (const chosenTrait of chosenImgTraits) {
-          for (const childHR of Hierarchy.switchableChildren) {
-            if (chosenTrait.address.includes(childHR.address)) {
-              // if found at least one, force select that child
-              console.log(chosenTrait.address);
-              chosenHR = childHR;
-              break;
-            }
+      for (const chosenTrait of PreGenChoicesArray[preChoiceCurrentIndex]) {
+        for (const childHR of Hierarchy.switchableChildren) {
+          if (chosenTrait.address.includes(childHR.address)) {
+            // if found at least one, force select that child
+            console.log('Same Address: ', chosenTrait.address);
+            chosenHR = childHR;
+            break;
           }
         }
       }
@@ -185,15 +182,12 @@ const iterateAndSelectTraits = async (
       if (parentHueVariant.hue) Hierarchy.hueVariant = parentHueVariant;
     }
 
-    
-    for (const chosenImgTraits of PreGenChoicesArray[preChoiceCurrentIndex]) {
-      for (const chosenTrait of chosenImgTraits) {
-        if (chosenTrait.address.includes(chosenTrait.address)) {
-          // if found at least one, force select that child
-          console.log(chosenTrait.address);
-          Hierarchy.hueVariant = chosenTrait.hueVariant;
-          break;
-        }
+    for (const chosenTrait of PreGenChoicesArray[preChoiceCurrentIndex]) {
+      if (chosenTrait.address.includes(chosenTrait.address)) {
+        // if found at least one, force select that child
+        console.log(chosenTrait.address);
+        Hierarchy.hueVariant = chosenTrait.hueVariant;
+        break;
       }
     }
     /////////////////////HandleMask//////////////////////
