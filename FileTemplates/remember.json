@@ -1,8 +1,0 @@
-{
-    "mappings":[{
-        "chosenTraits":["if these traits of the target category were chosen, consider mapping as follows.."],
-        "autoMapByName": false,
-        "blackList":["all traits to ignore if the trait(s) was selected before"],
-        "whiteList":["all traits to count for choosing if the trait(s) was selected before"]
-    }]
-}

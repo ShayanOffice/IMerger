@@ -5,8 +5,9 @@
         "blacklist":["all traits to ignore if the trait(s) was selected before / Either this or whitelist"],
         "whitelist":["all traits to count for choosing if the trait(s) was selected before / Either this or blacklist"]
     }]
-}
-Example:{
+},
+// Example:
+{
     "mappings": [
       {
         "chosenTraits": ["GenericBody"],
