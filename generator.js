@@ -1,9 +1,7 @@
-//  https://github.com/ashbeech/moralis-mutants-nft-engine
-//  https://moralis.io/how-to-mint-nfts-for-free-without-paying-gas-fees/
-import { promises as fs } from 'fs';
-import { choose } from './bin/chooser.js';
-import { choose as usePreChosen } from './bin/chooserPrime.js';
-import { compose } from './bin/composer.js';
+import { promises as fs } from "fs";
+import { choose } from "./bin/chooser.js";
+import { choose as usePreChosen } from "./bin/chooserPrime.js";
+import { compose } from "./bin/composer.js";
 import {
   Size,
   ResyncBeforeStart,
@@ -14,40 +12,57 @@ import {
   EvolutionDictionaryFileName,
   CacheDir,
   fromPreGenerated,
-} from './config.js';
+} from "./config.js";
 import {
   ReSyncBuilt,
   ReadObjFromFile,
-  WriteObjToFile,
   readDir,
   HierarchyFromFile,
-} from './bin/fileHandler.js';
-import { Cache, findImgHrByProperty } from './bin/explorer.js';
-import _ from 'lodash';
+} from "./bin/fileHandler.js";
+import { Cache, findImgHrByProperty } from "./bin/explorer.js";
+import _ from "lodash";
 
 const main = async () => {
   await makeRequiredDirectories();
   var rootHr = await HierarchyFromFile();
   if (ResyncBeforeStart) await ReSyncBuilt();
   if (CacheBeforeStart || !rootHr || rootHr == {}) rootHr = await Cache();
-  // if (fromPreGenerated) {
-  var PreGenImgsArray = await getPreGenChoices(
-    ChoicesDetailsDir,
-    CacheDir + EvolutionDictionaryFileName,
-    rootHr
-  );
-  const { AllImgProbabilities, AllImgAttributes, MadeChoices, AllMaskedNames } =
-    await usePreChosen(PreGenImgsArray);
-  // } else {
-  // const { AllImgProbabilities, AllImgAttributes, MadeChoices, AllMaskedNames } =
-  //   await choose();
-  // }
+
+  var allImgProbabilities, allImgAttributes, madeChoices, allMaskedNames;
+  if (fromPreGenerated) {
+    var PreGenImgsArray = await getPreGenChoices(
+      ChoicesDetailsDir,
+      CacheDir + EvolutionDictionaryFileName,
+      rootHr
+    );
+    const {
+      AllImgProbabilities,
+      AllImgAttributes,
+      MadeChoices,
+      AllMaskedNames,
+    } = await usePreChosen(PreGenImgsArray);
+    allImgProbabilities = AllImgProbabilities;
+    allImgAttributes = AllImgAttributes;
+    madeChoices = MadeChoices;
+    allMaskedNames = AllMaskedNames;
+  } else {
+    const {
+      AllImgProbabilities,
+      AllImgAttributes,
+      MadeChoices,
+      AllMaskedNames,
+    } = await choose();
+    allImgProbabilities = AllImgProbabilities;
+    allImgAttributes = AllImgAttributes;
+    madeChoices = MadeChoices;
+    allMaskedNames = AllMaskedNames;
+  }
 
   await compose(
-    AllImgProbabilities,
-    AllImgAttributes,
-    MadeChoices,
-    AllMaskedNames,
+    allImgProbabilities,
+    allImgAttributes,
+    madeChoices,
+    allMaskedNames,
     Size
   );
 };
@@ -89,7 +104,7 @@ const getPreGenChoices = async (
         if (key == trait.address) {
           const convertedImgHr = findImgHrByProperty(
             rootHr,
-            'address',
+            "address",
             evolutionDictionary[key]
           );
           PreChosenImgTraitsTo.push(convertedImgHr);

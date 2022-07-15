@@ -9,7 +9,7 @@ import {
   EvolutionDictionaryFileName,
 } from "../config.js";
 
-async function Main() {
+export async function MakeEvolDict() {
   const choicesDetails = await readDir(ChoicesDetailsDir);
   for (const chosenTraits of choicesDetails) {
     const evolutionDictionary = await ReadObjFromFile(
@@ -40,7 +40,7 @@ const sortObj = (obj) => {
   return sortedObj;
 };
 
-Main();
+MakeEvolDict();
 // Have a conversion dictionary to set each coresponding trait in the later evolution stage
 // {
 //   Background:
